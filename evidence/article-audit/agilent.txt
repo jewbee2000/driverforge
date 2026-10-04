@@ -1,0 +1,7 @@
+{
+  "exit_code": 1,
+  "cases": 8,
+  "output": "artifacts\\article-audit-agilent"
+}
+C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\driverforge\.venv\Lib\site-packages\pymeasure\instruments\generic_types.py:110: FutureWarning: It is not known whether this device support SCPI commands or not. Please inform the pymeasure maintainers if you know the answer.
+  warn("It is not known whether this device support SCPI commands or not. Please inform "

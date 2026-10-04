@@ -29,7 +29,7 @@ Proposed package layout: src/driverforge/{spec,transport,driver,generate,report}
 
 ## Demonstration and outputs
 
-Target command contract, to be implemented: `python -m driverforge demo --offline --output artifacts/demo`. It emits spec.json, candidate.py, conformance.json, report.html, and manifest.json. It exits 0 only if the demonstration observed the intended bad-candidate rejection and the good candidate passed every required check. `python -m driverforge check <driver> --spec <spec>` exits nonzero on violations. These commands are specified interfaces, not existing software in the planning repository.
+Implemented command contract: `python -m driverforge demo --offline --output artifacts/demo`. It emits spec.json, candidate.py, conformance.json, report.html, and manifest.json. It exits 0 only if the demonstration observed the intended bad-candidate rejection and the good candidate passed every required check. `python -m driverforge check <driver> --spec <spec>` exits nonzero on violations. See PUBLIC_API.md for the installed interface and exit codes.
 
 The report shows source passage → interpreted field → wire bytes → driver result → verdict. It includes at least one failed candidate and one unresolved ambiguity, and clearly labels replay versus live generation.
 

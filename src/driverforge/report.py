@@ -206,9 +206,32 @@ def compare_reports(before: dict[str, Any], after: dict[str, Any]) -> list[dict[
 
     a, b = keyed(before), keyed(after)
     changes = []
+    for field in ("complete", "exit_code", "oracle_version"):
+        if before[field] != after[field]:
+            changes.append(
+                {
+                    "scope": "report",
+                    "case": None,
+                    "operation": None,
+                    "requirement": None,
+                    "field": field,
+                    "before": before[field],
+                    "after": after[field],
+                }
+            )
     for key in sorted(a.keys() | b.keys()):
         old, new = a.get(key), b.get(key)
-        for field in ("state", "observed", "attempts", "interpreted_fields", "transcript"):
+        for field in (
+            "state",
+            "expected",
+            "observed",
+            "detail",
+            "attempts",
+            "elapsed_ms",
+            "source",
+            "interpreted_fields",
+            "transcript",
+        ):
             left = old.get(field) if old else None
             right = new.get(field) if new else None
             if left != right:

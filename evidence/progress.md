@@ -1,5 +1,18 @@
 # Progress
 
+## 2026-10-04 publication audit
+
+Reproduced the existing 94-test result, lint, formatting, types, dependency check,
+wheel build and 39-case/six-mutant demo. Code review then found report comparison
+silently ignored changed completion/oracle/source/expectation/timing evidence.
+Six added regressions failed before repair; the repaired comparator passes the
+full 100-test suite. The Agilent check still exits 1 with the two original synthetic
+consumer-contract violations. All final commands and fingerprints are retained in
+evidence/article-audit/checks.json, including the original failed regression output.
+The frozen oracle and historical experiment artifacts remain unchanged. This is
+post-experiment cleanup, under Walter's later explicit article/GitHub publication
+authorization, not evidence of first-pass model success.
+
 ## 2026-10-04 CI merged and main trigger verified
 
 Final PR head 5cddcb256bfad82a348aae465dc22fd90f6042b7 passed hosted run 37231792241.

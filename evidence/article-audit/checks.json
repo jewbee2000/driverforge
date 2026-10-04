@@ -1,0 +1,132 @@
+{
+  "date_utc": "2026-10-04T23:44:32.930859+00:00",
+  "stage": "post-experiment publication audit",
+  "baseline_commit": "0583650745cc552fa6f2b3300bbf3db34e37f552",
+  "preexisting_tests": 94,
+  "post_repair_tests": 100,
+  "original_oracle_changed": false,
+  "synthetic_readings": true,
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "tools",
+        "examples"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "evidence/article-audit/lint.txt",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "tests",
+        "tools",
+        "examples"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "evidence/article-audit/format.txt",
+      "log_sha256": "1e8100ce5112b41053a89fae8931d735807139a983d212a9a9d2a8fab1194b67"
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "evidence/article-audit/types.txt",
+      "log_sha256": "8b88f6d12bd312c1b024b66d07a7f7619a68482ac4d64e475759b1823199faa5"
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "evidence/article-audit/dependencies.txt",
+      "log_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=evidence/article-audit/junit.xml"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "evidence/article-audit/tests.txt",
+      "log_sha256": "799d6305915a571b0f9b8b68f9c895eba75b5b40a048c0e52a1bae6f2f8c946d"
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "driverforge",
+        "demo",
+        "--offline",
+        "--output",
+        "artifacts/article-audit-corrected"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "evidence/article-audit/demo.txt",
+      "log_sha256": "a1f934384c4f4a1a5f6399266fec9fe9bede1b0df564295951ecaa29b8cbaaee"
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "driverforge",
+        "check",
+        "agilent34410a",
+        "--spec",
+        "examples/specs/agilent34410a.json",
+        "--output",
+        "artifacts/article-audit-agilent"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "log": "evidence/article-audit/agilent.txt",
+      "log_sha256": "5ac957adb3dcff33375c4ee2b6611c73fada4ef829e6eddf763df179475bb8ad"
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "build",
+        "--wheel",
+        "--no-isolation"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "evidence/article-audit/wheel.txt",
+      "log_sha256": "014f077957a3beb3188f47d9c1ef6d3469e971ddbdcedae213dfeceb0ef3bff9"
+    }
+  ],
+  "source_hashes": {
+    "src/driverforge/report.py": "f1179467a25f49ef806ac2ad57d71f938eababa5cff5156dd557161366e3369d",
+    "tests/acceptance/test_report_diff.py": "4da7d7793d4053ac4a5842c8e235f2957fc504a852a3a168bb7ef5f61058d47b",
+    "evaluation/cases.json": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67"
+  }
+}

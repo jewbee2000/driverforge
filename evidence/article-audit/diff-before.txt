@@ -1,0 +1,160 @@
+.FFFFFF                                                                  [100%]
+================================== FAILURES ===================================
+____________ test_report_completion_and_oracle_changes_are_visible ____________
+
+    def test_report_completion_and_oracle_changes_are_visible():
+        before = report_fixture()
+        after = copy.deepcopy(before)
+        after.update(complete=False, exit_code=2, oracle_version="revised-contract")
+        changes = compare_reports(before, after)
+>       assert {change["field"] for change in changes} == {
+            "complete",
+            "exit_code",
+            "oracle_version",
+        }
+E       AssertionError: assert set() == {'complete', ...acle_version'}
+E         
+E         Extra items in the right set:
+E         'oracle_version'
+E         'complete'
+E         'exit_code'
+E         Use -v to get more diff
+
+tests\acceptance\test_report_diff.py:47: AssertionError
+______ test_case_contract_and_evidence_changes_are_visible[expected--99] ______
+
+field = 'expected', value = -99
+
+    @pytest.mark.parametrize(
+        "field,value",
+        [
+            ("expected", -99),
+            ("elapsed_ms", 251),
+            ("source", {"anchor": "revised-manual", "passage": "Updated evidence"}),
+            ("detail", "Updated diagnosis"),
+        ],
+    )
+    def test_case_contract_and_evidence_changes_are_visible(field, value):
+        before = report_fixture()
+        after = copy.deepcopy(before)
+        after["cases"][0][field] = value
+        changes = compare_reports(before, after)
+>       assert len(changes) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests\acceptance\test_report_diff.py:69: AssertionError
+_____ test_case_contract_and_evidence_changes_are_visible[elapsed_ms-251] _____
+
+field = 'elapsed_ms', value = 251
+
+    @pytest.mark.parametrize(
+        "field,value",
+        [
+            ("expected", -99),
+            ("elapsed_ms", 251),
+            ("source", {"anchor": "revised-manual", "passage": "Updated evidence"}),
+            ("detail", "Updated diagnosis"),
+        ],
+    )
+    def test_case_contract_and_evidence_changes_are_visible(field, value):
+        before = report_fixture()
+        after = copy.deepcopy(before)
+        after["cases"][0][field] = value
+        changes = compare_reports(before, after)
+>       assert len(changes) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests\acceptance\test_report_diff.py:69: AssertionError
+_____ test_case_contract_and_evidence_changes_are_visible[source-value2] ______
+
+field = 'source'
+value = {'anchor': 'revised-manual', 'passage': 'Updated evidence'}
+
+    @pytest.mark.parametrize(
+        "field,value",
+        [
+            ("expected", -99),
+            ("elapsed_ms", 251),
+            ("source", {"anchor": "revised-manual", "passage": "Updated evidence"}),
+            ("detail", "Updated diagnosis"),
+        ],
+    )
+    def test_case_contract_and_evidence_changes_are_visible(field, value):
+        before = report_fixture()
+        after = copy.deepcopy(before)
+        after["cases"][0][field] = value
+        changes = compare_reports(before, after)
+>       assert len(changes) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests\acceptance\test_report_diff.py:69: AssertionError
+_ test_case_contract_and_evidence_changes_are_visible[detail-Updated diagnosis] _
+
+field = 'detail', value = 'Updated diagnosis'
+
+    @pytest.mark.parametrize(
+        "field,value",
+        [
+            ("expected", -99),
+            ("elapsed_ms", 251),
+            ("source", {"anchor": "revised-manual", "passage": "Updated evidence"}),
+            ("detail", "Updated diagnosis"),
+        ],
+    )
+    def test_case_contract_and_evidence_changes_are_visible(field, value):
+        before = report_fixture()
+        after = copy.deepcopy(before)
+        after["cases"][0][field] = value
+        changes = compare_reports(before, after)
+>       assert len(changes) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests\acceptance\test_report_diff.py:69: AssertionError
+__________________ test_cli_reports_metadata_only_difference __________________
+
+tmp_path = WindowsPath('C:/Users/Walt/AppData/Local/Temp/pytest-of-Walt/pytest-87/test_cli_reports_metadata_only0')
+
+    def test_cli_reports_metadata_only_difference(tmp_path):
+        before = report_fixture()
+        after = copy.deepcopy(before)
+        after["oracle_version"] = "new-oracle"
+        for name, report in (("before", before), ("after", after)):
+            (tmp_path / f"{name}.json").write_text(json.dumps(report), encoding="utf-8")
+        run = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "driverforge",
+                "diff",
+                str(tmp_path / "before.json"),
+                str(tmp_path / "after.json"),
+                "--output",
+                str(tmp_path / "diff"),
+            ],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=15,
+        )
+>       assert run.returncode == 1, run.stdout + run.stderr
+E       AssertionError: {
+E           "schema_version": 1,
+E           "changes": []
+E         }
+E         
+E       assert 0 == 1
+E        +  where 0 = CompletedProcess(args=['C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scrip..._cli_reports_metadata_only0\\diff'], returncode=0, stdout='{\n  "schema_version": 1,\n  "changes": []\n}\n', stderr='').returncode
+
+tests\acceptance\test_report_diff.py:97: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/acceptance/test_report_diff.py::test_report_completion_and_oracle_changes_are_visible
+FAILED tests/acceptance/test_report_diff.py::test_case_contract_and_evidence_changes_are_visible[expected--99]
+FAILED tests/acceptance/test_report_diff.py::test_case_contract_and_evidence_changes_are_visible[elapsed_ms-251]
+FAILED tests/acceptance/test_report_diff.py::test_case_contract_and_evidence_changes_are_visible[source-value2]
+FAILED tests/acceptance/test_report_diff.py::test_case_contract_and_evidence_changes_are_visible[detail-Updated diagnosis]
+FAILED tests/acceptance/test_report_diff.py::test_cli_reports_metadata_only_difference
+6 failed, 1 passed in 0.99s

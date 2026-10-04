@@ -43,6 +43,10 @@ capabilities appear as not_applicable context, not passing checks. Demo has a
 separate gate: both references pass, all six expected negative fixtures fail, and
 an unresolved ambiguity is retained. A demo's success does not change a normal
 check's failed verdict. Diff exits 0 for unchanged, 1 for differences, 2 for errors.
+Diff includes completeness, overall exit code and oracle version as report-level
+changes (`scope: "report"` with null case/operation/requirement). Case changes include
+expected and observed outcomes, diagnosis, source evidence, elapsed fake time,
+attempts, interpreted fields and exact transcripts.
 
 Limits frozen in M0: 64 KiB JSON inputs, 100 cases, 16 operations, 16 faults/case,
 256 response bytes, 250 ms reference exchange, 500 ms total read budget, 4 MiB

@@ -19,7 +19,7 @@ Implement DriverForge in this repository using START_HERE.md, docs/REQUIREMENTS.
 
 ## Environment setup
 
-Use a repo-local virtual environment and lock stable, compatible dependencies during M0. Python 3.12 is the preferred starting point, subject to the CAD stack's supported versions. No paid service is needed for the initial release. Install into the project, not global Python. Prefer uv if available; a standard virtual environment and pinned requirements are an acceptable fallback. Record actual versions rather than copying an unverified lockfile.
+Use a repo-local virtual environment and the verified Python 3.12 dependency pins in requirements.lock. No paid service is needed for the initial release. Install into the project, not global Python. Prefer uv if available; a standard virtual environment and pinned requirements are an acceptable fallback. Record actual versions rather than copying an unverified lockfile.
 
 The current preparation environment had Python 3.12.14 through the Codex runtime, Git, and Ruby available. The website bundle check passed, but rendering was blocked by a Jekyll runtime load error. uv, gh, and CMake were not found on the shell PATH. Docker's CLI existed but its daemon was unavailable. These are observations, not required changes to Walter's computer. The implementation session may have a different environment; check it before installing tools. Dependency downloads need network access. Generated-code experiments require real isolation; Docker is one option once operational, not a prerequisite for all deterministic modules.
 

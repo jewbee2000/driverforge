@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "reference_cases": 39,
+  "mutations_rejected": 6,
+  "output": "artifacts\\article-audit-corrected"
+}

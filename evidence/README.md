@@ -11,6 +11,8 @@ Current application evidence is recorded here. No live-model or physical runs oc
 - performance.json: three fresh worker measurements per workload and frozen limits.
 - licenses.json: 42 pinned distribution license declarations and notice paths.
 - signed-failure.png: actual report screenshot used in the unpublished blog.
+- article-audit/: later publication audit, retained comparator regression failure,
+  repair checks and JUnit. Original experiment evidence remains unchanged.
 
 Progress history and prior failures remain available; current results do not erase them.
 

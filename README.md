@@ -12,6 +12,12 @@ and late-response cases. Synthetic malformed/device-error responses fail the exp
 numeric consumer contract; those failures remain visible. Physical validation and
 practitioner adoption have not been demonstrated.
 
+The original implementation passed 94 tests. A later publication audit reproduced
+those results, found that report comparison missed changes to completion and
+source evidence, and repaired it with six additional regression cases. The current
+local suite passes **100 tests**. [Audit evidence](evidence/article-audit/README.md)
+separates this cleanup from the original experiment.
+
 ## Install and demonstrate
 
 Verified on Windows 11 with Python 3.12.2. Python 3.12 is the supported version.
