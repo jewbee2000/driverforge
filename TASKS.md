@@ -19,7 +19,7 @@ was separately authorized on 2026-10-04; the article remains unpublished.
 
 Follow-up work is proposed in docs/NEXT_STEPS.md, outside the completed M0–M4 scope:
 
-- [ ] Automate the supported Windows/Python 3.12 checks in CI.
+- [x] Automate the supported Windows/Python 3.12 checks in CI. PR #1 and hosted run 37231475370 passed all checks; evidence/ci retains the initial setup failure, correction, JUnit and inspected artifact hashes.
 - [ ] Obtain a practitioner walkthrough and exercise a second existing driver.
 - [ ] Resolve the integration contract's malformed/device-error semantics with source evidence.
 - [ ] Validate a read-only operation on available hardware if access is arranged.

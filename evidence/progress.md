@@ -1,5 +1,67 @@
 # Progress
 
+## 2026-10-04 hosted CI verified — step 1 complete
+
+Corrected PR run https://github.com/jewbee2000/driverforge/actions/runs/37231475370
+at head 462bfef81da412cb3a5dee78024a7e6fead53b69 completed successfully. Every job
+step succeeded: pinned installation, pip check, lint/format/types, all 94 tests
+(zero failures/errors/skips), offline demo, wheel build and artifact upload.
+Downloaded artifact 11313697790; its 406,696 bytes matched the API SHA256 digest.
+Independently parsed hosted JUnit, recomputed 42 main-demo output hashes, checked
+all six distinct rejected defect reports and inspected fixture/schema wheel contents.
+The archive also contains pytest's own demo copies; those were kept distinct from
+the main CLI demo when counting its six defects. Metadata and JUnit are permanently
+recorded in evidence/ci/hosted-run.json and hosted-junit.xml. The raw ZIP remains
+an ignored local artifact. Raw and LF-normalized JUnit hashes are distinguished
+so Git serialization cannot invalidate the retained XML hash.
+
+TASKS.md, STATUS.json and the documented CI limitation are updated from this
+actual run. The workflow is unchanged since the verified correction; this final
+documentation/evidence commit is subject to PR CI before merge. No new hardware,
+practitioner, model or performance claim is made. The blog remains unpublished
+and its separate checkout was not changed or pushed.
+
+## 2026-10-04 CI cold-directory repair
+
+PR #1 started hosted run 37231139309 on the unchanged application. Installation,
+lint/format/types and offline demo passed, but pytest had 84 passes / 10 setup errors
+because artifacts did not exist before pytest created artifacts/pytest-tmp. The
+first local check had already made artifacts for its helper, hiding this precondition.
+The workflow correctly failed and uploaded reports; the wheel step was skipped.
+Preserved the failing hosted JUnit plus run/ZIP hashes in evidence/ci. The complete
+job log and downloaded ZIP remain ignored local artifacts.
+
+Added an explicit PowerShell New-Item step to create the result directory before
+pytest. Reproduced the missing-parent FileNotFoundError locally against a fresh
+result path, retained that failure, then ran the full suite after directory creation:
+94 passed with the same single upstream warning. Commands/logs are in
+cold-path-checks.json and associated files. No test was skipped or expectation
+changed. The corrected hosted execution remains pending at this commit.
+
+## 2026-10-04 CI branch completion — local gate
+
+Resumed Walter's C:/Users/Walt/Documents/Codex/driverforge-next checkout on codex/ci.
+The branch and origin/codex/ci both matched main at 1024142. The only new input was
+an untracked .github/workflows/ci.yml.txt; GitHub ignores that extension, and no
+workflow commit had been made. Renamed it to ci.yml, preserving the proposed checks.
+Pinned checkout/setup-python/upload-artifact to the verified v7 tag commit SHAs
+(git ls-remote against their official repositories) and made PowerShell explicit.
+Contents permission is read-only, checkout credentials are not persisted, and
+artifact upload runs even after a check fails. No model key or hardware is needed.
+
+Verified the user's repository-local Python 3.12.2 environment. Installed the pinned
+lock and editable project, then executed pip check, lint, format, strict mypy,
+the complete pytest suite with JUnit/temp outputs, offline demo and wheel build.
+All nine commands exited 0; pytest reported 94 passed and one upstream FutureWarning.
+Exact commands, logs and hashes are under evidence/ci. Independently inspected JUnit,
+recomputed demo artifact hashes, verified six rejected defect reports, and checked
+the wheel includes the pytest fixture and schemas. The YAML parse, event triggers,
+read-only permissions and full action pins were checked. No production code, oracle,
+test or dependency constraint changed. Hosted execution is pending at this commit.
+
+The later project push authorization and request to finish step 1 cover the branch
+push and CI pull request. The separate website/blog checkout remains untouched.
+
 ## 2026-10-04 authorized GitHub publication and proposed follow-ups
 
 Walter's latest request authorizes pushing the project to his GitHub and explicitly

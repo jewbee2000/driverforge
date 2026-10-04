@@ -30,6 +30,8 @@ compliance claim, practitioner adoption, or a live model success rate.
   socket audit denial after installation; it is not an OS firewall.
 - No automatic discovery, real instrument writes, PDF extraction, full Modbus
   TCP/RTU, every-vendor support, enterprise platform or replacement HAL (DF-W01–05).
-- Project source is hosted at https://github.com/jewbee2000/driverforge. No package
-  registry release or hosted CI run has been demonstrated. The article remains
+- Project source is hosted at https://github.com/jewbee2000/driverforge. Hosted
+  Windows/Python 3.12.2 CI passes the 94-test suite, offline demo and wheel build;
+  evidence/ci records the run and retained failure. No package registry release
+  has been demonstrated. The article remains
   unpublished; editorial approval, its publication date and blog publication remain pending.

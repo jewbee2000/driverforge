@@ -1,0 +1,44 @@
+Obtaining file:///C:/Users/Walt/Documents/Codex/driverforge-next
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: jsonschema==4.26.0 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from driverforge==0.1.0) (4.26.0)
+Requirement already satisfied: attrs>=22.2.0 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from jsonschema==4.26.0->driverforge==0.1.0) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from jsonschema==4.26.0->driverforge==0.1.0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from jsonschema==4.26.0->driverforge==0.1.0) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from jsonschema==4.26.0->driverforge==0.1.0) (2026.9.1)
+Requirement already satisfied: pymeasure==0.16.0 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from driverforge==0.1.0) (0.16.0)
+Requirement already satisfied: numpy<3,>=1.6.1 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pymeasure==0.16.0->driverforge==0.1.0) (2.5.3)
+Requirement already satisfied: pandas<4,>=0.14 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pymeasure==0.16.0->driverforge==0.1.0) (3.0.6)
+Requirement already satisfied: pint in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pymeasure==0.16.0->driverforge==0.1.0) (0.26.1)
+Requirement already satisfied: pyvisa>=1.9 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pymeasure==0.16.0->driverforge==0.1.0) (1.16.2)
+Requirement already satisfied: pyserial>=2.7 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pymeasure==0.16.0->driverforge==0.1.0) (3.5)
+Requirement already satisfied: pyqtgraph>=0.12 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pymeasure==0.16.0->driverforge==0.1.0) (0.14.0)
+Requirement already satisfied: qtpy>=2.4 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pymeasure==0.16.0->driverforge==0.1.0) (2.4.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pandas<4,>=0.14->pymeasure==0.16.0->driverforge==0.1.0) (2.9.0.post0)
+Requirement already satisfied: tzdata in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pandas<4,>=0.14->pymeasure==0.16.0->driverforge==0.1.0) (2026.5)
+Requirement already satisfied: colorama in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pyqtgraph>=0.12->pymeasure==0.16.0->driverforge==0.1.0) (0.4.6)
+Requirement already satisfied: typing_extensions>=4.0.0 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pyvisa>=1.9->pymeasure==0.16.0->driverforge==0.1.0) (4.16.0)
+Requirement already satisfied: packaging in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from qtpy>=2.4->pymeasure==0.16.0->driverforge==0.1.0) (26.3)
+Requirement already satisfied: flexcache>=0.3 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pint->pymeasure==0.16.0->driverforge==0.1.0) (0.3)
+Requirement already satisfied: flexparser>=0.4 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pint->pymeasure==0.16.0->driverforge==0.1.0) (0.4)
+Requirement already satisfied: platformdirs>=2.1.0 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from pint->pymeasure==0.16.0->driverforge==0.1.0) (4.12.3)
+Requirement already satisfied: six>=1.5 in c:\users\walt\documents\codex\driverforge-next\.venv\lib\site-packages (from python-dateutil>=2.8.2->pandas<4,>=0.14->pymeasure==0.16.0->driverforge==0.1.0) (1.17.0)
+Checking if build backend supports build_editable: started
+Checking if build backend supports build_editable: finished with status 'done'
+Building wheels for collected packages: driverforge
+  Building editable for driverforge (pyproject.toml): started
+  Building editable for driverforge (pyproject.toml): finished with status 'done'
+  Created wheel for driverforge: filename=driverforge-0.1.0-0.editable-py3-none-any.whl size=2549 sha256=de366c25a60e6b5ee36a47546ec2f8e018c661061d4749da880794ac5fbe95d5
+  Stored in directory: C:\Users\Walt\AppData\Local\Temp\pip-ephem-wheel-cache-utnr2gmr\wheels\ba\13\6e\3adfd71132db2fe59ed32cbe9f4f7f69a8a1ee217205648e58
+Successfully built driverforge
+Installing collected packages: driverforge
+  Attempting uninstall: driverforge
+    Found existing installation: driverforge 0.1.0
+    Uninstalling driverforge-0.1.0:
+      Successfully uninstalled driverforge-0.1.0
+Successfully installed driverforge-0.1.0
+
+[notice] A new release of pip is available: 24.0 -> 26.2.1
+[notice] To update, run: C:\Users\Walt\Documents\Codex\driverforge-next\.venv\Scripts\python.exe -m pip install --upgrade pip

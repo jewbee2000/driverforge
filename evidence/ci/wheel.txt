@@ -1,0 +1,123 @@
+running egg_info
+creating src\driverforge.egg-info
+writing src\driverforge.egg-info\PKG-INFO
+writing dependency_links to src\driverforge.egg-info\dependency_links.txt
+writing entry points to src\driverforge.egg-info\entry_points.txt
+writing requirements to src\driverforge.egg-info\requires.txt
+writing top-level names to src\driverforge.egg-info\top_level.txt
+writing manifest file 'src\driverforge.egg-info\SOURCES.txt'
+reading manifest file 'src\driverforge.egg-info\SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src\driverforge.egg-info\SOURCES.txt'
+running bdist_wheel
+running build
+running build_py
+creating build\lib\driverforge
+copying src\driverforge\campaign.py -> build\lib\driverforge
+copying src\driverforge\cli.py -> build\lib\driverforge
+copying src\driverforge\driver.py -> build\lib\driverforge
+copying src\driverforge\errors.py -> build\lib\driverforge
+copying src\driverforge\mutations.py -> build\lib\driverforge
+copying src\driverforge\pymeasure_adapter.py -> build\lib\driverforge
+copying src\driverforge\pytest_plugin.py -> build\lib\driverforge
+copying src\driverforge\report.py -> build\lib\driverforge
+copying src\driverforge\spec.py -> build\lib\driverforge
+copying src\driverforge\transport.py -> build\lib\driverforge
+copying src\driverforge\__init__.py -> build\lib\driverforge
+copying src\driverforge\__main__.py -> build\lib\driverforge
+running egg_info
+writing src\driverforge.egg-info\PKG-INFO
+writing dependency_links to src\driverforge.egg-info\dependency_links.txt
+writing entry points to src\driverforge.egg-info\entry_points.txt
+writing requirements to src\driverforge.egg-info\requires.txt
+writing top-level names to src\driverforge.egg-info\top_level.txt
+reading manifest file 'src\driverforge.egg-info\SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src\driverforge.egg-info\SOURCES.txt'
+copying src\driverforge\py.typed -> build\lib\driverforge
+creating build\lib\driverforge\data
+copying src\driverforge\data\agilent34410a.json -> build\lib\driverforge\data
+copying src\driverforge\data\agilent_cases.json -> build\lib\driverforge\data
+copying src\driverforge\data\cases.json -> build\lib\driverforge\data
+copying src\driverforge\data\pressurebrick.json -> build\lib\driverforge\data
+copying src\driverforge\data\thermoblock.json -> build\lib\driverforge\data
+copying src\driverforge\data\agilent34410a.md -> build\lib\driverforge\data
+copying src\driverforge\data\pressurebrick.md -> build\lib\driverforge\data
+copying src\driverforge\data\thermoblock.md -> build\lib\driverforge\data
+copying src\driverforge\data\requirements.lock -> build\lib\driverforge\data
+creating build\lib\driverforge\schemas
+copying src\driverforge\schemas\campaign-v1.json -> build\lib\driverforge\schemas
+copying src\driverforge\schemas\result-v1.json -> build\lib\driverforge\schemas
+copying src\driverforge\schemas\spec-v1.json -> build\lib\driverforge\schemas
+installing to build\bdist.win-amd64\wheel
+running install
+running install_lib
+creating build\bdist.win-amd64\wheel
+creating build\bdist.win-amd64\wheel\driverforge
+copying build\lib\driverforge\campaign.py -> build\bdist.win-amd64\wheel\.\driverforge
+copying build\lib\driverforge\cli.py -> build\bdist.win-amd64\wheel\.\driverforge
+creating build\bdist.win-amd64\wheel\driverforge\data
+copying build\lib\driverforge\data\agilent34410a.json -> build\bdist.win-amd64\wheel\.\driverforge\data
+copying build\lib\driverforge\data\agilent34410a.md -> build\bdist.win-amd64\wheel\.\driverforge\data
+copying build\lib\driverforge\data\agilent_cases.json -> build\bdist.win-amd64\wheel\.\driverforge\data
+copying build\lib\driverforge\data\cases.json -> build\bdist.win-amd64\wheel\.\driverforge\data
+copying build\lib\driverforge\data\pressurebrick.json -> build\bdist.win-amd64\wheel\.\driverforge\data
+copying build\lib\driverforge\data\pressurebrick.md -> build\bdist.win-amd64\wheel\.\driverforge\data
+copying build\lib\driverforge\data\requirements.lock -> build\bdist.win-amd64\wheel\.\driverforge\data
+copying build\lib\driverforge\data\thermoblock.json -> build\bdist.win-amd64\wheel\.\driverforge\data
+copying build\lib\driverforge\data\thermoblock.md -> build\bdist.win-amd64\wheel\.\driverforge\data
+copying build\lib\driverforge\driver.py -> build\bdist.win-amd64\wheel\.\driverforge
+copying build\lib\driverforge\errors.py -> build\bdist.win-amd64\wheel\.\driverforge
+copying build\lib\driverforge\mutations.py -> build\bdist.win-amd64\wheel\.\driverforge
+copying build\lib\driverforge\py.typed -> build\bdist.win-amd64\wheel\.\driverforge
+copying build\lib\driverforge\pymeasure_adapter.py -> build\bdist.win-amd64\wheel\.\driverforge
+copying build\lib\driverforge\pytest_plugin.py -> build\bdist.win-amd64\wheel\.\driverforge
+copying build\lib\driverforge\report.py -> build\bdist.win-amd64\wheel\.\driverforge
+creating build\bdist.win-amd64\wheel\driverforge\schemas
+copying build\lib\driverforge\schemas\campaign-v1.json -> build\bdist.win-amd64\wheel\.\driverforge\schemas
+copying build\lib\driverforge\schemas\result-v1.json -> build\bdist.win-amd64\wheel\.\driverforge\schemas
+copying build\lib\driverforge\schemas\spec-v1.json -> build\bdist.win-amd64\wheel\.\driverforge\schemas
+copying build\lib\driverforge\spec.py -> build\bdist.win-amd64\wheel\.\driverforge
+copying build\lib\driverforge\transport.py -> build\bdist.win-amd64\wheel\.\driverforge
+copying build\lib\driverforge\__init__.py -> build\bdist.win-amd64\wheel\.\driverforge
+copying build\lib\driverforge\__main__.py -> build\bdist.win-amd64\wheel\.\driverforge
+running install_egg_info
+Copying src\driverforge.egg-info to build\bdist.win-amd64\wheel\.\driverforge-0.1.0-py3.12.egg-info
+running install_scripts
+creating build\bdist.win-amd64\wheel\driverforge-0.1.0.dist-info\WHEEL
+creating 'C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\dist\\.tmp-ke8z2_xe\\driverforge-0.1.0-py3-none-any.whl' and adding 'build\\bdist.win-amd64\\wheel' to it
+adding 'driverforge/__init__.py'
+adding 'driverforge/__main__.py'
+adding 'driverforge/campaign.py'
+adding 'driverforge/cli.py'
+adding 'driverforge/driver.py'
+adding 'driverforge/errors.py'
+adding 'driverforge/mutations.py'
+adding 'driverforge/py.typed'
+adding 'driverforge/pymeasure_adapter.py'
+adding 'driverforge/pytest_plugin.py'
+adding 'driverforge/report.py'
+adding 'driverforge/spec.py'
+adding 'driverforge/transport.py'
+adding 'driverforge/data/agilent34410a.json'
+adding 'driverforge/data/agilent34410a.md'
+adding 'driverforge/data/agilent_cases.json'
+adding 'driverforge/data/cases.json'
+adding 'driverforge/data/pressurebrick.json'
+adding 'driverforge/data/pressurebrick.md'
+adding 'driverforge/data/requirements.lock'
+adding 'driverforge/data/thermoblock.json'
+adding 'driverforge/data/thermoblock.md'
+adding 'driverforge/schemas/campaign-v1.json'
+adding 'driverforge/schemas/result-v1.json'
+adding 'driverforge/schemas/spec-v1.json'
+adding 'driverforge-0.1.0.dist-info/licenses/LICENSE'
+adding 'driverforge-0.1.0.dist-info/METADATA'
+adding 'driverforge-0.1.0.dist-info/WHEEL'
+adding 'driverforge-0.1.0.dist-info/entry_points.txt'
+adding 'driverforge-0.1.0.dist-info/top_level.txt'
+adding 'driverforge-0.1.0.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel
+Successfully built driverforge-0.1.0-py3-none-any.whl
+* Getting build dependencies for wheel...
+* Building wheel...

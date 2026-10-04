@@ -73,6 +73,13 @@ edits. See [public API and schemas](docs/PUBLIC_API.md), the
 
 ## Verify and reproduce the consumer walkthrough
 
+GitHub Actions runs the Windows/Python 3.12.2 checks on pull requests and pushes to
+main. The workflow can also be started manually from the Actions tab. Each run
+retains JUnit results, test output artifacts, demo reports and the wheel when built
+for 14 days. Action revisions are pinned to commits. Check the actual run status
+at [Actions](https://github.com/jewbee2000/driverforge/actions); local checks alone
+do not establish a successful hosted run.
+
 ~~~powershell
 .venv\Scripts\python.exe -m ruff check src tests tools examples
 .venv\Scripts\python.exe -m ruff format --check src tests tools examples

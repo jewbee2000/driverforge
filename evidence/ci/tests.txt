@@ -1,0 +1,9 @@
+........................................................................ [ 76%]
+......................                                                   [100%]
+============================== warnings summary ===============================
+tests/acceptance/test_existing_driver_adapter.py::test_unchanged_public_driver_three_operations_and_faults
+  C:\Users\Walt\Documents\Codex\driverforge-next\.venv\Lib\site-packages\pymeasure\instruments\generic_types.py:110: FutureWarning: It is not known whether this device support SCPI commands or not. Please inform the pymeasure maintainers if you know the answer.
+    warn("It is not known whether this device support SCPI commands or not. Please inform "
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+94 passed, 1 warning in 9.87s
