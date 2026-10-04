@@ -1,5 +1,24 @@
 # Progress
 
+## 2026-10-04 M0/M1 vertical slice
+
+Implemented explicit ProtocolSpec schema and source-linked ambiguity outcomes;
+11 independent missing/contradictory cases and unknown-version checks pass.
+Built trusted typed fictional references, counted in-memory fault transport and
+fake clock, plus an adapter for the existing PyMeasure driver. Installed upstream
+source hash matches raw pinned commit (evidence/upstream.json); no modifications.
+Commands: `python -m pytest -q` exit 0, 61 passed (one upstream SCPI FutureWarning).
+`python -m mypy` exit 0 after explicit type repairs. Golden bytes passed exactly.
+`python -m driverforge demo --offline --output artifacts/demo` exit 0: 39 reference
+cases, six rejected mutations. Inspected unsigned failure: expected -12.34,
+observed 643.02, request 0300000001, response 0302fb2e.
+`python -m driverforge check agilent34410a --spec examples/specs/agilent34410a.json
+--output artifacts/agilent` exit 1 as intended: six cases pass, malformed and
+synthetic device-error cases fail. Cancellation/framing/retry limitations remain
+explicit. No upstream repair or physical reproduction claimed. M0/M1 gates met.
+Next: harden public failure semantics, resource/data boundaries, package consumer,
+and fresh-install release evidence before checking M2–M4.
+
 ## 2026-10-04 implementation — contract/oracle milestone
 
 Read all working agreements, requirements, spec, acceptance plan, implementation

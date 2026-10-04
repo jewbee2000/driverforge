@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "oracle_version",
+    "complete",
+    "cases",
+    "exit_code"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "oracle_version": {
+      "type": "string"
+    },
+    "complete": {
+      "type": "boolean"
+    },
+    "cases": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "operation",
+          "requirement",
+          "state",
+          "expected",
+          "observed",
+          "detail",
+          "transcript",
+          "source",
+          "interpreted_fields",
+          "attempts",
+          "elapsed_ms"
+        ],
+        "properties": {
+          "expected": {},
+          "observed": {},
+          "source": {},
+          "interpreted_fields": {},
+          "id": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string"
+          },
+          "requirement": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "pass",
+              "fail",
+              "inconclusive",
+              "not_applicable"
+            ]
+          },
+          "transcript": {
+            "type": "array"
+          },
+          "attempts": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "elapsed_ms": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "exit_code": {
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    }
+  }
+}

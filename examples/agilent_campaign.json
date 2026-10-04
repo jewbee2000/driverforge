@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "profile": "agilent34410a",
+  "cases": [
+    {
+      "id": "voltage_dc",
+      "operation": "voltage_dc",
+      "request_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+      "response_hex": "312e3235300a",
+      "expected": 1.25,
+      "error": null,
+      "attempts": 1,
+      "requirement": "DF-14"
+    },
+    {
+      "id": "current_dc",
+      "operation": "current_dc",
+      "request_hex": "4d4541533a435552523a44433f204445462c4445460a",
+      "response_hex": "302e3031320a",
+      "expected": 0.012,
+      "error": null,
+      "attempts": 1,
+      "requirement": "DF-14"
+    },
+    {
+      "id": "resistance",
+      "operation": "resistance",
+      "request_hex": "4d4541533a5245533f204445462c4445460a",
+      "response_hex": "313030300a",
+      "expected": 1000.0,
+      "error": null,
+      "attempts": 1,
+      "requirement": "DF-14"
+    },
+    {
+      "id": "timeout",
+      "operation": "voltage_dc",
+      "request_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+      "response_hex": "312e3235300a",
+      "expected": null,
+      "error": "DeadlineExceeded",
+      "faults": [
+        {
+          "kind": "timeout",
+          "onset": 1
+        }
+      ],
+      "attempts": 1,
+      "requirement": "DF-14"
+    },
+    {
+      "id": "fragment",
+      "operation": "voltage_dc",
+      "request_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+      "response_hex": "312e3235300a",
+      "expected": 1.25,
+      "error": null,
+      "faults": [
+        {
+          "kind": "fragment",
+          "onset": 1,
+          "chunks_hex": [
+            "312e",
+            "3235300a"
+          ],
+          "delay_ms": 1
+        }
+      ],
+      "attempts": 1,
+      "requirement": "DF-14"
+    },
+    {
+      "id": "malformed",
+      "operation": "voltage_dc",
+      "request_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+      "response_hex": "312e3235300a",
+      "expected": null,
+      "error": "ParseError",
+      "faults": [
+        {
+          "kind": "malformed",
+          "onset": 1,
+          "data_hex": "676172626167650a"
+        }
+      ],
+      "attempts": 1,
+      "requirement": "DF-14"
+    },
+    {
+      "id": "device-error",
+      "operation": "voltage_dc",
+      "request_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+      "response_hex": "312e3235300a",
+      "expected": null,
+      "error": "DeviceError",
+      "faults": [
+        {
+          "kind": "device_error",
+          "onset": 1,
+          "data_hex": "2d3130312c496e76616c6964206368617261637465720a"
+        }
+      ],
+      "attempts": 1,
+      "requirement": "DF-14"
+    },
+    {
+      "id": "late",
+      "operation": "voltage_dc",
+      "request_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+      "response_hex": "312e3235300a",
+      "expected": null,
+      "error": "DeadlineExceeded",
+      "faults": [
+        {
+          "kind": "late",
+          "onset": 1,
+          "data_hex": "312e3235300a",
+          "delay_ms": 251
+        }
+      ],
+      "attempts": 1,
+      "requirement": "DF-14"
+    }
+  ]
+}

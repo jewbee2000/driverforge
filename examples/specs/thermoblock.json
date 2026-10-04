@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "protocol_version": "1.0",
+  "profile": "thermoblock",
+  "operations": {
+    "identify": {
+      "source": {
+        "anchor": "manuals/thermoblock.md#identify",
+        "passage": "request=\"*IDN?\\\\n\"; response=\"identity\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+      },
+      "fields": {
+        "request": {
+          "value": "*IDN?\\n",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#identify",
+              "passage": "request=\"*IDN?\\\\n\"; response=\"identity\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "response": {
+          "value": "identity",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#identify",
+              "passage": "request=\"*IDN?\\\\n\"; response=\"identity\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "unit": {
+          "value": "none",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#identify",
+              "passage": "request=\"*IDN?\\\\n\"; response=\"identity\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "scale": {
+          "value": 1,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#identify",
+              "passage": "request=\"*IDN?\\\\n\"; response=\"identity\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "signed": {
+          "value": "not_applicable",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#identify",
+              "passage": "request=\"*IDN?\\\\n\"; response=\"identity\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "range": {
+          "value": null,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#identify",
+              "passage": "request=\"*IDN?\\\\n\"; response=\"identity\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "timeout_ms": {
+          "value": 250,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#identify",
+              "passage": "request=\"*IDN?\\\\n\"; response=\"identity\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "retry": {
+          "value": 1,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#identify",
+              "passage": "request=\"*IDN?\\\\n\"; response=\"identity\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "side_effect": {
+          "value": "read",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#identify",
+              "passage": "request=\"*IDN?\\\\n\"; response=\"identity\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        }
+      }
+    },
+    "read_temperature": {
+      "source": {
+        "anchor": "manuals/thermoblock.md#read-temperature",
+        "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+      },
+      "fields": {
+        "request": {
+          "value": "MEAS:TEMP?\\n",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#read-temperature",
+              "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "response": {
+          "value": "ascii_decimal",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#read-temperature",
+              "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "unit": {
+          "value": "C",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#read-temperature",
+              "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "scale": {
+          "value": 1,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#read-temperature",
+              "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "signed": {
+          "value": true,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#read-temperature",
+              "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "range": {
+          "value": null,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#read-temperature",
+              "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "timeout_ms": {
+          "value": 250,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#read-temperature",
+              "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "retry": {
+          "value": 1,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#read-temperature",
+              "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "side_effect": {
+          "value": "read",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#read-temperature",
+              "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        }
+      }
+    },
+    "set_voltage": {
+      "source": {
+        "anchor": "manuals/thermoblock.md#set-voltage",
+        "passage": "request=\"SOUR:VOLT {volts:.3f}\\\\n\"; response=\"OK\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+      },
+      "fields": {
+        "request": {
+          "value": "SOUR:VOLT {volts:.3f}\\n",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#set-voltage",
+              "passage": "request=\"SOUR:VOLT {volts:.3f}\\\\n\"; response=\"OK\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "response": {
+          "value": "OK",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#set-voltage",
+              "passage": "request=\"SOUR:VOLT {volts:.3f}\\\\n\"; response=\"OK\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "unit": {
+          "value": "V",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#set-voltage",
+              "passage": "request=\"SOUR:VOLT {volts:.3f}\\\\n\"; response=\"OK\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "scale": {
+          "value": 0.001,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#set-voltage",
+              "passage": "request=\"SOUR:VOLT {volts:.3f}\\\\n\"; response=\"OK\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "signed": {
+          "value": false,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#set-voltage",
+              "passage": "request=\"SOUR:VOLT {volts:.3f}\\\\n\"; response=\"OK\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "range": {
+          "value": [
+            0,
+            5
+          ],
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#set-voltage",
+              "passage": "request=\"SOUR:VOLT {volts:.3f}\\\\n\"; response=\"OK\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "timeout_ms": {
+          "value": 250,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#set-voltage",
+              "passage": "request=\"SOUR:VOLT {volts:.3f}\\\\n\"; response=\"OK\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "retry": {
+          "value": 0,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#set-voltage",
+              "passage": "request=\"SOUR:VOLT {volts:.3f}\\\\n\"; response=\"OK\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "side_effect": {
+          "value": "write",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#set-voltage",
+              "passage": "request=\"SOUR:VOLT {volts:.3f}\\\\n\"; response=\"OK\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        }
+      }
+    },
+    "disable_output": {
+      "source": {
+        "anchor": "manuals/thermoblock.md#disable-output",
+        "passage": "request=\"OUTP OFF\\\\n\"; response=\"OK\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=0; side_effect=\"write\""
+      },
+      "fields": {
+        "request": {
+          "value": "OUTP OFF\\n",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#disable-output",
+              "passage": "request=\"OUTP OFF\\\\n\"; response=\"OK\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "response": {
+          "value": "OK",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#disable-output",
+              "passage": "request=\"OUTP OFF\\\\n\"; response=\"OK\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "unit": {
+          "value": "none",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#disable-output",
+              "passage": "request=\"OUTP OFF\\\\n\"; response=\"OK\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "scale": {
+          "value": 1,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#disable-output",
+              "passage": "request=\"OUTP OFF\\\\n\"; response=\"OK\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "signed": {
+          "value": "not_applicable",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#disable-output",
+              "passage": "request=\"OUTP OFF\\\\n\"; response=\"OK\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "range": {
+          "value": null,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#disable-output",
+              "passage": "request=\"OUTP OFF\\\\n\"; response=\"OK\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "timeout_ms": {
+          "value": 250,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#disable-output",
+              "passage": "request=\"OUTP OFF\\\\n\"; response=\"OK\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "retry": {
+          "value": 0,
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#disable-output",
+              "passage": "request=\"OUTP OFF\\\\n\"; response=\"OK\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "side_effect": {
+          "value": "write",
+          "sources": [
+            {
+              "anchor": "manuals/thermoblock.md#disable-output",
+              "passage": "request=\"OUTP OFF\\\\n\"; response=\"OK\"; unit=\"none\"; scale=1; signed=\"not_applicable\"; range=null; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        }
+      }
+    }
+  }
+}
