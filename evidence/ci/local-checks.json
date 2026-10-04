@@ -1,0 +1,143 @@
+{
+  "verified_at_utc": "2026-10-04T20:09:45.312454+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "checks": [
+    {
+      "name": "install-lock",
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "requirements.lock"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.219,
+      "log": "evidence\\ci\\install-lock.txt",
+      "log_sha256": "9ca4571e245bb569f6f8c9c4cfa41b5b2f3e554557f5e83cdb38bc4451fb377a"
+    },
+    {
+      "name": "install-project",
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "--no-build-isolation",
+        "-e",
+        ".[pymeasure]"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.75,
+      "log": "evidence\\ci\\install-project.txt",
+      "log_sha256": "6a17ccf00d18c7ed1efe882e90909e7cd01e144b7cea02576afb42addd903d8e"
+    },
+    {
+      "name": "dependencies",
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.766,
+      "log": "evidence\\ci\\dependencies.txt",
+      "log_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "tools",
+        "examples"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.5,
+      "log": "evidence\\ci\\lint.txt",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "name": "format",
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "tests",
+        "tools",
+        "examples"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.109,
+      "log": "evidence\\ci\\format.txt",
+      "log_sha256": "1e8100ce5112b41053a89fae8931d735807139a983d212a9a9d2a8fab1194b67"
+    },
+    {
+      "name": "types",
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.625,
+      "log": "evidence\\ci\\types.txt",
+      "log_sha256": "8b88f6d12bd312c1b024b66d07a7f7619a68482ac4d64e475759b1823199faa5"
+    },
+    {
+      "name": "tests",
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=artifacts/junit.xml",
+        "--basetemp=artifacts/pytest-tmp"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 10.532,
+      "log": "evidence\\ci\\tests.txt",
+      "log_sha256": "e2a53e43f10dfef14387a62a489acb33b1203fb18aeeb33fdd0a43ef49e030ed"
+    },
+    {
+      "name": "demo",
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+        "-m",
+        "driverforge",
+        "demo",
+        "--offline",
+        "--output",
+        "artifacts/demo"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.297,
+      "log": "evidence\\ci\\demo.txt",
+      "log_sha256": "3549413974521f339d2893e317b171792cda363437d9b3e873f5fbfbb618f2f6"
+    },
+    {
+      "name": "wheel",
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+        "-m",
+        "build",
+        "--wheel",
+        "--no-isolation"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.375,
+      "log": "evidence\\ci\\wheel.txt",
+      "log_sha256": "7a633efca459958dedb53bd99a932206ea98d14e74910483662061771dd3a2ae"
+    }
+  ]
+}

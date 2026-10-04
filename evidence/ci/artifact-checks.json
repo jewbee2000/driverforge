@@ -1,0 +1,17 @@
+{
+  "tests": 94,
+  "failures": 0,
+  "errors": 0,
+  "rejected_defects": [
+    "blind_write_retry",
+    "stale_response_reuse",
+    "swallowed_device_error",
+    "swapped_bytes",
+    "unsigned_decode",
+    "voltage_factor_1000"
+  ],
+  "verified_artifact_hashes": 42,
+  "wheel": "dist\\driverforge-0.1.0-py3-none-any.whl",
+  "wheel_sha256": "7db0d8cc332a0e6e85b78e133332672c01062df7d9b1389989f4d4aa4d06f2e4",
+  "workflow_sha256": "6cffa59e1cf40cbd601ef132980959c9607c987b9b94e58e6190ea0dbb069e81"
+}

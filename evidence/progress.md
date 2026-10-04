@@ -1,5 +1,29 @@
 # Progress
 
+## 2026-10-04 CI branch completion — local gate
+
+Resumed Walter's C:/Users/Walt/Documents/Codex/driverforge-next checkout on codex/ci.
+The branch and origin/codex/ci both matched main at 1024142. The only new input was
+an untracked .github/workflows/ci.yml.txt; GitHub ignores that extension, and no
+workflow commit had been made. Renamed it to ci.yml, preserving the proposed checks.
+Pinned checkout/setup-python/upload-artifact to the verified v7 tag commit SHAs
+(git ls-remote against their official repositories) and made PowerShell explicit.
+Contents permission is read-only, checkout credentials are not persisted, and
+artifact upload runs even after a check fails. No model key or hardware is needed.
+
+Verified the user's repository-local Python 3.12.2 environment. Installed the pinned
+lock and editable project, then executed pip check, lint, format, strict mypy,
+the complete pytest suite with JUnit/temp outputs, offline demo and wheel build.
+All nine commands exited 0; pytest reported 94 passed and one upstream FutureWarning.
+Exact commands, logs and hashes are under evidence/ci. Independently inspected JUnit,
+recomputed demo artifact hashes, verified six rejected defect reports, and checked
+the wheel includes the pytest fixture and schemas. The YAML parse, event triggers,
+read-only permissions and full action pins were checked. No production code, oracle,
+test or dependency constraint changed. Hosted execution is pending at this commit.
+
+The later project push authorization and request to finish step 1 cover the branch
+push and CI pull request. The separate website/blog checkout remains untouched.
+
 ## 2026-10-04 authorized GitHub publication and proposed follow-ups
 
 Walter's latest request authorizes pushing the project to his GitHub and explicitly
