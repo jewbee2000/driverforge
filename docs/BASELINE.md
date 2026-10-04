@@ -10,16 +10,20 @@ consumer contract must reject. This is an observed supported-operation mismatch,
 not a reproduced hardware bug or a claim that the vendor emits that text.
 
 Install: local venv, `pip install -r requirements.lock`. No VISA vendor runtime,
-instrument, Qt GUI binding, or model service is needed. The baseline is 51 lines
-of Python and 20 lines of YAML before automatic formatting; final measured code
-sizes and timings will be saved with the consumer walkthrough.
+instrument, Qt GUI binding, or model service is needed. Final formatted source and
+configuration sizes are recorded in evidence/code-size.json. The extension adapter
+is 50 lines; the consumer test is 35 lines plus 14 configuration lines. These cover
+different scopes from the baseline script and do not establish a code-size speedup.
+The final baseline also executes partial ProtocolAdapter reads, missing-response
+behavior, and malformed/device-error/timeout PyVISA-sim dialogues. A PyVISA timeout
+is observable already; packaging a fake-clock fault schedule remains the addition.
 
 | Behavior | expected_protocol | PyVISA-sim YAML | Proposed extension |
 | --- | --- | --- | --- |
 | Three numeric operations | executed, pass | executed, pass | same unchanged driver |
-| Malformed/device-error bytes | pairs supported | dialogues supported | no novelty claim |
-| Missing response/timeout | custom method mock possible | missing dialogue response | scheduled fake deadline |
-| Fragments | byte adapter supports partial reads | raw-byte dialogues | recorded individual chunks |
+| Malformed/device-error bytes | executed pairs | executed dialogues | no novelty claim |
+| Missing response/timeout | executed ValueError; no fake clock | executed VisaIOError timeout | scheduled fake deadline |
+| Fragments | executed partial byte reads | raw-byte dialogues documented | recorded individual timed chunks |
 | Terminators | explicitly excluded in helper | EOM configured | bytes include terminators |
 | Late response/cancel | custom test code needed | no declarative timed schedule in inspected definitions | discard/close evidence |
 | Retry count/unknown-write verdict | handwritten assertions | handwritten assertions | reusable verdict/attempt count |

@@ -1,5 +1,39 @@
 # Progress
 
+## 2026-10-04 M4 release preparation
+
+Completed requirement-specific checks for all 22 IDs: all applicable Must passed;
+DF-10 not applicable with untrusted execution disabled; DF-17 implemented; DF-18
+deferred with no budget/live campaign. python tools/verify_release.py retained
+commands/logs/hashes in evidence/requirements-evidence.json. Full suite: 94 passed,
+one upstream SCPI FutureWarning, no skips; lint/format/mypy/pip check passed.
+Added final provenance coverage for package/schema hashes and dirty diff hashes.
+
+Clean local clone at b8f9cd3 installed pinned dependencies and editable source in
+a new venv; lint/format/types/pip check/demo/diff passed. Bootstrap pytest passed
+93 checks and excluded only the not-yet-existent record-about-that-run assertion;
+the workspace subsequently ran all 94. A second clean full-suite clone is next.
+Final wheel consumer outside the repository installed offline, observed failure
+2500 -> expected 2.5, corrected configuration, and passed with unchanged source.
+60.669 s cached setup; 35 Python + 14 config lines; evidence/consumer retains
+actual commands, wheel hash and both reports. First walkthrough remains in artifacts.
+
+Expanded baseline to execute missing response and partial reads plus three
+PyVISA-sim faults (malformed, device error, timeout). These already work with
+ordinary existing tools; the contribution remains timed campaign/evidence reuse.
+Final measured code sizes in evidence/code-size.json; no productivity claim.
+
+Updated canonical website draft and local convenience copy (768 words), preserved
+published:false and no publication date/hosted URL. Jekyll normal and explicit
+--drafts --unpublished builds both exit 0, using destinations outside that checkout.
+Normal build contained no DriverForge article or index path. Inspected desktop
+1280 px and mobile 390 px previews and confirmed screenshot asset loads. The
+theme scrolls long code lines; page width has no horizontal overflow. Preview
+screenshots are in artifacts; result screenshot is committed evidence.
+Temporary local servers/tabs were closed. No push, publication, API spend or
+hardware purchase occurred. Next: freeze local candidate, repeat final clean and
+wheel checks, inspect copied final artifacts, and commit their evidence.
+
 ## 2026-10-04 M2/M3 fault kit and report milestone
 
 Installed public pytest fixture/API and versioned input/result schemas. CLI

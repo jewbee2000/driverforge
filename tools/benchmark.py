@@ -43,7 +43,7 @@ def main():
         "target_seconds": 10,
         "target_memory_bytes": 256 * 1024 * 1024,
         "runs": runs,
-        "comparison_limit": "core demo runs 39 cases plus six mutations; upstream eight; baseline seven; workloads are not equivalent speed benchmarks",
+        "comparison_limit": "core demo runs 39 cases plus six mutations; upstream eight; baseline thirteen scenarios; workloads are not equivalent speed benchmarks",
     }
     report["within_limits"] = all(
         r["elapsed_seconds"] < 10 and r["peak_working_set_bytes"] < 256 * 1024 * 1024 for r in runs

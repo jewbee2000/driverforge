@@ -52,7 +52,48 @@
       "fault": "malformed",
       "actual": "garbage",
       "observation": "upstream returns text; explicit scalar contract rejects it"
+    },
+    {
+      "tool": "expected_protocol",
+      "fault": "device_error",
+      "actual": [
+        -101.0,
+        "\"Invalid character\""
+      ]
+    },
+    {
+      "tool": "expected_protocol",
+      "fault": "no_response",
+      "actual": "ValueError",
+      "observation": "helper rejects missing response; no clock/deadline"
+    },
+    {
+      "tool": "ProtocolAdapter",
+      "fault": "fragment",
+      "actual": [
+        "312e",
+        "323530"
+      ],
+      "observation": "partial reads supported, no timed onset"
+    },
+    {
+      "tool": "pyvisa-sim",
+      "fault": "malformed",
+      "actual": "garbage"
+    },
+    {
+      "tool": "pyvisa-sim",
+      "fault": "device_error",
+      "actual": [
+        -101.0,
+        "\"Invalid character\""
+      ]
+    },
+    {
+      "tool": "pyvisa-sim",
+      "fault": "timeout",
+      "actual": "VisaIOError(error_timeout)"
     }
   ],
-  "elapsed_seconds": 0.03372129999479512
+  "elapsed_seconds": 0.084502199999406
 }

@@ -53,6 +53,7 @@ previous run.
 
 Reports use normalized UTF-8/LF JSON for semantic input hashes and copy the
 candidate source file. Manifests record candidate, oracle vector, evaluator,
-source/manual, lockfile and output hashes, source commit/dirty status (unavailable
+source/manual, lockfile, whole-package/schema and output hashes, source commit/dirty
+status and tracked dirty diff hash (unavailable
 outside a checkout), commands and exit status. Data stays local. Spec passages
 and driver text are escaped in HTML under a restrictive content security policy.

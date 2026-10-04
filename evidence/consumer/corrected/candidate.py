@@ -1,4 +1,5 @@
 """Standalone consumer example: only documented DriverForge/PyMeasure APIs."""
+
 import json
 from pathlib import Path
 
@@ -22,8 +23,13 @@ def test_calibrated_voltage(driverforge_transport):
 
     spec = ProtocolSpec.load(asset("agilent34410a.json"))
     result = run_campaign(ConsumerMeter, spec, [case], oracle_version="consumer-1.0")
-    write_report(Path("reports") / config["run_name"], result, spec, ConsumerMeter,
-                 command=["python", "-m", "pytest", "test_meter.py", "-q"],
-                 extras={"consumer_configuration": config},
-                 campaign_input={"schema_version": 1, "profile": "agilent34410a", "cases": [case]})
+    write_report(
+        Path("reports") / config["run_name"],
+        result,
+        spec,
+        ConsumerMeter,
+        command=["python", "-m", "pytest", "test_meter.py", "-q"],
+        extras={"consumer_configuration": config},
+        campaign_input={"schema_version": 1, "profile": "agilent34410a", "cases": [case]},
+    )
     assert result.exit_code == 0, result.to_dict()

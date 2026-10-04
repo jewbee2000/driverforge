@@ -1,0 +1,21 @@
+spec: "1.0"
+devices:
+  malformed:
+    eom:
+      GPIB INSTR: {q: "\n", r: "\n"}
+    dialogues:
+      - {q: "MEAS:VOLT:DC? DEF,DEF", r: "garbage"}
+  device_error:
+    eom:
+      GPIB INSTR: {q: "\n", r: "\n"}
+    dialogues:
+      - {q: "MEAS:VOLT:DC? DEF,DEF", r: '-101,"Invalid character"'}
+  timeout:
+    eom:
+      GPIB INSTR: {q: "\n", r: "\n"}
+    dialogues:
+      - {q: "MEAS:VOLT:DC? DEF,DEF"}
+resources:
+  GPIB::2::INSTR: {device: malformed}
+  GPIB::3::INSTR: {device: device_error}
+  GPIB::4::INSTR: {device: timeout}

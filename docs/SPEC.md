@@ -1,6 +1,8 @@
 # DriverForge specification
 
-Status: refined proposal; M0 baseline comparison is pending. No implementation or benchmark results are claimed. Read [REQUIREMENTS.md](REQUIREMENTS.md) first for priorities, rationale, external-user interfaces, and release gates.
+Status: implemented reference contract. M0 selected a PyMeasure-compatible
+extension; executed behavior/resource evidence is linked from REQUIREMENTS.md.
+These constants describe synthetic profiles, not physical measurements.
 
 
 ## Scope and assumptions

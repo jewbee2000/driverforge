@@ -27,6 +27,8 @@ def test_actual_artifact_hashes_and_source_trace(tmp_path):
     )
     assert manifest["command"] and manifest["evaluator_sha256"] and manifest["oracle_version"]
     assert "dirty" in manifest["source"] and "commit" in manifest["source"]
+    assert "dirty_diff_sha256" in manifest["source"]
+    assert manifest["package_hashes"]["transport.py"] and manifest["package_sha256"]
     report = json.loads((output / "conformance.json").read_text())
     assert all(c["source"]["passage"] and c["interpreted_fields"] for c in report["cases"])
     context = json.loads((output / "context.json").read_text())

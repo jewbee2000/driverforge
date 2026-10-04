@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-04T19:15:43.907317+00:00",
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "requirements": [
+    {
+      "requirement": "DF-01",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_spec_validation.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "3af2f057dd27d1213d7d3f78887059018efd3a94bf085d277d01aca870e74d21",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-01.txt",
+      "log_sha256": "8478e6b437f3d9b065e15424a141410ceb40ad20fedf65c2732406d7c7f846c5"
+    },
+    {
+      "requirement": "DF-02",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_capabilities.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "bfbb14f702275c8f00e92a5da61be10e6871b9588ab357aa1225e71a88a01563",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-02.txt",
+      "log_sha256": "36ee6125777253800df314c891baf72e42248a17540db95c6bdb02de742e24de"
+    },
+    {
+      "requirement": "DF-03",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_golden_bytes.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "031a13b09ea628bc341213cad8696cecf0772e3e3cb6babe3c3b369a1ca80d2c",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-03.txt",
+      "log_sha256": "f7da7f86cbf89957a3d2994d522437ec98ca4c257402418f86bbcbd223cc7b9e"
+    },
+    {
+      "requirement": "DF-04",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_hostile_frames.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "cc6b755412a2a7c947f034d74a2020f94ae1a0a367fd6ffaa6d5bf9498db6d33",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-04.txt",
+      "log_sha256": "89167ec9d022cef0071e7abcf3797eeda3146d9de45b31d2cd46f3883b43cee8"
+    },
+    {
+      "requirement": "DF-05",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_retry_semantics.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "f541019fbbc907c7fae65c3a90a85fe21325c629260b75a9e512b22ffbeedfbb",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-05.txt",
+      "log_sha256": "fa665775964cf05a4b8c9ca6f3bb541d55819b03a8e9277e22b2aa4799804700"
+    },
+    {
+      "requirement": "DF-06",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_lifecycle.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "5767b9d6523ac902636ff5aae377332b8fa2b4a16302bebb39aeb6b7bac68994",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-06.txt",
+      "log_sha256": "36ee6125777253800df314c891baf72e42248a17540db95c6bdb02de742e24de"
+    },
+    {
+      "requirement": "DF-07",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_mutation_detection.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "9142a0ed697c1b800c29c5cc46e8b7373822a8e2fc42c2e1fdd409b206288242",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-07.txt",
+      "log_sha256": "d2d744b6b2df2bbb0d73cb7a43f6675bd03881bc2a2c2a74e54ecf18667789e2"
+    },
+    {
+      "requirement": "DF-08",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_case_inventory.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "0ababaf7584892e7db9bf7943207aaf517061c2d223e506ff8080710db9997d6",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-08.txt",
+      "log_sha256": "016a4093788648644b08006f7d1d171ca7639313677f5aa929f004d4a3e52465"
+    },
+    {
+      "requirement": "DF-09",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_offline_demo.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "40af8faa0b2e53f2aea42970f3e32dcb759b6ebe365b4e68271a8f1ad49dc942",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-09.txt",
+      "log_sha256": "a447b0ef6625e5f28651aff634c1379f233d8e6c96a9490bcd361bc624dc0b5f"
+    },
+    {
+      "requirement": "DF-10",
+      "priority": "must",
+      "state": "not_applicable",
+      "reason": "untrusted execution disabled; Docker daemon unavailable; sandbox egress/write/CPU tests not run",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_isolation.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "ae1998ca643f8484a6f312053db9f65b73211cfb0608c69cb7144289e7be8470",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-10.txt",
+      "log_sha256": "3b48e0860dc023141693c4f77181cda5b340fb20a1a3707eedab872d4f8fa2ba"
+    },
+    {
+      "requirement": "DF-11",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_provenance.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "90dc8ec5c2bcc636e5ec10a1f812f539f12455b8e0d90b88982e212b6a4de8fd",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-11.txt",
+      "log_sha256": "01cdd48247cab7b390581fe6c4304671fcddf040b2a9072ef90373db72da86eb"
+    },
+    {
+      "requirement": "DF-12",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_reproducibility.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "2fa43523b02504505e148cc900cb9239f03d3fd74f7f72f54430b9910e2ea8f4",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-12.txt",
+      "log_sha256": "7e15266061ed0d31aa89e2241ce9ed802cf0173def79bf29c0398d727932d5d2"
+    },
+    {
+      "requirement": "DF-13",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_baseline_artifacts.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "952f861415a0f0fab78ef02048d6bbfb65341d2ad46b86c06e603f040f6531e3",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-13.txt",
+      "log_sha256": "36ee6125777253800df314c891baf72e42248a17540db95c6bdb02de742e24de"
+    },
+    {
+      "requirement": "DF-14",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_existing_driver_adapter.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "a0f00134a744339a617984e686a5a6bb9bd485abe818d498243551ad6a106523",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-14.txt",
+      "log_sha256": "2fb1ec49e46f1021c6b0960eb25a836143a4051fcd2f4e1f82aeaa4c38da4cd3"
+    },
+    {
+      "requirement": "DF-15",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_fault_schedule.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "0268c88e68e808748753f67482cf3618ddfadfd89a6f3568fb8f88bf39c08ed5",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-15.txt",
+      "log_sha256": "3b699c09a131f6fce9f8c5f77719de7f8be6f3d226bd0fbfbe7c408b1742ff02"
+    },
+    {
+      "requirement": "DF-16",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_pytest_consumer.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "5f1718993097e990e83f15060b0dc876bb28f937681b6c8dcb734084e8c7eb92",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-16.txt",
+      "log_sha256": "f7da7f86cbf89957a3d2994d522437ec98ca4c257402418f86bbcbd223cc7b9e"
+    },
+    {
+      "requirement": "DF-17",
+      "priority": "should",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_report_diff.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "d89104bc64109de34c2404308861042d3fe368b12770fadb9236682cc4df7d6f",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-17.txt",
+      "log_sha256": "d907fec0e0445cfe67a7272e864304e81194b234052d6bdfcb6ec87c0b123e62"
+    },
+    {
+      "requirement": "DF-18",
+      "priority": "could",
+      "state": "deferred",
+      "reason": "optional generation not enabled; no API budget; no live model campaign run",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_optional_generation.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "7cb88702621a173ad909d72e6e9bc3e420e1c36cd94a8abeaf002285a857f28a",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-18.txt",
+      "log_sha256": "36ee6125777253800df314c891baf72e42248a17540db95c6bdb02de742e24de"
+    },
+    {
+      "requirement": "DF-19",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_public_contract.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "d175b20e8090daf8cecd83d7f1068fe2e5a7ef5700004a0f81e989da722a7fd3",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-19.txt",
+      "log_sha256": "ac0820a6ed6774771e95e25d7bf46b29890d4a15d1e1d16881123b0225574da1"
+    },
+    {
+      "requirement": "DF-20",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_resource_limits.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "679d0c5f792d0927eb43843eca78c22a2e79069465598725ec2921cc2cd3de24",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-20.txt",
+      "log_sha256": "f3d3ca3f5fee50214b720d6239f9a86346aa8478c9e3aec0083841749994b598"
+    },
+    {
+      "requirement": "DF-21",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_data_and_license_boundaries.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "75a541275d7bcf465a6af43000f7eba997ad7470ef46706cb729c9aae72c115a",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-21.txt",
+      "log_sha256": "ed4e09caf2c123cc998a4a054db510aefa9991486486560067423d72e1530bca"
+    },
+    {
+      "requirement": "DF-22",
+      "priority": "must",
+      "state": "pass",
+      "reason": null,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/acceptance/test_consumer_walkthrough.py",
+        "-q"
+      ],
+      "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
+      "exit_code": 0,
+      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_dirty": true,
+      "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+      "oracle_version": "1.0.0",
+      "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+      "test_sha256": "942f20c2ed614c35d2870028b71aecff787b47e6e6e8deb4e18b1fa889f19d4d",
+      "input_hashes": {
+        "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+        "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+        "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
+      },
+      "log": "evidence\\checks\\DF-22.txt",
+      "log_sha256": "d2d744b6b2df2bbb0d73cb7a43f6675bd03881bc2a2c2a74e54ecf18667789e2"
+    }
+  ],
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "tools",
+        "examples"
+      ],
+      "exit_code": 0,
+      "log": "evidence\\checks\\release-0.txt",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "tests",
+        "tools",
+        "examples"
+      ],
+      "exit_code": 0,
+      "log": "evidence\\checks\\release-1.txt",
+      "log_sha256": "7df18b42c43329c0833da621f67724dca7a56dfff20a450ae0336efb05e24f06"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mypy"
+      ],
+      "exit_code": 0,
+      "log": "evidence\\checks\\release-2.txt",
+      "log_sha256": "8b88f6d12bd312c1b024b66d07a7f7619a68482ac4d64e475759b1823199faa5"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log": "evidence\\checks\\release-3.txt",
+      "log_sha256": "f0813cb3d61fd6bcfa64b259f316dd01ba02ac2526e69e497b6ee0e5c32fb954"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "evidence\\checks\\release-4.txt",
+      "log_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    }
+  ],
+  "all_applicable_must_pass": true,
+  "known_failed_upstream_cases": [
+    "malformed",
+    "device-error"
+  ],
+  "physical_validation": false,
+  "practitioner_validation": false,
+  "live_model_evaluation": false
+}

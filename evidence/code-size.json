@@ -1,0 +1,26 @@
+{
+  "examples/baseline/run_baseline.py": {
+    "lines": 138,
+    "bytes": 4920
+  },
+  "examples/baseline/agilent.yaml": {
+    "lines": 17,
+    "bytes": 308
+  },
+  "examples/baseline/faults.yaml": {
+    "lines": 21,
+    "bytes": 526
+  },
+  "examples/consumer/test_meter.py": {
+    "lines": 35,
+    "bytes": 1246
+  },
+  "examples/consumer/consumer.json": {
+    "lines": 14,
+    "bytes": 326
+  },
+  "src/driverforge/pymeasure_adapter.py": {
+    "lines": 50,
+    "bytes": 2067
+  }
+}

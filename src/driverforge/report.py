@@ -84,13 +84,27 @@ def source_context() -> dict[str, Any]:
             timeout=2,
             check=False,
         )
+        diff = subprocess.run(
+            [*command, "diff", "--no-ext-diff", "--binary", "HEAD"],
+            capture_output=True,
+            timeout=2,
+            check=False,
+        )
         return {
             "commit": commit.stdout.strip() if commit.returncode == 0 else "unavailable",
             "dirty": bool(dirty.stdout),
+            "dirty_diff_sha256": digest(diff.stdout)
+            if dirty.stdout and diff.returncode == 0
+            else None,
             "git_available": commit.returncode == 0,
         }
     except (OSError, subprocess.TimeoutExpired):
-        return {"commit": "unavailable", "dirty": None, "git_available": False}
+        return {
+            "commit": "unavailable",
+            "dirty": None,
+            "dirty_diff_sha256": None,
+            "git_available": False,
+        }
 
 
 def write_report(
@@ -133,8 +147,20 @@ def write_report(
             "pressurebrick.md",
             "agilent34410a.md",
             "requirements.lock",
+            "thermoblock.json",
+            "pressurebrick.json",
+            "agilent34410a.json",
+            "agilent_cases.json",
         )
     }
+    package = Path(__file__).parent
+    package_hashes = {p.name: digest(p.read_bytes()) for p in sorted(package.glob("*.py"))}
+    package_hashes.update(
+        {
+            f"schemas/{p.name}": digest(p.read_bytes())
+            for p in sorted((package / "schemas").glob("*.json"))
+        }
+    )
     manifest = {
         "schema_version": 1,
         "mode": "REPLAY",
@@ -153,6 +179,8 @@ def write_report(
         "platform": platform.platform(),
         "package_version": version("driverforge"),
         "source_hashes": source_hashes,
+        "package_hashes": package_hashes,
+        "package_sha256": digest(dump(package_hashes).encode()),
         "artifact_sha256": hashes,
         "untrusted_execution": "disabled: isolation unavailable",
         "physical_validation": False,

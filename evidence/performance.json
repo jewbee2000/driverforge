@@ -3,83 +3,83 @@
   "platform": "Windows-11-10.0.26300-SP0",
   "cpu": "Intel Core i9-11900H @ 2.50 GHz, 16 logical CPUs",
   "ram": "64 GiB installed",
-  "lock_sha256": "7c9a650306b906db14eba545bda03630142f72e66af000c32c90b0f00b54b581",
+  "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
   "target_seconds": 10,
   "target_memory_bytes": 268435456,
   "runs": [
     {
       "workload": "baseline",
-      "elapsed_seconds": 0.6809001999936299,
-      "peak_working_set_bytes": 80035840,
+      "elapsed_seconds": 0.6440746000007493,
+      "peak_working_set_bytes": 80347136,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 1
     },
     {
       "workload": "baseline",
-      "elapsed_seconds": 0.633657200000016,
-      "peak_working_set_bytes": 79642624,
+      "elapsed_seconds": 0.626028699996823,
+      "peak_working_set_bytes": 80003072,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 2
     },
     {
       "workload": "baseline",
-      "elapsed_seconds": 0.6499748999995063,
-      "peak_working_set_bytes": 79745024,
+      "elapsed_seconds": 0.6036475999935647,
+      "peak_working_set_bytes": 80105472,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 3
     },
     {
       "workload": "core",
-      "elapsed_seconds": 0.8578972999966936,
-      "peak_working_set_bytes": 33984512,
+      "elapsed_seconds": 0.8044886000061524,
+      "peak_working_set_bytes": 34287616,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 1
     },
     {
       "workload": "core",
-      "elapsed_seconds": 0.811837099994591,
-      "peak_working_set_bytes": 33947648,
+      "elapsed_seconds": 0.743239800001902,
+      "peak_working_set_bytes": 33931264,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 2
     },
     {
       "workload": "core",
-      "elapsed_seconds": 0.8150415999989491,
-      "peak_working_set_bytes": 33837056,
+      "elapsed_seconds": 0.747088200005237,
+      "peak_working_set_bytes": 34160640,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 3
     },
     {
       "workload": "upstream",
-      "elapsed_seconds": 0.8898149999949965,
-      "peak_working_set_bytes": 83365888,
+      "elapsed_seconds": 0.7450421000030474,
+      "peak_working_set_bytes": 83447808,
       "exit_code": 1,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 1
     },
     {
       "workload": "upstream",
-      "elapsed_seconds": 0.8443138000002364,
-      "peak_working_set_bytes": 83247104,
+      "elapsed_seconds": 0.924969500003499,
+      "peak_working_set_bytes": 83353600,
       "exit_code": 1,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 2
     },
     {
       "workload": "upstream",
-      "elapsed_seconds": 0.8312598999982583,
-      "peak_working_set_bytes": 83361792,
+      "elapsed_seconds": 0.7742478000000119,
+      "peak_working_set_bytes": 83582976,
       "exit_code": 1,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 3
     }
   ],
-  "comparison_limit": "core demo runs 39 cases plus six mutations; upstream eight; baseline seven; workloads are not equivalent speed benchmarks",
+  "comparison_limit": "core demo runs 39 cases plus six mutations; upstream eight; baseline thirteen scenarios; workloads are not equivalent speed benchmarks",
   "within_limits": true
 }

@@ -1,6 +1,9 @@
 # Acceptance and evidence plan
 
-Status: test design only; no application tests have run. Read [REQUIREMENTS.md](REQUIREMENTS.md) for the full prioritized register, rationale, applicability, and acceptance criteria, and [SPEC.md](SPEC.md) for the reference-case contracts. [requirements.json](../requirements.json) provides planned test paths. Avoid a second independently edited requirements table.
+Status: executed. The release suite has 94 passing tests, lint/format/type checks,
+and fresh-install/consumer evidence. See [requirements-evidence.json](../evidence/requirements-evidence.json)
+for commands, outcomes and hashes. DF-10 is not applicable with untrusted execution
+disabled; DF-18 is deferred. The design below governs future changes.
 
 ## Required layers
 

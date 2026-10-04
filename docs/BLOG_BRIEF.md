@@ -4,7 +4,11 @@ Working title: **Making an instrument driver earn my trust**
 
 Target length after implementation: 600–900 words. Audience: a technically curious reader who enjoys building things; not a job application reviewer addressed directly. Use first person, concrete engineering details, and mild humor when natural. Walter's bicycle-parts and couch-riser posts begin with a practical motivation and describe constraints plainly. Avoid a generic thought-leadership essay, copied phrases from other writers, inflated AI claims, or invented autobiographical stories.
 
-The current draft is prospective. It is suitable as a starting point, not a finished retrospective. Convert future tense to past tense only when the referenced work exists. Preserve the honest distinction between Walter choosing/directing the project and an agent doing implementation work. The user has authorized first-person drafting, but personal beliefs or anecdotes beyond the supplied context remain suggestions for his review.
+The updated draft describes actual local work and remains unpublished. Its canonical
+Jekyll copy and convenience copy are synchronized, with a real failure screenshot.
+Normal and explicit draft builds passed; desktop/mobile previews were inspected.
+Preserve the distinction between Walter directing the project and Codex implementing
+it. Hosted URL verification and owner editorial review remain publication work.
 
 ## Evidence to add after implementation
 

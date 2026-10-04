@@ -1,6 +1,9 @@
 # DriverForge implementation plan
 
-Revised 2026-10-04. Begin with [requirements and rationale](docs/REQUIREMENTS.md). The previous all-features-at-once plan is superseded by this useful-core-first sequence. Application implementation has not started.
+Revised 2026-10-04. Begin with [requirements and rationale](docs/REQUIREMENTS.md).
+M0–M4 deterministic local implementation is complete; executed evidence is in
+evidence/requirements-evidence.json and evidence/progress.md. The sequence below
+records the governing plan. Optional generation remains deferred.
 
 ## Purpose and feasibility
 

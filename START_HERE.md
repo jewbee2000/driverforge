@@ -1,6 +1,9 @@
 # Start here
 
-DriverForge is currently a planning repository. The implementation agent should build the software, tests, and demonstration from these files. No application commands are implemented yet.
+DriverForge now has a local deterministic release candidate. Begin with README.md
+for installation and the offline demo; evidence/requirements-evidence.json maps
+executed checks to every requirement. The documents below govern further work.
+Generated-code execution and live models stay disabled.
 
 ## Read in order
 
