@@ -1,5 +1,26 @@
 # Progress
 
+## 2026-10-04 hosted CI verified — step 1 complete
+
+Corrected PR run https://github.com/jewbee2000/driverforge/actions/runs/37231475370
+at head 462bfef81da412cb3a5dee78024a7e6fead53b69 completed successfully. Every job
+step succeeded: pinned installation, pip check, lint/format/types, all 94 tests
+(zero failures/errors/skips), offline demo, wheel build and artifact upload.
+Downloaded artifact 11313697790; its 406,696 bytes matched the API SHA256 digest.
+Independently parsed hosted JUnit, recomputed 42 main-demo output hashes, checked
+all six distinct rejected defect reports and inspected fixture/schema wheel contents.
+The archive also contains pytest's own demo copies; those were kept distinct from
+the main CLI demo when counting its six defects. Metadata and JUnit are permanently
+recorded in evidence/ci/hosted-run.json and hosted-junit.xml. The raw ZIP remains
+an ignored local artifact. Raw and LF-normalized JUnit hashes are distinguished
+so Git serialization cannot invalidate the retained XML hash.
+
+TASKS.md, STATUS.json and the documented CI limitation are updated from this
+actual run. The workflow is unchanged since the verified correction; this final
+documentation/evidence commit is subject to PR CI before merge. No new hardware,
+practitioner, model or performance claim is made. The blog remains unpublished
+and its separate checkout was not changed or pushed.
+
 ## 2026-10-04 CI cold-directory repair
 
 PR #1 started hosted run 37231139309 on the unchanged application. Installation,

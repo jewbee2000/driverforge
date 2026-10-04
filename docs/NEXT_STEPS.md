@@ -3,6 +3,11 @@
 The applicable deterministic Must requirements are complete. These are follow-up
 proposals, not retroactive changes to the completed acceptance gate.
 
+Step 1 is now implemented and hosted-verified: run 37231475370 passes all 94 tests,
+lint/format/types/dependency checks, offline demo and wheel build. CI reports remain
+available for 14 days; permanent run/JUnit/local/failure evidence is under evidence/ci.
+The remaining steps below retain their unverified practitioner/hardware status.
+
 1. **Automate regression checks.** Start with the verified Windows/Python 3.12
    environment and pinned lock. Run lint, formatting, types, all 94 tests, wheel
    build and the offline demo. Preserve reports when a run fails. A green hosted
