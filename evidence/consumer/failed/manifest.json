@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "mode": "REPLAY",
+  "timestamp_utc": "2026-10-04T18:57:51.260373+00:00",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "test_meter.py",
+    "-q"
+  ],
+  "exit_code": 1,
+  "source": {
+    "commit": "unavailable",
+    "dirty": false,
+    "git_available": false
+  },
+  "candidate_sha256": "99dde82a95585a4d1afbd421c382cd2d5d43009c442afbf386c9ad8c6666b37b",
+  "input_sha256": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+  "campaign_sha256": "4282a0386f7f8640acb02ce51dd6c206e90b32637955aa07bbec74705ba9db1c",
+  "oracle_version": "consumer-1.0",
+  "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+  "environment_lock_sha256": "7c9a650306b906db14eba545bda03630142f72e66af000c32c90b0f00b54b581",
+  "evaluator_sha256": "ec9067a021c8ac1faa06e966f74811e0465cfce57d95540b8c0208796ccc0f9f",
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "package_version": "0.1.0",
+  "source_hashes": {
+    "cases.json": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+    "thermoblock.md": "ca2c1b7a9a69a9ab9e15532d7906886e56ca5947ee36c64a52c5b9b4d762c6c7",
+    "pressurebrick.md": "032e719299d26f7dd748c8c9c4f3da31f049a22c8d988daec83797bd60f4ba44",
+    "agilent34410a.md": "7ed779b3613201c15a9a92d968a2589bedeb348e914ddd9860f2d05689e53ccd",
+    "requirements.lock": "7c9a650306b906db14eba545bda03630142f72e66af000c32c90b0f00b54b581"
+  },
+  "artifact_sha256": {
+    "spec.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+    "candidate.py": "99dde82a95585a4d1afbd421c382cd2d5d43009c442afbf386c9ad8c6666b37b",
+    "conformance.json": "baf14912b2a3d89888c720019e25f055b9b306d212d4ebfe0e489c843e6fbe6d",
+    "report.html": "8b8daeeb4fd8419e9a126cecb46a8b97ae98f0d7d684586dd62396afb3cdd4c5",
+    "context.json": "34769e990e0365c0393f10892bda27312a012fdec17670cf75c2b0d01e032d4b",
+    "campaign.json": "4282a0386f7f8640acb02ce51dd6c206e90b32637955aa07bbec74705ba9db1c"
+  },
+  "untrusted_execution": "disabled: isolation unavailable",
+  "physical_validation": false,
+  "live_model_evaluation": false
+}

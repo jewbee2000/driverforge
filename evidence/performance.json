@@ -1,0 +1,85 @@
+{
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cpu": "Intel Core i9-11900H @ 2.50 GHz, 16 logical CPUs",
+  "ram": "64 GiB installed",
+  "lock_sha256": "7c9a650306b906db14eba545bda03630142f72e66af000c32c90b0f00b54b581",
+  "target_seconds": 10,
+  "target_memory_bytes": 268435456,
+  "runs": [
+    {
+      "workload": "baseline",
+      "elapsed_seconds": 0.6809001999936299,
+      "peak_working_set_bytes": 80035840,
+      "exit_code": 0,
+      "measurement": "fresh trusted worker; excludes parent supervisor",
+      "trial": 1
+    },
+    {
+      "workload": "baseline",
+      "elapsed_seconds": 0.633657200000016,
+      "peak_working_set_bytes": 79642624,
+      "exit_code": 0,
+      "measurement": "fresh trusted worker; excludes parent supervisor",
+      "trial": 2
+    },
+    {
+      "workload": "baseline",
+      "elapsed_seconds": 0.6499748999995063,
+      "peak_working_set_bytes": 79745024,
+      "exit_code": 0,
+      "measurement": "fresh trusted worker; excludes parent supervisor",
+      "trial": 3
+    },
+    {
+      "workload": "core",
+      "elapsed_seconds": 0.8578972999966936,
+      "peak_working_set_bytes": 33984512,
+      "exit_code": 0,
+      "measurement": "fresh trusted worker; excludes parent supervisor",
+      "trial": 1
+    },
+    {
+      "workload": "core",
+      "elapsed_seconds": 0.811837099994591,
+      "peak_working_set_bytes": 33947648,
+      "exit_code": 0,
+      "measurement": "fresh trusted worker; excludes parent supervisor",
+      "trial": 2
+    },
+    {
+      "workload": "core",
+      "elapsed_seconds": 0.8150415999989491,
+      "peak_working_set_bytes": 33837056,
+      "exit_code": 0,
+      "measurement": "fresh trusted worker; excludes parent supervisor",
+      "trial": 3
+    },
+    {
+      "workload": "upstream",
+      "elapsed_seconds": 0.8898149999949965,
+      "peak_working_set_bytes": 83365888,
+      "exit_code": 1,
+      "measurement": "fresh trusted worker; excludes parent supervisor",
+      "trial": 1
+    },
+    {
+      "workload": "upstream",
+      "elapsed_seconds": 0.8443138000002364,
+      "peak_working_set_bytes": 83247104,
+      "exit_code": 1,
+      "measurement": "fresh trusted worker; excludes parent supervisor",
+      "trial": 2
+    },
+    {
+      "workload": "upstream",
+      "elapsed_seconds": 0.8312598999982583,
+      "peak_working_set_bytes": 83361792,
+      "exit_code": 1,
+      "measurement": "fresh trusted worker; excludes parent supervisor",
+      "trial": 3
+    }
+  ],
+  "comparison_limit": "core demo runs 39 cases plus six mutations; upstream eight; baseline seven; workloads are not equivalent speed benchmarks",
+  "within_limits": true
+}

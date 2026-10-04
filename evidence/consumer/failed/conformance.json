@@ -1,0 +1,55 @@
+{
+  "cases": [
+    {
+      "id": "calibrated-voltage",
+      "operation": "voltage_dc",
+      "requirement": "DF-22",
+      "state": "fail",
+      "expected": 2.5,
+      "observed": 2500.0,
+      "detail": "expected 2.5; observed 2500.0",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "voltage_dc",
+          "data_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "receive",
+          "operation": "voltage_dc",
+          "data_hex": "322e3530300a",
+          "at_ms": 0
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 0
+        }
+      ],
+      "source": {
+        "anchor": "manuals/agilent34410a.md#voltage-dc",
+        "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "interpreted_fields": {
+        "request": "MEAS:VOLT:DC? DEF,DEF\\n",
+        "response": "finite_scalar",
+        "unit": "V",
+        "scale": 1,
+        "signed": true,
+        "range": null,
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "trigger_measurement"
+      },
+      "attempts": 1,
+      "elapsed_ms": 0
+    }
+  ],
+  "schema_version": 1,
+  "oracle_version": "consumer-1.0",
+  "complete": true,
+  "exit_code": 1
+}

@@ -6,8 +6,10 @@ from driverforge import FaultTransport, PressureBrick, ThermoBlock, UnsupportedO
 
 
 def test_supported_api_annotations_and_explicit_unsupported():
-    for cls, capabilities in [(ThermoBlock, {"identify", "read_temperature", "set_voltage", "disable_output"}),
-                              (PressureBrick, {"read_temperature", "read_pressure", "set_voltage"})]:
+    for cls, capabilities in [
+        (ThermoBlock, {"identify", "read_temperature", "set_voltage", "disable_output"}),
+        (PressureBrick, {"read_temperature", "read_pressure", "set_voltage"}),
+    ]:
         driver = cls(FaultTransport({}))
         assert cls.capabilities == capabilities
         for method in capabilities:

@@ -1,4 +1,5 @@
 """Installable pytest fixture; consumers need no internal imports."""
+
 from collections.abc import Callable
 
 import pytest

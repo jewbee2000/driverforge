@@ -1,11 +1,18 @@
 """Hand-authored fictional reference drivers; independent of evaluator vectors."""
+
 import math
 import re
 from dataclasses import dataclass
 from decimal import Decimal
 
-from .errors import (DeadlineExceeded, DeviceError, IllegalAddress, ParseError,
-                     UnknownWriteOutcome, UnsupportedOperation)
+from .errors import (
+    DeadlineExceeded,
+    DeviceError,
+    IllegalAddress,
+    ParseError,
+    UnknownWriteOutcome,
+    UnsupportedOperation,
+)
 from .transport import FaultTransport
 
 
@@ -59,6 +66,7 @@ class ReferenceDriver:
 
 class ThermoBlock(ReferenceDriver):
     """Fictional ASCII fixture. Methods match its declared capability set."""
+
     capabilities = frozenset({"identify", "read_temperature", "set_voltage", "disable_output"})
 
     def _line(self, operation: str, request: bytes, write: bool = False) -> str:
@@ -108,6 +116,7 @@ class ThermoBlock(ReferenceDriver):
 
 class PressureBrick(ReferenceDriver):
     """Fictional big-endian register PDU fixture; no TCP/RTU framing."""
+
     capabilities = frozenset({"read_temperature", "read_pressure", "set_voltage"})
 
     def _register(self, operation: str, address: int, signed: bool) -> int:

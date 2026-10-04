@@ -54,5 +54,5 @@
       "observation": "upstream returns text; explicit scalar contract rejects it"
     }
   ],
-  "elapsed_seconds": 0.03374039999471279
+  "elapsed_seconds": 0.03372129999479512
 }

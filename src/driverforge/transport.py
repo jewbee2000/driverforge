@@ -1,4 +1,5 @@
 """Deterministic, in-memory scheduled transport. No physical I/O."""
+
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -62,8 +63,15 @@ class FaultTransport:
             raise InvalidInput("fault operation lacks a dialogue")
 
     def record(self, event: str, operation: str, data: bytes = b"", **extra: Any) -> None:
-        self.transcript.append(dict(event=event, operation=operation, data_hex=data.hex(),
-                                    at_ms=self.clock.milliseconds, **extra))
+        self.transcript.append(
+            dict(
+                event=event,
+                operation=operation,
+                data_hex=data.hex(),
+                at_ms=self.clock.milliseconds,
+                **extra,
+            )
+        )
 
     def discard(self, operation: str) -> None:
         if self.pending_late is not None:
@@ -83,13 +91,24 @@ class FaultTransport:
         expected, response = self.dialogues[operation]
         if request != expected:
             raise ParseError(f"request differs: expected {expected.hex()}, got {request.hex()}")
-        fault = next((f for f in self.faults if f.operation == operation and
-                      f.onset == self.counts[operation]), None)
+        fault = next(
+            (
+                f
+                for f in self.faults
+                if f.operation == operation and f.onset == self.counts[operation]
+            ),
+            None,
+        )
         delay = self.delay_ms
         chunks: tuple[bytes, ...] = (response,) if response is not None else ()
         if fault is not None:
-            self.record("fault", operation, kind=fault.kind, onset=fault.onset,
-                        expected_outcome=fault.expected_outcome)
+            self.record(
+                "fault",
+                operation,
+                kind=fault.kind,
+                onset=fault.onset,
+                expected_outcome=fault.expected_outcome,
+            )
             delay = fault.delay_ms
             if fault.kind == "cancel":
                 self.clock.advance(min(delay, timeout_ms))

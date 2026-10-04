@@ -1,4 +1,5 @@
 """Versioned explicit specifications; ambiguities block dependent execution."""
+
 import json
 import math
 from dataclasses import dataclass
@@ -11,7 +12,17 @@ from jsonschema import Draft202012Validator
 from .errors import InvalidInput, ResourceLimit
 
 MAX_INPUT_BYTES = 65536
-FIELDS = ("request", "response", "unit", "scale", "signed", "range", "timeout_ms", "retry", "side_effect")
+FIELDS = (
+    "request",
+    "response",
+    "unit",
+    "scale",
+    "signed",
+    "range",
+    "timeout_ms",
+    "retry",
+    "side_effect",
+)
 
 
 def asset(name: str) -> Path:
@@ -53,7 +64,9 @@ class ProtocolSpec:
     @classmethod
     def from_dict(cls, document: Any) -> "ProtocolSpec":
         schema = json.loads(files("driverforge").joinpath("schemas", "spec-v1.json").read_text())
-        errors = sorted(Draft202012Validator(schema).iter_errors(document), key=lambda e: str(e.path))
+        errors = sorted(
+            Draft202012Validator(schema).iter_errors(document), key=lambda e: str(e.path)
+        )
         if errors:
             raise InvalidInput("spec schema: " + errors[0].message)
         return cls(document)
@@ -83,8 +96,14 @@ class ProtocolSpec:
             effect = fields.get("side_effect", {}).get("value")
             retries = fields.get("retry", {}).get("value")
             if effect != "read" and isinstance(retries, int) and retries > 0:
-                result.append(Ambiguity(operation, "retry", "side-effecting operation cannot auto-retry",
-                                        fields["retry"].get("sources") or [command["source"]]))
+                result.append(
+                    Ambiguity(
+                        operation,
+                        "retry",
+                        "side-effecting operation cannot auto-retry",
+                        fields["retry"].get("sources") or [command["source"]],
+                    )
+                )
         return result
 
     @staticmethod
@@ -96,8 +115,12 @@ class ProtocolSpec:
         if name == "signed":
             return type(value) is bool or value == "not_applicable"
         if name == "range":
-            return value is None or (isinstance(value, list) and len(value) == 2 and
-                all(type(v) in (int, float) and math.isfinite(v) for v in value) and value[0] <= value[1])
+            return value is None or (
+                isinstance(value, list)
+                and len(value) == 2
+                and all(type(v) in (int, float) and math.isfinite(v) for v in value)
+                and value[0] <= value[1]
+            )
         if name == "timeout_ms":
             return type(value) is int and 0 < value <= 500
         if name == "retry":

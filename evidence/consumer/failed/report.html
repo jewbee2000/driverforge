@@ -1,0 +1,30 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width'><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'unsafe-inline'"><title>DriverForge conformance</title><style>body{font:16px system-ui;background:#f5f6f9;color:#17223a;max-width:1000px;margin:32px auto;padding:0 16px}article{background:white;padding:16px;margin:16px 0;border-left:6px solid #14775e;border-radius:8px}.fail{border-color:#bf3645}.inconclusive{border-color:#ad750e}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f7;padding:12px}h1{font-size:32px}h2{font-size:20px}blockquote{margin:0;padding:12px;background:#eef1f7}</style><h1>DriverForge conformance</h1><p>REPLAY · synthetic traffic · no hardware or live model evaluation</p><p>Exit 1 · Complete True · 1 cases</p><article class='fail'><h2>calibrated-voltage · fail</h2><p>voltage_dc · DF-22</p><p><b>Expected:</b> 2.5 <b>Observed:</b> 2500.0</p><p>expected 2.5; observed 2500.0</p><details><summary>Source → interpretation → wire</summary><p>manuals/agilent34410a.md#voltage-dc</p><blockquote>request=&quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;; response=&quot;finite_scalar&quot;; unit=&quot;V&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=&quot;trigger_measurement&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;,
+  &quot;response&quot;: &quot;finite_scalar&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;trigger_measurement&quot;
+}
+</pre><pre>  0 ms send         4d4541533a564f4c543a44433f204445462c4445460a
+  0 ms receive      322e3530300a
+  0 ms close        </pre></details></article><h2>Run context and preserved attempts</h2><pre>{
+  &quot;consumer_configuration&quot;: {
+    &quot;calibration_factor&quot;: 1000,
+    &quot;run_name&quot;: &quot;failed&quot;,
+    &quot;case&quot;: {
+      &quot;id&quot;: &quot;calibrated-voltage&quot;,
+      &quot;operation&quot;: &quot;voltage_dc&quot;,
+      &quot;request_hex&quot;: &quot;4d4541533a564f4c543a44433f204445462c4445460a&quot;,
+      &quot;response_hex&quot;: &quot;322e3530300a&quot;,
+      &quot;expected&quot;: 2.5,
+      &quot;error&quot;: null,
+      &quot;attempts&quot;: 1,
+      &quot;requirement&quot;: &quot;DF-22&quot;
+    }
+  }
+}
+</pre></html>

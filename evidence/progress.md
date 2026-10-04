@@ -1,5 +1,32 @@
 # Progress
 
+## 2026-10-04 M2/M3 fault kit and report milestone
+
+Installed public pytest fixture/API and versioned input/result schemas. CLI
+contracts: check 0/1/2 for success/violations/incomplete; built-in candidates only,
+killable trusted worker; generated scripts rejected. All six scheduled fault types
+have deterministic traces. Added bounded resource/data checks and report diff.
+Checks: ruff check and format --check pass; mypy passes; pytest 93 passed / one
+fresh-install evidence test deliberately deselected while its run is pending.
+This is not yet an all-checks release claim. Two Hypothesis domain checks ran 100
+examples each; source injection stays inert data. Credentials-free/socket-audit
+denied demo passed; denial itself was verified. No OS sandbox is claimed.
+
+The first separate consumer venv installed the wheel from --no-index cached
+dependencies, failed at 2500 V versus expected 2.5, then passed after config factor
+1000 -> 1. Source hashes remained unchanged. First setup duration 58.771 s; reports
+and actual commands retained in evidence/consumer. A final formatted wheel run is
+pending. Three fresh worker measurements each for baseline/core/upstream passed
+the frozen 10 s / 256 MiB limits (evidence/performance.json); different workloads
+are explicitly not a speedup comparison. Inspected source/bytes in HTML with the
+in-app browser and saved evidence/signed-failure.png.
+
+Corrected cross-checkout evidence serialization: fixtures now force UTF-8/LF and
+.gitattributes fixes EOL. Parsed expected values were unchanged; only serialization
+hashes were regenerated. No candidate was repaired by changing expected outcomes.
+Licensing inventory covers 42 pinned distributions. M2/M3 gates met. Next: final
+clean checkout installation, full checks, updated unpublished article and M4 evidence.
+
 ## 2026-10-04 M0/M1 vertical slice
 
 Implemented explicit ProtocolSpec schema and source-linked ambiguity outcomes;

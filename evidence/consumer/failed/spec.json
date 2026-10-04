@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "protocol_version": "1.0",
+  "profile": "agilent34410a",
+  "operations": {
+    "voltage_dc": {
+      "source": {
+        "anchor": "manuals/agilent34410a.md#voltage-dc",
+        "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "fields": {
+        "request": {
+          "value": "MEAS:VOLT:DC? DEF,DEF\\n",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#voltage-dc",
+              "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "response": {
+          "value": "finite_scalar",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#voltage-dc",
+              "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "unit": {
+          "value": "V",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#voltage-dc",
+              "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "scale": {
+          "value": 1,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#voltage-dc",
+              "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "signed": {
+          "value": true,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#voltage-dc",
+              "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "range": {
+          "value": null,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#voltage-dc",
+              "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "timeout_ms": {
+          "value": 250,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#voltage-dc",
+              "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "retry": {
+          "value": 0,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#voltage-dc",
+              "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "side_effect": {
+          "value": "trigger_measurement",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#voltage-dc",
+              "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        }
+      }
+    },
+    "current_dc": {
+      "source": {
+        "anchor": "manuals/agilent34410a.md#current-dc",
+        "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "fields": {
+        "request": {
+          "value": "MEAS:CURR:DC? DEF,DEF\\n",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#current-dc",
+              "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "response": {
+          "value": "finite_scalar",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#current-dc",
+              "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "unit": {
+          "value": "A",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#current-dc",
+              "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "scale": {
+          "value": 1,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#current-dc",
+              "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "signed": {
+          "value": true,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#current-dc",
+              "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "range": {
+          "value": null,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#current-dc",
+              "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "timeout_ms": {
+          "value": 250,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#current-dc",
+              "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "retry": {
+          "value": 0,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#current-dc",
+              "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "side_effect": {
+          "value": "trigger_measurement",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#current-dc",
+              "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        }
+      }
+    },
+    "resistance": {
+      "source": {
+        "anchor": "manuals/agilent34410a.md#resistance",
+        "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "fields": {
+        "request": {
+          "value": "MEAS:RES? DEF,DEF\\n",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#resistance",
+              "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "response": {
+          "value": "finite_scalar",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#resistance",
+              "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "unit": {
+          "value": "ohm",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#resistance",
+              "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "scale": {
+          "value": 1,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#resistance",
+              "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "signed": {
+          "value": false,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#resistance",
+              "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "range": {
+          "value": null,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#resistance",
+              "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "timeout_ms": {
+          "value": 250,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#resistance",
+              "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "retry": {
+          "value": 0,
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#resistance",
+              "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        },
+        "side_effect": {
+          "value": "trigger_measurement",
+          "sources": [
+            {
+              "anchor": "manuals/agilent34410a.md#resistance",
+              "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+            }
+          ]
+        }
+      }
+    }
+  }
+}

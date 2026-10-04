@@ -1,11 +1,12 @@
 """Public fault campaigns with independent caller-supplied expectations."""
-import math
+
 import json
+import math
 import time
 from collections.abc import Callable
 from dataclasses import asdict, dataclass, field
-from typing import Any
 from importlib.resources import files
+from typing import Any
 
 from jsonschema import Draft202012Validator
 
@@ -43,7 +44,11 @@ class CampaignResult:
 
     @property
     def exit_code(self) -> int:
-        if not self.complete or not self.cases or any(c.state == "inconclusive" for c in self.cases):
+        if (
+            not self.complete
+            or not self.cases
+            or any(c.state == "inconclusive" for c in self.cases)
+        ):
             return 2
         if any(c.state == "fail" for c in self.cases):
             return 1
@@ -65,14 +70,24 @@ def factory_for(profile: str) -> Factory:
         return PressureBrick
     if profile == "agilent34410a":
         from .pymeasure_adapter import agilent34410a
+
         return agilent34410a
     raise UnsupportedOperation(profile)
 
 
 def validate_cases(cases: list[dict[str, Any]]) -> None:
+    try:
+        encoded = json.dumps(cases, allow_nan=False).encode("utf-8")
+    except (TypeError, ValueError) as exc:
+        raise InvalidInput("campaign contains non-JSON or nonfinite data") from exc
+    if len(encoded) > 65536:
+        raise InvalidInput("campaign exceeds 64 KiB")
     schema = json.loads(files("driverforge").joinpath("schemas", "campaign-v1.json").read_text())
-    errors = list(Draft202012Validator(schema).iter_errors(
-        {"schema_version": 1, "profile": "api", "cases": cases}))
+    errors = list(
+        Draft202012Validator(schema).iter_errors(
+            {"schema_version": 1, "profile": "api", "cases": cases}
+        )
+    )
     if errors:
         raise InvalidInput("campaign schema: " + errors[0].message)
     if not cases or len(cases) > MAX_CASES:
@@ -93,8 +108,14 @@ def validate_cases(cases: list[dict[str, Any]]) -> None:
         raise InvalidInput("duplicate case IDs")
 
 
-def run_campaign(factory: Factory, spec: ProtocolSpec, cases: list[dict[str, Any]],
-                 *, oracle_version: str = "caller-defined", wall_limit: float = 10) -> CampaignResult:
+def run_campaign(
+    factory: Factory,
+    spec: ProtocolSpec,
+    cases: list[dict[str, Any]],
+    *,
+    oracle_version: str = "caller-defined",
+    wall_limit: float = 10,
+) -> CampaignResult:
     """Run reviewed local driver callables. This API does not sandbox Python.
 
     The CLI accepts only built-in reviewed candidates and uses a killable worker.
@@ -116,58 +137,130 @@ def run_campaign(factory: Factory, spec: ProtocolSpec, cases: list[dict[str, Any
         expected = case.get("error") or case.get("expected")
         if time.monotonic() - started > wall_limit:
             result.complete = False
-            result.cases.append(CaseResult(case["id"], op, case.get("requirement", "DF-19"),
-                "inconclusive", expected, None, "campaign wall limit exceeded", [], source, {}, 0, 0))
+            result.cases.append(
+                CaseResult(
+                    case["id"],
+                    op,
+                    case.get("requirement", "DF-19"),
+                    "inconclusive",
+                    expected,
+                    None,
+                    "campaign wall limit exceeded",
+                    [],
+                    source,
+                    {},
+                    0,
+                    0,
+                )
+            )
             break
         canonical_command = canonical.document["operations"].get(op)
-        incompatible = command is not None and canonical_command is not None and any(
-            command["fields"].get(name, {}).get("value") != evidence["value"]
-            for name, evidence in canonical_command["fields"].items())
+        incompatible = (
+            command is not None
+            and canonical_command is not None
+            and any(
+                command["fields"].get(name, {}).get("value") != evidence["value"]
+                for name, evidence in canonical_command["fields"].items()
+            )
+        )
         if command is None or incompatible or any(a.operation == op for a in ambiguities):
-            result.cases.append(CaseResult(case["id"], op, case.get("requirement", "DF-01"),
-                "inconclusive", expected, None, "unsupported or unresolved contract", [], source, {}, 0, 0))
+            result.cases.append(
+                CaseResult(
+                    case["id"],
+                    op,
+                    case.get("requirement", "DF-01"),
+                    "inconclusive",
+                    expected,
+                    None,
+                    "unsupported or unresolved contract",
+                    [],
+                    source,
+                    {},
+                    0,
+                    0,
+                )
+            )
             continue
         req = bytes.fromhex(case["request_hex"])
         response = None if case.get("response_hex") is None else bytes.fromhex(case["response_hex"])
-        faults = tuple(Fault(operation=op, expected_outcome=str(expected),
-                             **{**f, "chunks_hex": tuple(f.get("chunks_hex", ()))})
-                       for f in case.get("faults", []))
+        faults = tuple(
+            Fault(
+                operation=op,
+                expected_outcome=str(expected),
+                **{**f, "chunks_hex": tuple(f.get("chunks_hex", ()))},
+            )
+            for f in case.get("faults", [])
+        )
         transport = FaultTransport({op: (req, response)}, faults, delay_ms=case.get("delay_ms", 0))
         observed: Any = None
         outcome = None
         state = "pass"
         detail = "contract satisfied"
-        driver = factory(transport)
+        driver: Any = None
+        crashed = False
         try:
+            driver = factory(transport)
             attribute = getattr(driver, op)
             value = attribute(*case.get("args", [])) if callable(attribute) else attribute
             observed = value.value if isinstance(value, Measurement) else value
             if isinstance(observed, float) and not math.isfinite(observed):
                 observed = str(observed)
-            if isinstance(value, Measurement) and (value.sampled_at is not None or
-                value.unit != fields["unit"]["value"] or value.quality != "simulated"):
+            if isinstance(value, Measurement) and (
+                value.sampled_at is not None
+                or value.unit != fields["unit"]["value"]
+                or value.quality != "simulated"
+            ):
                 state, detail = "fail", "measurement metadata violates source contract"
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 -- driver boundary preserves failed execution
             outcome = type(exc).__name__
             observed = outcome
             detail = str(exc)
+            crashed = outcome not in {
+                "ParseError",
+                "DeadlineExceeded",
+                "UnknownWriteOutcome",
+                "DeviceError",
+                "IllegalAddress",
+                "Cancelled",
+                "Closed",
+                "ValueError",
+            }
         if outcome != case.get("error") or (outcome is None and observed != case.get("expected")):
             state, detail = "fail", f"expected {expected!r}; observed {observed!r}"
+        if type(case.get("expected")) in (int, float) and type(observed) not in (int, float):
+            state, detail = "fail", "numeric contract requires a finite scalar"
         attempts = transport.counts.get(op, 0)
         if "attempts" in case and attempts != case["attempts"]:
-            state, detail = "fail", f"expected {case['attempts']} transmissions; observed {attempts}"
+            state, detail = (
+                "fail",
+                f"expected {case['attempts']} transmissions; observed {attempts}",
+            )
         if "elapsed_ms" in case and transport.clock.milliseconds != case["elapsed_ms"]:
             state, detail = "fail", "fake-clock budget differs"
         if case.get("after") == "Closed":
             try:
                 driver.read_temperature()
                 state, detail = "fail", "cancelled transport reused a stale response"
-            except Exception as exc:
+            except Exception as exc:  # noqa: BLE001 -- lifecycle assertion records actual exception
                 if type(exc).__name__ != "Closed":
                     state, detail = "fail", "cancel did not close transport"
+        if crashed:
+            state, detail = "inconclusive", f"driver execution failed: {outcome}"
         transport.close()
-        result.cases.append(CaseResult(case["id"], op, case.get("requirement", "DF-19"), state,
-            expected, observed, detail, transport.transcript, source,
-            {name: evidence.get("value") for name, evidence in fields.items()}, attempts,
-            transport.clock.milliseconds))
+        result.cases.append(
+            CaseResult(
+                case["id"],
+                op,
+                case.get("requirement", "DF-19"),
+                state,
+                expected,
+                observed,
+                detail,
+                transport.transcript,
+                source,
+                {name: evidence.get("value") for name, evidence in fields.items()},
+                attempts,
+                transport.clock.milliseconds,
+            )
+        )
     return result

@@ -1,0 +1,16 @@
+{
+  "consumer_configuration": {
+    "calibration_factor": 1000,
+    "run_name": "failed",
+    "case": {
+      "id": "calibrated-voltage",
+      "operation": "voltage_dc",
+      "request_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+      "response_hex": "322e3530300a",
+      "expected": 2.5,
+      "error": null,
+      "attempts": 1,
+      "requirement": "DF-22"
+    }
+  }
+}

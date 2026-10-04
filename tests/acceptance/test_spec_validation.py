@@ -25,7 +25,9 @@ def test_missing_and_conflicting_source(case):
     spec = ProtocolSpec.from_dict(doc)
     problems = spec.ambiguities()
     assert any(a.field == case["field"] and a.operation == op for a in problems)
-    assert all(a.sources and a.sources[0]["anchor"] and a.outcome == case["expected"] for a in problems)
+    assert all(
+        a.sources and a.sources[0]["anchor"] and a.outcome == case["expected"] for a in problems
+    )
     with pytest.raises(InvalidInput):
         spec.require_resolved()
 

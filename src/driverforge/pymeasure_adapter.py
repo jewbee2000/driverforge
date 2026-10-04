@@ -1,4 +1,5 @@
 """Inject the existing PyMeasure adapter seam; leave driver source unchanged."""
+
 from importlib.metadata import version
 from typing import Any
 
@@ -11,6 +12,7 @@ from .transport import FaultTransport
 
 class PyMeasureFaultAdapter(Adapter):  # type: ignore[misc]
     """Simulate an LF connection, without adding parsing/retry logic upstream lacks."""
+
     unsupported_capabilities = ("async_cancellation", "upstream_framing_validation", "read_retry")
 
     def __init__(self, transport: FaultTransport) -> None:
@@ -23,7 +25,9 @@ class PyMeasureFaultAdapter(Adapter):  # type: ignore[misc]
         if self.pending is not None:
             raise InvalidInput("read pending; preserve operation ordering")
         raw = (command + "\n").encode("ascii")
-        operation = next((name for name, pair in self.transport.dialogues.items() if pair[0] == raw), None)
+        operation = next(
+            (name for name, pair in self.transport.dialogues.items() if pair[0] == raw), None
+        )
         if operation is None:
             raise UnsupportedOperation(command)
         self.pending = (operation, raw)
