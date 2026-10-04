@@ -5,4 +5,4 @@ tests/acceptance/test_existing_driver_adapter.py::test_unchanged_public_driver_t
     warn("It is not known whether this device support SCPI commands or not. Please inform "
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-1 passed, 1 warning in 0.65s
+1 passed, 1 warning in 0.74s

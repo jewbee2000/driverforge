@@ -1,0 +1,139 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width'><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'unsafe-inline'"><title>DriverForge conformance</title><style>body{font:16px system-ui;background:#f5f6f9;color:#17223a;max-width:1000px;margin:32px auto;padding:0 16px}article{background:white;padding:16px;margin:16px 0;border-left:6px solid #14775e;border-radius:8px}.fail{border-color:#bf3645}.inconclusive{border-color:#ad750e}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f7;padding:12px}h1{font-size:32px}h2{font-size:20px}blockquote{margin:0;padding:12px;background:#eef1f7}</style><h1>DriverForge conformance</h1><p>REPLAY · synthetic traffic · no hardware or live model evaluation</p><p>Exit 1 · Complete True · 8 cases</p><article class='pass'><h2>voltage_dc · pass</h2><p>voltage_dc · DF-14</p><p><b>Expected:</b> 1.25 <b>Observed:</b> 1.25</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/agilent34410a.md#voltage-dc</p><blockquote>request=&quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;; response=&quot;finite_scalar&quot;; unit=&quot;V&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=&quot;trigger_measurement&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;,
+  &quot;response&quot;: &quot;finite_scalar&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;trigger_measurement&quot;
+}
+</pre><pre>  0 ms send         4d4541533a564f4c543a44433f204445462c4445460a
+  0 ms receive      312e3235300a
+  0 ms close        </pre></details></article><article class='pass'><h2>current_dc · pass</h2><p>current_dc · DF-14</p><p><b>Expected:</b> 0.012 <b>Observed:</b> 0.012</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/agilent34410a.md#current-dc</p><blockquote>request=&quot;MEAS:CURR:DC? DEF,DEF\\n&quot;; response=&quot;finite_scalar&quot;; unit=&quot;A&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=&quot;trigger_measurement&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:CURR:DC? DEF,DEF\\n&quot;,
+  &quot;response&quot;: &quot;finite_scalar&quot;,
+  &quot;unit&quot;: &quot;A&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;trigger_measurement&quot;
+}
+</pre><pre>  0 ms send         4d4541533a435552523a44433f204445462c4445460a
+  0 ms receive      302e3031320a
+  0 ms close        </pre></details></article><article class='pass'><h2>resistance · pass</h2><p>resistance · DF-14</p><p><b>Expected:</b> 1000.0 <b>Observed:</b> 1000.0</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/agilent34410a.md#resistance</p><blockquote>request=&quot;MEAS:RES? DEF,DEF\\n&quot;; response=&quot;finite_scalar&quot;; unit=&quot;ohm&quot;; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=&quot;trigger_measurement&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:RES? DEF,DEF\\n&quot;,
+  &quot;response&quot;: &quot;finite_scalar&quot;,
+  &quot;unit&quot;: &quot;ohm&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;trigger_measurement&quot;
+}
+</pre><pre>  0 ms send         4d4541533a5245533f204445462c4445460a
+  0 ms receive      313030300a
+  0 ms close        </pre></details></article><article class='pass'><h2>timeout · pass</h2><p>voltage_dc · DF-14</p><p><b>Expected:</b> DeadlineExceeded <b>Observed:</b> DeadlineExceeded</p><p>response deadline exceeded</p><details><summary>Source → interpretation → wire</summary><p>manuals/agilent34410a.md#voltage-dc</p><blockquote>request=&quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;; response=&quot;finite_scalar&quot;; unit=&quot;V&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=&quot;trigger_measurement&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;,
+  &quot;response&quot;: &quot;finite_scalar&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;trigger_measurement&quot;
+}
+</pre><pre>  0 ms send         4d4541533a564f4c543a44433f204445462c4445460a
+  0 ms fault        
+250 ms timeout      
+250 ms close        </pre></details></article><article class='pass'><h2>fragment · pass</h2><p>voltage_dc · DF-14</p><p><b>Expected:</b> 1.25 <b>Observed:</b> 1.25</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/agilent34410a.md#voltage-dc</p><blockquote>request=&quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;; response=&quot;finite_scalar&quot;; unit=&quot;V&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=&quot;trigger_measurement&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;,
+  &quot;response&quot;: &quot;finite_scalar&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;trigger_measurement&quot;
+}
+</pre><pre>  0 ms send         4d4541533a564f4c543a44433f204445462c4445460a
+  0 ms fault        
+  1 ms receive      312e
+  2 ms receive      3235300a
+  2 ms close        </pre></details></article><article class='fail'><h2>malformed · fail</h2><p>voltage_dc · DF-14</p><p><b>Expected:</b> ParseError <b>Observed:</b> garbage</p><p>expected &#x27;ParseError&#x27;; observed &#x27;garbage&#x27;</p><details><summary>Source → interpretation → wire</summary><p>manuals/agilent34410a.md#voltage-dc</p><blockquote>request=&quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;; response=&quot;finite_scalar&quot;; unit=&quot;V&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=&quot;trigger_measurement&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;,
+  &quot;response&quot;: &quot;finite_scalar&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;trigger_measurement&quot;
+}
+</pre><pre>  0 ms send         4d4541533a564f4c543a44433f204445462c4445460a
+  0 ms fault        
+  0 ms receive      676172626167650a
+  0 ms close        </pre></details></article><article class='fail'><h2>device-error · fail</h2><p>voltage_dc · DF-14</p><p><b>Expected:</b> DeviceError <b>Observed:</b> [-101.0, &#x27;Invalid character&#x27;]</p><p>expected &#x27;DeviceError&#x27;; observed [-101.0, &#x27;Invalid character&#x27;]</p><details><summary>Source → interpretation → wire</summary><p>manuals/agilent34410a.md#voltage-dc</p><blockquote>request=&quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;; response=&quot;finite_scalar&quot;; unit=&quot;V&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=&quot;trigger_measurement&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;,
+  &quot;response&quot;: &quot;finite_scalar&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;trigger_measurement&quot;
+}
+</pre><pre>  0 ms send         4d4541533a564f4c543a44433f204445462c4445460a
+  0 ms fault        
+  0 ms receive      2d3130312c496e76616c6964206368617261637465720a
+  0 ms close        </pre></details></article><article class='pass'><h2>late · pass</h2><p>voltage_dc · DF-14</p><p><b>Expected:</b> DeadlineExceeded <b>Observed:</b> DeadlineExceeded</p><p>response deadline exceeded</p><details><summary>Source → interpretation → wire</summary><p>manuals/agilent34410a.md#voltage-dc</p><blockquote>request=&quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;; response=&quot;finite_scalar&quot;; unit=&quot;V&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=&quot;trigger_measurement&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:VOLT:DC? DEF,DEF\\n&quot;,
+  &quot;response&quot;: &quot;finite_scalar&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;trigger_measurement&quot;
+}
+</pre><pre>  0 ms send         4d4541533a564f4c543a44433f204445462c4445460a
+  0 ms fault        
+250 ms timeout      
+250 ms discard_late 312e3235300a
+250 ms close        </pre></details></article><h2>Run context and preserved attempts</h2><pre>{
+  &quot;ambiguities&quot;: [],
+  &quot;unsupported_capabilities&quot;: [
+    {
+      &quot;capability&quot;: &quot;async_cancellation&quot;,
+      &quot;state&quot;: &quot;not_applicable&quot;,
+      &quot;reason&quot;: &quot;outside declared synchronous upstream contract&quot;
+    },
+    {
+      &quot;capability&quot;: &quot;upstream_framing_validation&quot;,
+      &quot;state&quot;: &quot;not_applicable&quot;,
+      &quot;reason&quot;: &quot;outside declared synchronous upstream contract&quot;
+    },
+    {
+      &quot;capability&quot;: &quot;read_retry&quot;,
+      &quot;state&quot;: &quot;not_applicable&quot;,
+      &quot;reason&quot;: &quot;outside declared synchronous upstream contract&quot;
+    }
+  ],
+  &quot;upstream&quot;: {
+    &quot;package&quot;: &quot;pymeasure&quot;,
+    &quot;version&quot;: &quot;0.16.0&quot;,
+    &quot;commit&quot;: &quot;597e0c6760288f6fe1c5a677e9d53a2b7a033566&quot;,
+    &quot;source_sha256&quot;: &quot;7e578cc7438c05c4186786b07fab42fba8a4faaf6c2092a00192bf7b1e980764&quot;,
+    &quot;modified&quot;: false
+  }
+}
+</pre></html>

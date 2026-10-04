@@ -1,0 +1,16 @@
+{
+  "canonical": "../../website-drafts/_drafts/driverforge.md",
+  "website_commit": "a395ad6",
+  "published": false,
+  "date_frontmatter": false,
+  "words": 768,
+  "normal_build_exit_code": 0,
+  "draft_build_exit_code": 0,
+  "normal_article_matches": [],
+  "desktop_width": 1280,
+  "mobile_width": 390,
+  "mobile_document_scroll_width": 375,
+  "mobile_document_client_width": 375,
+  "screenshot_sha256": "f275dcdf90000a19754032c6556d083953978e2a524c6a66e7877edaa6da494c",
+  "draft_sha256": "d468196549d7273226f36013f1a06dc7f746012fa2586d4ac6cca4fce1213f55"
+}

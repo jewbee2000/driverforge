@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "timestamp_utc": "2026-10-04T19:15:43.907317+00:00",
+  "timestamp_utc": "2026-10-04T19:24:00.600577+00:00",
   "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
   "platform": "Windows-11-10.0.26300-SP0",
   "requirements": [
@@ -18,7 +18,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -30,7 +30,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-01.txt",
-      "log_sha256": "8478e6b437f3d9b065e15424a141410ceb40ad20fedf65c2732406d7c7f846c5"
+      "log_sha256": "661cc27a2db83afc41ffb9cb1dfa7f808a3742eaaa8ed5e185534ce62c7aa5eb"
     },
     {
       "requirement": "DF-02",
@@ -46,7 +46,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -74,7 +74,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -102,7 +102,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -114,7 +114,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-04.txt",
-      "log_sha256": "89167ec9d022cef0071e7abcf3797eeda3146d9de45b31d2cd46f3883b43cee8"
+      "log_sha256": "6997182bdc1a938c91fdbfca3a4f4afac3b32c88d5c26dbdf06ec5e036579a32"
     },
     {
       "requirement": "DF-05",
@@ -130,7 +130,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -142,7 +142,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-05.txt",
-      "log_sha256": "fa665775964cf05a4b8c9ca6f3bb541d55819b03a8e9277e22b2aa4799804700"
+      "log_sha256": "7e15266061ed0d31aa89e2241ce9ed802cf0173def79bf29c0398d727932d5d2"
     },
     {
       "requirement": "DF-06",
@@ -158,7 +158,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -186,7 +186,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -214,7 +214,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -226,7 +226,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-08.txt",
-      "log_sha256": "016a4093788648644b08006f7d1d171ca7639313677f5aa929f004d4a3e52465"
+      "log_sha256": "36ee6125777253800df314c891baf72e42248a17540db95c6bdb02de742e24de"
     },
     {
       "requirement": "DF-09",
@@ -242,7 +242,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -254,7 +254,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-09.txt",
-      "log_sha256": "a447b0ef6625e5f28651aff634c1379f233d8e6c96a9490bcd361bc624dc0b5f"
+      "log_sha256": "b5a574ccfff522b047e4bbc8868608d4bc62843b2bb058706cb61044d249c695"
     },
     {
       "requirement": "DF-10",
@@ -270,7 +270,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -282,7 +282,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-10.txt",
-      "log_sha256": "3b48e0860dc023141693c4f77181cda5b340fb20a1a3707eedab872d4f8fa2ba"
+      "log_sha256": "85a7532b40196fb821e4b3dfb1231181e8e280a2da477abec65674576186c6c1"
     },
     {
       "requirement": "DF-11",
@@ -298,19 +298,19 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
       "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
-      "test_sha256": "90dc8ec5c2bcc636e5ec10a1f812f539f12455b8e0d90b88982e212b6a4de8fd",
+      "test_sha256": "2fe97baf5919061d521b77f936ffc1cbe61a12ddc62e33a0e1ca1d3e71b93ba4",
       "input_hashes": {
         "examples\\specs\\agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
         "examples\\specs\\pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-11.txt",
-      "log_sha256": "01cdd48247cab7b390581fe6c4304671fcddf040b2a9072ef90373db72da86eb"
+      "log_sha256": "94f637a11e3ab7e202c311d8457e129b32b19795cbf37167b40e870db11bef0b"
     },
     {
       "requirement": "DF-12",
@@ -326,7 +326,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -338,7 +338,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-12.txt",
-      "log_sha256": "7e15266061ed0d31aa89e2241ce9ed802cf0173def79bf29c0398d727932d5d2"
+      "log_sha256": "ed4e09caf2c123cc998a4a054db510aefa9991486486560067423d72e1530bca"
     },
     {
       "requirement": "DF-13",
@@ -354,7 +354,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -366,7 +366,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-13.txt",
-      "log_sha256": "36ee6125777253800df314c891baf72e42248a17540db95c6bdb02de742e24de"
+      "log_sha256": "d2d744b6b2df2bbb0d73cb7a43f6675bd03881bc2a2c2a74e54ecf18667789e2"
     },
     {
       "requirement": "DF-14",
@@ -382,7 +382,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -394,7 +394,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-14.txt",
-      "log_sha256": "2fb1ec49e46f1021c6b0960eb25a836143a4051fcd2f4e1f82aeaa4c38da4cd3"
+      "log_sha256": "607fb146a2d7b359603bdeccfdfd350135235e04ed50cabecdfb1c52d19457d4"
     },
     {
       "requirement": "DF-15",
@@ -410,7 +410,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -422,7 +422,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-15.txt",
-      "log_sha256": "3b699c09a131f6fce9f8c5f77719de7f8be6f3d226bd0fbfbe7c408b1742ff02"
+      "log_sha256": "35c11cc3672b8bda3b90af5b09f81b95192b96e163255ff89c7c355117ee769d"
     },
     {
       "requirement": "DF-16",
@@ -438,7 +438,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -450,7 +450,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-16.txt",
-      "log_sha256": "f7da7f86cbf89957a3d2994d522437ec98ca4c257402418f86bbcbd223cc7b9e"
+      "log_sha256": "704d54d2279476b018517267a8ebc5993f930e5bbc21c5a90a2ece64846fe69f"
     },
     {
       "requirement": "DF-17",
@@ -466,7 +466,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -478,7 +478,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-17.txt",
-      "log_sha256": "d907fec0e0445cfe67a7272e864304e81194b234052d6bdfcb6ec87c0b123e62"
+      "log_sha256": "d2d744b6b2df2bbb0d73cb7a43f6675bd03881bc2a2c2a74e54ecf18667789e2"
     },
     {
       "requirement": "DF-18",
@@ -494,7 +494,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -506,7 +506,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-18.txt",
-      "log_sha256": "36ee6125777253800df314c891baf72e42248a17540db95c6bdb02de742e24de"
+      "log_sha256": "d907fec0e0445cfe67a7272e864304e81194b234052d6bdfcb6ec87c0b123e62"
     },
     {
       "requirement": "DF-19",
@@ -522,7 +522,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -534,7 +534,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-19.txt",
-      "log_sha256": "ac0820a6ed6774771e95e25d7bf46b29890d4a15d1e1d16881123b0225574da1"
+      "log_sha256": "9f9c3bc08af9492f783c058f6db2653928fe019acb0c99ab084c9132a54a71ec"
     },
     {
       "requirement": "DF-20",
@@ -550,7 +550,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -562,7 +562,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-20.txt",
-      "log_sha256": "f3d3ca3f5fee50214b720d6239f9a86346aa8478c9e3aec0083841749994b598"
+      "log_sha256": "2f86d6e00fe040f161a2957fe1080a435069dbb1158c2975c3b86c577069cdf2"
     },
     {
       "requirement": "DF-21",
@@ -578,7 +578,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -590,7 +590,7 @@
         "examples\\specs\\thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f"
       },
       "log": "evidence\\checks\\DF-21.txt",
-      "log_sha256": "ed4e09caf2c123cc998a4a054db510aefa9991486486560067423d72e1530bca"
+      "log_sha256": "d2e19278f2acef7cfe468afa87fbba8925315ff38a8d23649526ec4f7bbe6521"
     },
     {
       "requirement": "DF-22",
@@ -606,7 +606,7 @@
       ],
       "executed_interpreter": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\driverforge\\.venv\\Scripts\\python.exe",
       "exit_code": 0,
-      "source_commit": "b8f9cd3d2a9049c70039db59bd1420d3c3a7f8fa",
+      "source_commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
       "source_dirty": true,
       "lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
       "oracle_version": "1.0.0",
@@ -651,7 +651,7 @@
       ],
       "exit_code": 0,
       "log": "evidence\\checks\\release-1.txt",
-      "log_sha256": "7df18b42c43329c0833da621f67724dca7a56dfff20a450ae0336efb05e24f06"
+      "log_sha256": "1e8100ce5112b41053a89fae8931d735807139a983d212a9a9d2a8fab1194b67"
     },
     {
       "command": [
@@ -672,7 +672,7 @@
       ],
       "exit_code": 0,
       "log": "evidence\\checks\\release-3.txt",
-      "log_sha256": "f0813cb3d61fd6bcfa64b259f316dd01ba02ac2526e69e497b6ee0e5c32fb954"
+      "log_sha256": "ff94c3618d2ed6edfe2e1ef5fb9b5c486c525f531f690404fff3ae733ff449f5"
     },
     {
       "command": [

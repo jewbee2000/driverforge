@@ -1,10 +1,17 @@
 {
-  "phase": "planning",
-  "implementation_started": false,
-  "application_tests_run": false,
+  "phase": "local_release_candidate",
+  "implementation_started": true,
+  "application_tests_run": true,
   "live_model_evaluation_run": false,
   "physical_validation_run": false,
   "published": false,
   "requirements_revision": "2026-10-04",
-  "usefulness_validation": "desk_research_only_baseline_and_consumer_checks_pending"
+  "usefulness_validation": "executed_baseline_and_agent_consumer_practitioner_unverified",
+  "all_applicable_must_verified": true,
+  "untrusted_execution_enabled": false,
+  "optional_generation": "deferred_no_budget",
+  "known_upstream_failures": [
+    "malformed",
+    "device-error"
+  ]
 }

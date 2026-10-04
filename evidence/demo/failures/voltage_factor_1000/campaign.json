@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "profile": "pressurebrick",
+  "cases": [
+    {
+      "id": "voltage",
+      "profile": "pressurebrick",
+      "operation": "set_voltage",
+      "request_hex": "06001004e2",
+      "response_hex": "06001004e2",
+      "expected": null,
+      "error": null,
+      "requirement": "DF-03",
+      "args": [
+        1.25
+      ]
+    }
+  ]
+}

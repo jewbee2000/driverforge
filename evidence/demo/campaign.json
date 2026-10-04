@@ -1,0 +1,482 @@
+{
+  "schema_version": 1,
+  "profile": "two-fictional-profiles",
+  "cases": [
+    {
+      "id": "signed",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "0302fb2e",
+      "expected": -12.34,
+      "error": null,
+      "requirement": "DF-03"
+    },
+    {
+      "id": "pressure",
+      "profile": "pressurebrick",
+      "operation": "read_pressure",
+      "request_hex": "0300010001",
+      "response_hex": "0302007b",
+      "expected": 12.3,
+      "error": null,
+      "requirement": "DF-03"
+    },
+    {
+      "id": "voltage",
+      "profile": "pressurebrick",
+      "operation": "set_voltage",
+      "request_hex": "06001004e2",
+      "response_hex": "06001004e2",
+      "expected": null,
+      "error": null,
+      "requirement": "DF-03",
+      "args": [
+        1.25
+      ]
+    },
+    {
+      "id": "zero",
+      "profile": "pressurebrick",
+      "operation": "set_voltage",
+      "request_hex": "0600100000",
+      "response_hex": "0600100000",
+      "expected": null,
+      "error": null,
+      "requirement": "DF-03",
+      "args": [
+        0.0
+      ]
+    },
+    {
+      "id": "upper",
+      "profile": "pressurebrick",
+      "operation": "set_voltage",
+      "request_hex": "0600101388",
+      "response_hex": "0600101388",
+      "expected": null,
+      "error": null,
+      "requirement": "DF-03",
+      "args": [
+        5.0
+      ]
+    },
+    {
+      "id": "illegal-address",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "8302",
+      "expected": null,
+      "error": "IllegalAddress",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "pdu-truncated",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "0302fb",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "pdu-trailing",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "0302fb2e00",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "pdu-bytecount",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "0301fb2e",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "pdu-function",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "0402fb2e",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "bad-echo",
+      "profile": "pressurebrick",
+      "operation": "set_voltage",
+      "request_hex": "06001004e2",
+      "response_hex": "06001004e3",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04",
+      "args": [
+        1.25
+      ]
+    },
+    {
+      "id": "write-timeout",
+      "profile": "pressurebrick",
+      "operation": "set_voltage",
+      "request_hex": "06001004e2",
+      "response_hex": null,
+      "expected": null,
+      "error": "UnknownWriteOutcome",
+      "requirement": "DF-05",
+      "args": [
+        1.25
+      ],
+      "attempts": 1
+    },
+    {
+      "id": "read-retry",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "0302fb2e",
+      "expected": -12.34,
+      "error": null,
+      "requirement": "DF-05",
+      "faults": [
+        {
+          "kind": "timeout",
+          "onset": 1
+        }
+      ],
+      "attempts": 2,
+      "elapsed_ms": 250
+    },
+    {
+      "id": "read-budget",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": null,
+      "expected": null,
+      "error": "DeadlineExceeded",
+      "requirement": "DF-05",
+      "attempts": 2,
+      "elapsed_ms": 500
+    },
+    {
+      "id": "late-after-timeout",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "03020064",
+      "expected": 1.0,
+      "error": null,
+      "requirement": "DF-06",
+      "faults": [
+        {
+          "kind": "late",
+          "onset": 1,
+          "data_hex": "0302fb2e",
+          "delay_ms": 251
+        }
+      ],
+      "attempts": 2,
+      "elapsed_ms": 250
+    },
+    {
+      "id": "cancel",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "0302fb2e",
+      "expected": null,
+      "error": "Cancelled",
+      "requirement": "DF-06",
+      "faults": [
+        {
+          "kind": "cancel",
+          "onset": 1,
+          "delay_ms": 10
+        }
+      ],
+      "attempts": 1,
+      "after": "Closed"
+    },
+    {
+      "id": "fragment",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "0302fb2e",
+      "expected": -12.34,
+      "error": null,
+      "requirement": "DF-15",
+      "faults": [
+        {
+          "kind": "fragment",
+          "onset": 1,
+          "chunks_hex": [
+            "03",
+            "02fb",
+            "2e"
+          ],
+          "delay_ms": 1
+        }
+      ]
+    },
+    {
+      "id": "deadline-equal",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "0302fb2e",
+      "expected": -12.34,
+      "error": null,
+      "requirement": "DF-05",
+      "delay_ms": 250,
+      "elapsed_ms": 250
+    },
+    {
+      "id": "identify",
+      "profile": "thermoblock",
+      "operation": "identify",
+      "request_hex": "2a49444e3f0a",
+      "response_hex": "57414c542c544845524d4f424c4f434b2d54312c303030312c312e300a",
+      "expected": "WALT,THERMOBLOCK-T1,0001,1.0",
+      "error": null,
+      "requirement": "DF-02"
+    },
+    {
+      "id": "ascii-temperature",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "2d31322e33340a",
+      "expected": -12.34,
+      "error": null,
+      "requirement": "DF-03"
+    },
+    {
+      "id": "crlf",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "312e30300d0a",
+      "expected": 1.0,
+      "error": null,
+      "requirement": "DF-04"
+    },
+    {
+      "id": "ascii-voltage",
+      "profile": "thermoblock",
+      "operation": "set_voltage",
+      "request_hex": "534f55523a564f4c5420312e3235300a",
+      "response_hex": "4f4b0a",
+      "expected": null,
+      "error": null,
+      "requirement": "DF-03",
+      "args": [
+        1.25
+      ]
+    },
+    {
+      "id": "disable",
+      "profile": "thermoblock",
+      "operation": "disable_output",
+      "request_hex": "4f555450204f46460a",
+      "response_hex": "4f4b0a",
+      "expected": null,
+      "error": null,
+      "requirement": "DF-02"
+    },
+    {
+      "id": "nan",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "4e614e0a",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "infinity",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "696e660a",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "units",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "312e3020460a",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "no-terminator",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "312e30",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "extra-frame",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "312e300a322e300a",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "malformed",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "676172626167650a",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "whitespace",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "20312e300a",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "encoding",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "ff0a",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "overlong",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131310a",
+      "expected": null,
+      "error": "ParseError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "device-error",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "4552522c322c4661756c740a",
+      "expected": null,
+      "error": "DeviceError",
+      "requirement": "DF-04"
+    },
+    {
+      "id": "thermoblock-negative",
+      "profile": "thermoblock",
+      "operation": "set_voltage",
+      "request_hex": "",
+      "response_hex": null,
+      "expected": null,
+      "error": "ValueError",
+      "requirement": "DF-04",
+      "args": [
+        -0.001
+      ],
+      "attempts": 0
+    },
+    {
+      "id": "thermoblock-above",
+      "profile": "thermoblock",
+      "operation": "set_voltage",
+      "request_hex": "",
+      "response_hex": null,
+      "expected": null,
+      "error": "ValueError",
+      "requirement": "DF-04",
+      "args": [
+        5.001
+      ],
+      "attempts": 0
+    },
+    {
+      "id": "thermoblock-precision",
+      "profile": "thermoblock",
+      "operation": "set_voltage",
+      "request_hex": "",
+      "response_hex": null,
+      "expected": null,
+      "error": "ValueError",
+      "requirement": "DF-04",
+      "args": [
+        1.2345
+      ],
+      "attempts": 0
+    },
+    {
+      "id": "pressurebrick-negative",
+      "profile": "pressurebrick",
+      "operation": "set_voltage",
+      "request_hex": "",
+      "response_hex": null,
+      "expected": null,
+      "error": "ValueError",
+      "requirement": "DF-04",
+      "args": [
+        -0.001
+      ],
+      "attempts": 0
+    },
+    {
+      "id": "pressurebrick-above",
+      "profile": "pressurebrick",
+      "operation": "set_voltage",
+      "request_hex": "",
+      "response_hex": null,
+      "expected": null,
+      "error": "ValueError",
+      "requirement": "DF-04",
+      "args": [
+        5.001
+      ],
+      "attempts": 0
+    },
+    {
+      "id": "pressurebrick-precision",
+      "profile": "pressurebrick",
+      "operation": "set_voltage",
+      "request_hex": "",
+      "response_hex": null,
+      "expected": null,
+      "error": "ValueError",
+      "requirement": "DF-04",
+      "args": [
+        1.2345
+      ],
+      "attempts": 0
+    }
+  ]
+}

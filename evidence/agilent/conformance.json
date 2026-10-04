@@ -1,0 +1,444 @@
+{
+  "cases": [
+    {
+      "id": "voltage_dc",
+      "operation": "voltage_dc",
+      "requirement": "DF-14",
+      "state": "pass",
+      "expected": 1.25,
+      "observed": 1.25,
+      "detail": "contract satisfied",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "voltage_dc",
+          "data_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "receive",
+          "operation": "voltage_dc",
+          "data_hex": "312e3235300a",
+          "at_ms": 0
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 0
+        }
+      ],
+      "source": {
+        "anchor": "manuals/agilent34410a.md#voltage-dc",
+        "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "interpreted_fields": {
+        "request": "MEAS:VOLT:DC? DEF,DEF\\n",
+        "response": "finite_scalar",
+        "unit": "V",
+        "scale": 1,
+        "signed": true,
+        "range": null,
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "trigger_measurement"
+      },
+      "attempts": 1,
+      "elapsed_ms": 0
+    },
+    {
+      "id": "current_dc",
+      "operation": "current_dc",
+      "requirement": "DF-14",
+      "state": "pass",
+      "expected": 0.012,
+      "observed": 0.012,
+      "detail": "contract satisfied",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "current_dc",
+          "data_hex": "4d4541533a435552523a44433f204445462c4445460a",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "receive",
+          "operation": "current_dc",
+          "data_hex": "302e3031320a",
+          "at_ms": 0
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 0
+        }
+      ],
+      "source": {
+        "anchor": "manuals/agilent34410a.md#current-dc",
+        "passage": "request=\"MEAS:CURR:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"A\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "interpreted_fields": {
+        "request": "MEAS:CURR:DC? DEF,DEF\\n",
+        "response": "finite_scalar",
+        "unit": "A",
+        "scale": 1,
+        "signed": true,
+        "range": null,
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "trigger_measurement"
+      },
+      "attempts": 1,
+      "elapsed_ms": 0
+    },
+    {
+      "id": "resistance",
+      "operation": "resistance",
+      "requirement": "DF-14",
+      "state": "pass",
+      "expected": 1000.0,
+      "observed": 1000.0,
+      "detail": "contract satisfied",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "resistance",
+          "data_hex": "4d4541533a5245533f204445462c4445460a",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "receive",
+          "operation": "resistance",
+          "data_hex": "313030300a",
+          "at_ms": 0
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 0
+        }
+      ],
+      "source": {
+        "anchor": "manuals/agilent34410a.md#resistance",
+        "passage": "request=\"MEAS:RES? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"ohm\"; scale=1; signed=false; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "interpreted_fields": {
+        "request": "MEAS:RES? DEF,DEF\\n",
+        "response": "finite_scalar",
+        "unit": "ohm",
+        "scale": 1,
+        "signed": false,
+        "range": null,
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "trigger_measurement"
+      },
+      "attempts": 1,
+      "elapsed_ms": 0
+    },
+    {
+      "id": "timeout",
+      "operation": "voltage_dc",
+      "requirement": "DF-14",
+      "state": "pass",
+      "expected": "DeadlineExceeded",
+      "observed": "DeadlineExceeded",
+      "detail": "response deadline exceeded",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "voltage_dc",
+          "data_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "fault",
+          "operation": "voltage_dc",
+          "data_hex": "",
+          "at_ms": 0,
+          "kind": "timeout",
+          "onset": 1,
+          "expected_outcome": "DeadlineExceeded"
+        },
+        {
+          "event": "timeout",
+          "operation": "voltage_dc",
+          "data_hex": "",
+          "at_ms": 250
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 250
+        }
+      ],
+      "source": {
+        "anchor": "manuals/agilent34410a.md#voltage-dc",
+        "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "interpreted_fields": {
+        "request": "MEAS:VOLT:DC? DEF,DEF\\n",
+        "response": "finite_scalar",
+        "unit": "V",
+        "scale": 1,
+        "signed": true,
+        "range": null,
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "trigger_measurement"
+      },
+      "attempts": 1,
+      "elapsed_ms": 250
+    },
+    {
+      "id": "fragment",
+      "operation": "voltage_dc",
+      "requirement": "DF-14",
+      "state": "pass",
+      "expected": 1.25,
+      "observed": 1.25,
+      "detail": "contract satisfied",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "voltage_dc",
+          "data_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "fault",
+          "operation": "voltage_dc",
+          "data_hex": "",
+          "at_ms": 0,
+          "kind": "fragment",
+          "onset": 1,
+          "expected_outcome": "1.25"
+        },
+        {
+          "event": "receive",
+          "operation": "voltage_dc",
+          "data_hex": "312e",
+          "at_ms": 1
+        },
+        {
+          "event": "receive",
+          "operation": "voltage_dc",
+          "data_hex": "3235300a",
+          "at_ms": 2
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 2
+        }
+      ],
+      "source": {
+        "anchor": "manuals/agilent34410a.md#voltage-dc",
+        "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "interpreted_fields": {
+        "request": "MEAS:VOLT:DC? DEF,DEF\\n",
+        "response": "finite_scalar",
+        "unit": "V",
+        "scale": 1,
+        "signed": true,
+        "range": null,
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "trigger_measurement"
+      },
+      "attempts": 1,
+      "elapsed_ms": 2
+    },
+    {
+      "id": "malformed",
+      "operation": "voltage_dc",
+      "requirement": "DF-14",
+      "state": "fail",
+      "expected": "ParseError",
+      "observed": "garbage",
+      "detail": "expected 'ParseError'; observed 'garbage'",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "voltage_dc",
+          "data_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "fault",
+          "operation": "voltage_dc",
+          "data_hex": "",
+          "at_ms": 0,
+          "kind": "malformed",
+          "onset": 1,
+          "expected_outcome": "ParseError"
+        },
+        {
+          "event": "receive",
+          "operation": "voltage_dc",
+          "data_hex": "676172626167650a",
+          "at_ms": 0
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 0
+        }
+      ],
+      "source": {
+        "anchor": "manuals/agilent34410a.md#voltage-dc",
+        "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "interpreted_fields": {
+        "request": "MEAS:VOLT:DC? DEF,DEF\\n",
+        "response": "finite_scalar",
+        "unit": "V",
+        "scale": 1,
+        "signed": true,
+        "range": null,
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "trigger_measurement"
+      },
+      "attempts": 1,
+      "elapsed_ms": 0
+    },
+    {
+      "id": "device-error",
+      "operation": "voltage_dc",
+      "requirement": "DF-14",
+      "state": "fail",
+      "expected": "DeviceError",
+      "observed": [
+        -101.0,
+        "Invalid character"
+      ],
+      "detail": "expected 'DeviceError'; observed [-101.0, 'Invalid character']",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "voltage_dc",
+          "data_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "fault",
+          "operation": "voltage_dc",
+          "data_hex": "",
+          "at_ms": 0,
+          "kind": "device_error",
+          "onset": 1,
+          "expected_outcome": "DeviceError"
+        },
+        {
+          "event": "receive",
+          "operation": "voltage_dc",
+          "data_hex": "2d3130312c496e76616c6964206368617261637465720a",
+          "at_ms": 0
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 0
+        }
+      ],
+      "source": {
+        "anchor": "manuals/agilent34410a.md#voltage-dc",
+        "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "interpreted_fields": {
+        "request": "MEAS:VOLT:DC? DEF,DEF\\n",
+        "response": "finite_scalar",
+        "unit": "V",
+        "scale": 1,
+        "signed": true,
+        "range": null,
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "trigger_measurement"
+      },
+      "attempts": 1,
+      "elapsed_ms": 0
+    },
+    {
+      "id": "late",
+      "operation": "voltage_dc",
+      "requirement": "DF-14",
+      "state": "pass",
+      "expected": "DeadlineExceeded",
+      "observed": "DeadlineExceeded",
+      "detail": "response deadline exceeded",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "voltage_dc",
+          "data_hex": "4d4541533a564f4c543a44433f204445462c4445460a",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "fault",
+          "operation": "voltage_dc",
+          "data_hex": "",
+          "at_ms": 0,
+          "kind": "late",
+          "onset": 1,
+          "expected_outcome": "DeadlineExceeded"
+        },
+        {
+          "event": "timeout",
+          "operation": "voltage_dc",
+          "data_hex": "",
+          "at_ms": 250
+        },
+        {
+          "event": "discard_late",
+          "operation": "close",
+          "data_hex": "312e3235300a",
+          "at_ms": 250
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 250
+        }
+      ],
+      "source": {
+        "anchor": "manuals/agilent34410a.md#voltage-dc",
+        "passage": "request=\"MEAS:VOLT:DC? DEF,DEF\\\\n\"; response=\"finite_scalar\"; unit=\"V\"; scale=1; signed=true; range=null; timeout_ms=250; retry=0; side_effect=\"trigger_measurement\""
+      },
+      "interpreted_fields": {
+        "request": "MEAS:VOLT:DC? DEF,DEF\\n",
+        "response": "finite_scalar",
+        "unit": "V",
+        "scale": 1,
+        "signed": true,
+        "range": null,
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "trigger_measurement"
+      },
+      "attempts": 1,
+      "elapsed_ms": 250
+    }
+  ],
+  "schema_version": 1,
+  "oracle_version": "1.0.0",
+  "complete": true,
+  "exit_code": 1
+}

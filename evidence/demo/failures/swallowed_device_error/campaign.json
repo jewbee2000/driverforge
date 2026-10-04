@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "profile": "thermoblock",
+  "cases": [
+    {
+      "id": "device-error",
+      "profile": "thermoblock",
+      "operation": "read_temperature",
+      "request_hex": "4d4541533a54454d503f0a",
+      "response_hex": "4552522c322c4661756c740a",
+      "expected": null,
+      "error": "DeviceError",
+      "requirement": "DF-04"
+    }
+  ]
+}

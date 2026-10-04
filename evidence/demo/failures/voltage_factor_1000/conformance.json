@@ -1,0 +1,52 @@
+{
+  "cases": [
+    {
+      "id": "voltage",
+      "operation": "set_voltage",
+      "requirement": "DF-03",
+      "state": "fail",
+      "expected": null,
+      "observed": "ParseError",
+      "detail": "expected None; observed 'ParseError'",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "set_voltage",
+          "data_hex": "0600100001",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 0
+        }
+      ],
+      "source": {
+        "anchor": "manuals/pressurebrick.md#set-voltage",
+        "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+      },
+      "interpreted_fields": {
+        "request": "060010{register}",
+        "response": "echo",
+        "unit": "V",
+        "scale": 0.001,
+        "signed": false,
+        "range": [
+          0,
+          5
+        ],
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "write"
+      },
+      "attempts": 1,
+      "elapsed_ms": 0
+    }
+  ],
+  "schema_version": 1,
+  "oracle_version": "1.0.0",
+  "complete": true,
+  "exit_code": 1
+}

@@ -1,0 +1,18 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width'><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'unsafe-inline'"><title>DriverForge conformance</title><style>body{font:16px system-ui;background:#f5f6f9;color:#17223a;max-width:1000px;margin:32px auto;padding:0 16px}article{background:white;padding:16px;margin:16px 0;border-left:6px solid #14775e;border-radius:8px}.fail{border-color:#bf3645}.inconclusive{border-color:#ad750e}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f7;padding:12px}h1{font-size:32px}h2{font-size:20px}blockquote{margin:0;padding:12px;background:#eef1f7}</style><h1>DriverForge conformance</h1><p>REPLAY · synthetic traffic · no hardware or live model evaluation</p><p>Exit 1 · Complete True · 1 cases</p><article class='fail'><h2>signed · fail</h2><p>read_temperature · DF-03</p><p><b>Expected:</b> -12.34 <b>Observed:</b> 120.27</p><p>expected -12.34; observed 120.27</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms receive      0302fb2e
+  0 ms close        </pre></details></article><h2>Run context and preserved attempts</h2><pre>{}
+</pre></html>

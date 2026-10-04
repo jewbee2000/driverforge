@@ -1,0 +1,1622 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width'><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'unsafe-inline'"><title>DriverForge conformance</title><style>body{font:16px system-ui;background:#f5f6f9;color:#17223a;max-width:1000px;margin:32px auto;padding:0 16px}article{background:white;padding:16px;margin:16px 0;border-left:6px solid #14775e;border-radius:8px}.fail{border-color:#bf3645}.inconclusive{border-color:#ad750e}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f7;padding:12px}h1{font-size:32px}h2{font-size:20px}blockquote{margin:0;padding:12px;background:#eef1f7}</style><h1>DriverForge conformance</h1><p>REPLAY · synthetic traffic · no hardware or live model evaluation</p><p>Exit 0 · Complete True · 39 cases</p><article class='pass'><h2>identify · pass</h2><p>identify · DF-02</p><p><b>Expected:</b> WALT,THERMOBLOCK-T1,0001,1.0 <b>Observed:</b> WALT,THERMOBLOCK-T1,0001,1.0</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#identify</p><blockquote>request=&quot;*IDN?\\n&quot;; response=&quot;identity&quot;; unit=&quot;none&quot;; scale=1; signed=&quot;not_applicable&quot;; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;*IDN?\\n&quot;,
+  &quot;response&quot;: &quot;identity&quot;,
+  &quot;unit&quot;: &quot;none&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: &quot;not_applicable&quot;,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         2a49444e3f0a
+  0 ms receive      57414c542c544845524d4f424c4f434b2d54312c303030312c312e300a
+  0 ms close        </pre></details></article><article class='pass'><h2>ascii-temperature · pass</h2><p>read_temperature · DF-03</p><p><b>Expected:</b> -12.34 <b>Observed:</b> -12.34</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      2d31322e33340a
+  0 ms close        </pre></details></article><article class='pass'><h2>crlf · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> 1.0 <b>Observed:</b> 1.0</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      312e30300d0a
+  0 ms close        </pre></details></article><article class='pass'><h2>ascii-voltage · pass</h2><p>set_voltage · DF-03</p><p><b>Expected:</b> None <b>Observed:</b> None</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#set-voltage</p><blockquote>request=&quot;SOUR:VOLT {volts:.3f}\\n&quot;; response=&quot;OK&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;SOUR:VOLT {volts:.3f}\\n&quot;,
+  &quot;response&quot;: &quot;OK&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms send         534f55523a564f4c5420312e3235300a
+  0 ms receive      4f4b0a
+  0 ms close        </pre></details></article><article class='pass'><h2>disable · pass</h2><p>disable_output · DF-02</p><p><b>Expected:</b> None <b>Observed:</b> None</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#disable-output</p><blockquote>request=&quot;OUTP OFF\\n&quot;; response=&quot;OK&quot;; unit=&quot;none&quot;; scale=1; signed=&quot;not_applicable&quot;; range=null; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;OUTP OFF\\n&quot;,
+  &quot;response&quot;: &quot;OK&quot;,
+  &quot;unit&quot;: &quot;none&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: &quot;not_applicable&quot;,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms send         4f555450204f46460a
+  0 ms receive      4f4b0a
+  0 ms close        </pre></details></article><article class='pass'><h2>nan · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>finite Celsius decimal required</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      4e614e0a
+  0 ms close        </pre></details></article><article class='pass'><h2>infinity · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>finite Celsius decimal required</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      696e660a
+  0 ms close        </pre></details></article><article class='pass'><h2>units · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>finite Celsius decimal required</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      312e3020460a
+  0 ms close        </pre></details></article><article class='pass'><h2>no-terminator · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>exactly one terminated frame required</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      312e30
+  0 ms close        </pre></details></article><article class='pass'><h2>extra-frame · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>exactly one terminated frame required</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      312e300a322e300a
+  0 ms close        </pre></details></article><article class='pass'><h2>malformed · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>finite Celsius decimal required</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      676172626167650a
+  0 ms close        </pre></details></article><article class='pass'><h2>whitespace · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>finite Celsius decimal required</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      20312e300a
+  0 ms close        </pre></details></article><article class='pass'><h2>encoding · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>response is not ASCII</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      ff0a
+  0 ms close        </pre></details></article><article class='pass'><h2>overlong · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>response exceeds 256 bytes</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131310a
+  0 ms close        </pre></details></article><article class='pass'><h2>device-error · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> DeviceError <b>Observed:</b> DeviceError</p><p>ERR,2,Fault</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#read-temperature</p><blockquote>request=&quot;MEAS:TEMP?\\n&quot;; response=&quot;ascii_decimal&quot;; unit=&quot;C&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+  &quot;response&quot;: &quot;ascii_decimal&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 1,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: null,
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         4d4541533a54454d503f0a
+  0 ms receive      4552522c322c4661756c740a
+  0 ms close        </pre></details></article><article class='pass'><h2>thermoblock-negative · pass</h2><p>set_voltage · DF-04</p><p><b>Expected:</b> ValueError <b>Observed:</b> ValueError</p><p>voltage must be finite and in 0..5 V</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#set-voltage</p><blockquote>request=&quot;SOUR:VOLT {volts:.3f}\\n&quot;; response=&quot;OK&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;SOUR:VOLT {volts:.3f}\\n&quot;,
+  &quot;response&quot;: &quot;OK&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms close        </pre></details></article><article class='pass'><h2>thermoblock-above · pass</h2><p>set_voltage · DF-04</p><p><b>Expected:</b> ValueError <b>Observed:</b> ValueError</p><p>voltage must be finite and in 0..5 V</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#set-voltage</p><blockquote>request=&quot;SOUR:VOLT {volts:.3f}\\n&quot;; response=&quot;OK&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;SOUR:VOLT {volts:.3f}\\n&quot;,
+  &quot;response&quot;: &quot;OK&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms close        </pre></details></article><article class='pass'><h2>thermoblock-precision · pass</h2><p>set_voltage · DF-04</p><p><b>Expected:</b> ValueError <b>Observed:</b> ValueError</p><p>voltage resolution is 0.001 V</p><details><summary>Source → interpretation → wire</summary><p>manuals/thermoblock.md#set-voltage</p><blockquote>request=&quot;SOUR:VOLT {volts:.3f}\\n&quot;; response=&quot;OK&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;SOUR:VOLT {volts:.3f}\\n&quot;,
+  &quot;response&quot;: &quot;OK&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms close        </pre></details></article><article class='pass'><h2>signed · pass</h2><p>read_temperature · DF-03</p><p><b>Expected:</b> -12.34 <b>Observed:</b> -12.34</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms receive      0302fb2e
+  0 ms close        </pre></details></article><article class='pass'><h2>pressure · pass</h2><p>read_pressure · DF-03</p><p><b>Expected:</b> 12.3 <b>Observed:</b> 12.3</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-pressure</p><blockquote>request=&quot;0300010001&quot;; response=&quot;0302{register}&quot;; unit=&quot;kPa&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300010001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;kPa&quot;,
+  &quot;scale&quot;: 0.1,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    6553.5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300010001
+  0 ms receive      0302007b
+  0 ms close        </pre></details></article><article class='pass'><h2>voltage · pass</h2><p>set_voltage · DF-03</p><p><b>Expected:</b> None <b>Observed:</b> None</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#set-voltage</p><blockquote>request=&quot;060010{register}&quot;; response=&quot;echo&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;060010{register}&quot;,
+  &quot;response&quot;: &quot;echo&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms send         06001004e2
+  0 ms receive      06001004e2
+  0 ms close        </pre></details></article><article class='pass'><h2>zero · pass</h2><p>set_voltage · DF-03</p><p><b>Expected:</b> None <b>Observed:</b> None</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#set-voltage</p><blockquote>request=&quot;060010{register}&quot;; response=&quot;echo&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;060010{register}&quot;,
+  &quot;response&quot;: &quot;echo&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms send         0600100000
+  0 ms receive      0600100000
+  0 ms close        </pre></details></article><article class='pass'><h2>upper · pass</h2><p>set_voltage · DF-03</p><p><b>Expected:</b> None <b>Observed:</b> None</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#set-voltage</p><blockquote>request=&quot;060010{register}&quot;; response=&quot;echo&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;060010{register}&quot;,
+  &quot;response&quot;: &quot;echo&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms send         0600101388
+  0 ms receive      0600101388
+  0 ms close        </pre></details></article><article class='pass'><h2>illegal-address · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> IllegalAddress <b>Observed:</b> IllegalAddress</p><p>exception 0x83 0x02</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms receive      8302
+  0 ms close        </pre></details></article><article class='pass'><h2>pdu-truncated · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>single-register response required</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms receive      0302fb
+  0 ms close        </pre></details></article><article class='pass'><h2>pdu-trailing · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>single-register response required</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms receive      0302fb2e00
+  0 ms close        </pre></details></article><article class='pass'><h2>pdu-bytecount · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>single-register response required</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms receive      0301fb2e
+  0 ms close        </pre></details></article><article class='pass'><h2>pdu-function · pass</h2><p>read_temperature · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>single-register response required</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms receive      0402fb2e
+  0 ms close        </pre></details></article><article class='pass'><h2>bad-echo · pass</h2><p>set_voltage · DF-04</p><p><b>Expected:</b> ParseError <b>Observed:</b> ParseError</p><p>write echo differs</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#set-voltage</p><blockquote>request=&quot;060010{register}&quot;; response=&quot;echo&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;060010{register}&quot;,
+  &quot;response&quot;: &quot;echo&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms send         06001004e2
+  0 ms receive      06001004e3
+  0 ms close        </pre></details></article><article class='pass'><h2>write-timeout · pass</h2><p>set_voltage · DF-05</p><p><b>Expected:</b> UnknownWriteOutcome <b>Observed:</b> UnknownWriteOutcome</p><p>transmitted write timed out; do not replay</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#set-voltage</p><blockquote>request=&quot;060010{register}&quot;; response=&quot;echo&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;060010{register}&quot;,
+  &quot;response&quot;: &quot;echo&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms send         06001004e2
+250 ms timeout      
+250 ms close        </pre></details></article><article class='pass'><h2>read-retry · pass</h2><p>read_temperature · DF-05</p><p><b>Expected:</b> -12.34 <b>Observed:</b> -12.34</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms fault        
+250 ms timeout      
+250 ms send         0300000001
+250 ms receive      0302fb2e
+250 ms close        </pre></details></article><article class='pass'><h2>read-budget · pass</h2><p>read_temperature · DF-05</p><p><b>Expected:</b> DeadlineExceeded <b>Observed:</b> DeadlineExceeded</p><p>response deadline exceeded</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+250 ms timeout      
+250 ms send         0300000001
+500 ms timeout      
+500 ms close        </pre></details></article><article class='pass'><h2>late-after-timeout · pass</h2><p>read_temperature · DF-06</p><p><b>Expected:</b> 1.0 <b>Observed:</b> 1.0</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms fault        
+250 ms timeout      
+250 ms discard_late 0302fb2e
+250 ms send         0300000001
+250 ms receive      03020064
+250 ms close        </pre></details></article><article class='pass'><h2>cancel · pass</h2><p>read_temperature · DF-06</p><p><b>Expected:</b> Cancelled <b>Observed:</b> Cancelled</p><p>pending exchange cancelled; transport closed</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms fault        
+ 10 ms discard_late 0302fb2e
+ 10 ms close        </pre></details></article><article class='pass'><h2>fragment · pass</h2><p>read_temperature · DF-15</p><p><b>Expected:</b> -12.34 <b>Observed:</b> -12.34</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+  0 ms fault        
+  1 ms receive      03
+  2 ms receive      02fb
+  3 ms receive      2e
+  3 ms close        </pre></details></article><article class='pass'><h2>deadline-equal · pass</h2><p>read_temperature · DF-05</p><p><b>Expected:</b> -12.34 <b>Observed:</b> -12.34</p><p>contract satisfied</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#read-temperature</p><blockquote>request=&quot;0300000001&quot;; response=&quot;0302{register}&quot;; unit=&quot;C&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=&quot;read&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;0300000001&quot;,
+  &quot;response&quot;: &quot;0302{register}&quot;,
+  &quot;unit&quot;: &quot;C&quot;,
+  &quot;scale&quot;: 0.01,
+  &quot;signed&quot;: true,
+  &quot;range&quot;: [
+    -327.68,
+    327.67
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 1,
+  &quot;side_effect&quot;: &quot;read&quot;
+}
+</pre><pre>  0 ms send         0300000001
+250 ms receive      0302fb2e
+250 ms close        </pre></details></article><article class='pass'><h2>pressurebrick-negative · pass</h2><p>set_voltage · DF-04</p><p><b>Expected:</b> ValueError <b>Observed:</b> ValueError</p><p>voltage must be finite and in 0..5 V</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#set-voltage</p><blockquote>request=&quot;060010{register}&quot;; response=&quot;echo&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;060010{register}&quot;,
+  &quot;response&quot;: &quot;echo&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms close        </pre></details></article><article class='pass'><h2>pressurebrick-above · pass</h2><p>set_voltage · DF-04</p><p><b>Expected:</b> ValueError <b>Observed:</b> ValueError</p><p>voltage must be finite and in 0..5 V</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#set-voltage</p><blockquote>request=&quot;060010{register}&quot;; response=&quot;echo&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;060010{register}&quot;,
+  &quot;response&quot;: &quot;echo&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms close        </pre></details></article><article class='pass'><h2>pressurebrick-precision · pass</h2><p>set_voltage · DF-04</p><p><b>Expected:</b> ValueError <b>Observed:</b> ValueError</p><p>voltage resolution is 0.001 V</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#set-voltage</p><blockquote>request=&quot;060010{register}&quot;; response=&quot;echo&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;060010{register}&quot;,
+  &quot;response&quot;: &quot;echo&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms close        </pre></details></article><h2>Run context and preserved attempts</h2><pre>{
+  &quot;mutations&quot;: {
+    &quot;unsigned_decode&quot;: {
+      &quot;cases&quot;: [
+        {
+          &quot;id&quot;: &quot;signed&quot;,
+          &quot;operation&quot;: &quot;read_temperature&quot;,
+          &quot;requirement&quot;: &quot;DF-03&quot;,
+          &quot;state&quot;: &quot;fail&quot;,
+          &quot;expected&quot;: -12.34,
+          &quot;observed&quot;: 643.02,
+          &quot;detail&quot;: &quot;expected -12.34; observed 643.02&quot;,
+          &quot;transcript&quot;: [
+            {
+              &quot;event&quot;: &quot;send&quot;,
+              &quot;operation&quot;: &quot;read_temperature&quot;,
+              &quot;data_hex&quot;: &quot;0300000001&quot;,
+              &quot;at_ms&quot;: 0,
+              &quot;attempt&quot;: 1
+            },
+            {
+              &quot;event&quot;: &quot;receive&quot;,
+              &quot;operation&quot;: &quot;read_temperature&quot;,
+              &quot;data_hex&quot;: &quot;0302fb2e&quot;,
+              &quot;at_ms&quot;: 0
+            },
+            {
+              &quot;event&quot;: &quot;close&quot;,
+              &quot;operation&quot;: &quot;close&quot;,
+              &quot;data_hex&quot;: &quot;&quot;,
+              &quot;at_ms&quot;: 0
+            }
+          ],
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+          },
+          &quot;interpreted_fields&quot;: {
+            &quot;request&quot;: &quot;0300000001&quot;,
+            &quot;response&quot;: &quot;0302{register}&quot;,
+            &quot;unit&quot;: &quot;C&quot;,
+            &quot;scale&quot;: 0.01,
+            &quot;signed&quot;: true,
+            &quot;range&quot;: [
+              -327.68,
+              327.67
+            ],
+            &quot;timeout_ms&quot;: 250,
+            &quot;retry&quot;: 1,
+            &quot;side_effect&quot;: &quot;read&quot;
+          },
+          &quot;attempts&quot;: 1,
+          &quot;elapsed_ms&quot;: 0
+        }
+      ],
+      &quot;schema_version&quot;: 1,
+      &quot;oracle_version&quot;: &quot;1.0.0&quot;,
+      &quot;complete&quot;: true,
+      &quot;exit_code&quot;: 1
+    },
+    &quot;voltage_factor_1000&quot;: {
+      &quot;cases&quot;: [
+        {
+          &quot;id&quot;: &quot;voltage&quot;,
+          &quot;operation&quot;: &quot;set_voltage&quot;,
+          &quot;requirement&quot;: &quot;DF-03&quot;,
+          &quot;state&quot;: &quot;fail&quot;,
+          &quot;expected&quot;: null,
+          &quot;observed&quot;: &quot;ParseError&quot;,
+          &quot;detail&quot;: &quot;expected None; observed &#x27;ParseError&#x27;&quot;,
+          &quot;transcript&quot;: [
+            {
+              &quot;event&quot;: &quot;send&quot;,
+              &quot;operation&quot;: &quot;set_voltage&quot;,
+              &quot;data_hex&quot;: &quot;0600100001&quot;,
+              &quot;at_ms&quot;: 0,
+              &quot;attempt&quot;: 1
+            },
+            {
+              &quot;event&quot;: &quot;close&quot;,
+              &quot;operation&quot;: &quot;close&quot;,
+              &quot;data_hex&quot;: &quot;&quot;,
+              &quot;at_ms&quot;: 0
+            }
+          ],
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+          },
+          &quot;interpreted_fields&quot;: {
+            &quot;request&quot;: &quot;060010{register}&quot;,
+            &quot;response&quot;: &quot;echo&quot;,
+            &quot;unit&quot;: &quot;V&quot;,
+            &quot;scale&quot;: 0.001,
+            &quot;signed&quot;: false,
+            &quot;range&quot;: [
+              0,
+              5
+            ],
+            &quot;timeout_ms&quot;: 250,
+            &quot;retry&quot;: 0,
+            &quot;side_effect&quot;: &quot;write&quot;
+          },
+          &quot;attempts&quot;: 1,
+          &quot;elapsed_ms&quot;: 0
+        }
+      ],
+      &quot;schema_version&quot;: 1,
+      &quot;oracle_version&quot;: &quot;1.0.0&quot;,
+      &quot;complete&quot;: true,
+      &quot;exit_code&quot;: 1
+    },
+    &quot;swapped_bytes&quot;: {
+      &quot;cases&quot;: [
+        {
+          &quot;id&quot;: &quot;signed&quot;,
+          &quot;operation&quot;: &quot;read_temperature&quot;,
+          &quot;requirement&quot;: &quot;DF-03&quot;,
+          &quot;state&quot;: &quot;fail&quot;,
+          &quot;expected&quot;: -12.34,
+          &quot;observed&quot;: 120.27,
+          &quot;detail&quot;: &quot;expected -12.34; observed 120.27&quot;,
+          &quot;transcript&quot;: [
+            {
+              &quot;event&quot;: &quot;send&quot;,
+              &quot;operation&quot;: &quot;read_temperature&quot;,
+              &quot;data_hex&quot;: &quot;0300000001&quot;,
+              &quot;at_ms&quot;: 0,
+              &quot;attempt&quot;: 1
+            },
+            {
+              &quot;event&quot;: &quot;receive&quot;,
+              &quot;operation&quot;: &quot;read_temperature&quot;,
+              &quot;data_hex&quot;: &quot;0302fb2e&quot;,
+              &quot;at_ms&quot;: 0
+            },
+            {
+              &quot;event&quot;: &quot;close&quot;,
+              &quot;operation&quot;: &quot;close&quot;,
+              &quot;data_hex&quot;: &quot;&quot;,
+              &quot;at_ms&quot;: 0
+            }
+          ],
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+          },
+          &quot;interpreted_fields&quot;: {
+            &quot;request&quot;: &quot;0300000001&quot;,
+            &quot;response&quot;: &quot;0302{register}&quot;,
+            &quot;unit&quot;: &quot;C&quot;,
+            &quot;scale&quot;: 0.01,
+            &quot;signed&quot;: true,
+            &quot;range&quot;: [
+              -327.68,
+              327.67
+            ],
+            &quot;timeout_ms&quot;: 250,
+            &quot;retry&quot;: 1,
+            &quot;side_effect&quot;: &quot;read&quot;
+          },
+          &quot;attempts&quot;: 1,
+          &quot;elapsed_ms&quot;: 0
+        }
+      ],
+      &quot;schema_version&quot;: 1,
+      &quot;oracle_version&quot;: &quot;1.0.0&quot;,
+      &quot;complete&quot;: true,
+      &quot;exit_code&quot;: 1
+    },
+    &quot;blind_write_retry&quot;: {
+      &quot;cases&quot;: [
+        {
+          &quot;id&quot;: &quot;write-timeout&quot;,
+          &quot;operation&quot;: &quot;set_voltage&quot;,
+          &quot;requirement&quot;: &quot;DF-05&quot;,
+          &quot;state&quot;: &quot;fail&quot;,
+          &quot;expected&quot;: &quot;UnknownWriteOutcome&quot;,
+          &quot;observed&quot;: &quot;UnknownWriteOutcome&quot;,
+          &quot;detail&quot;: &quot;expected 1 transmissions; observed 2&quot;,
+          &quot;transcript&quot;: [
+            {
+              &quot;event&quot;: &quot;send&quot;,
+              &quot;operation&quot;: &quot;set_voltage&quot;,
+              &quot;data_hex&quot;: &quot;06001004e2&quot;,
+              &quot;at_ms&quot;: 0,
+              &quot;attempt&quot;: 1
+            },
+            {
+              &quot;event&quot;: &quot;timeout&quot;,
+              &quot;operation&quot;: &quot;set_voltage&quot;,
+              &quot;data_hex&quot;: &quot;&quot;,
+              &quot;at_ms&quot;: 250
+            },
+            {
+              &quot;event&quot;: &quot;send&quot;,
+              &quot;operation&quot;: &quot;set_voltage&quot;,
+              &quot;data_hex&quot;: &quot;06001004e2&quot;,
+              &quot;at_ms&quot;: 250,
+              &quot;attempt&quot;: 2
+            },
+            {
+              &quot;event&quot;: &quot;timeout&quot;,
+              &quot;operation&quot;: &quot;set_voltage&quot;,
+              &quot;data_hex&quot;: &quot;&quot;,
+              &quot;at_ms&quot;: 500
+            },
+            {
+              &quot;event&quot;: &quot;close&quot;,
+              &quot;operation&quot;: &quot;close&quot;,
+              &quot;data_hex&quot;: &quot;&quot;,
+              &quot;at_ms&quot;: 500
+            }
+          ],
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+          },
+          &quot;interpreted_fields&quot;: {
+            &quot;request&quot;: &quot;060010{register}&quot;,
+            &quot;response&quot;: &quot;echo&quot;,
+            &quot;unit&quot;: &quot;V&quot;,
+            &quot;scale&quot;: 0.001,
+            &quot;signed&quot;: false,
+            &quot;range&quot;: [
+              0,
+              5
+            ],
+            &quot;timeout_ms&quot;: 250,
+            &quot;retry&quot;: 0,
+            &quot;side_effect&quot;: &quot;write&quot;
+          },
+          &quot;attempts&quot;: 2,
+          &quot;elapsed_ms&quot;: 500
+        }
+      ],
+      &quot;schema_version&quot;: 1,
+      &quot;oracle_version&quot;: &quot;1.0.0&quot;,
+      &quot;complete&quot;: true,
+      &quot;exit_code&quot;: 1
+    },
+    &quot;swallowed_device_error&quot;: {
+      &quot;cases&quot;: [
+        {
+          &quot;id&quot;: &quot;device-error&quot;,
+          &quot;operation&quot;: &quot;read_temperature&quot;,
+          &quot;requirement&quot;: &quot;DF-04&quot;,
+          &quot;state&quot;: &quot;fail&quot;,
+          &quot;expected&quot;: &quot;DeviceError&quot;,
+          &quot;observed&quot;: 0.0,
+          &quot;detail&quot;: &quot;expected &#x27;DeviceError&#x27;; observed 0.0&quot;,
+          &quot;transcript&quot;: [
+            {
+              &quot;event&quot;: &quot;send&quot;,
+              &quot;operation&quot;: &quot;read_temperature&quot;,
+              &quot;data_hex&quot;: &quot;4d4541533a54454d503f0a&quot;,
+              &quot;at_ms&quot;: 0,
+              &quot;attempt&quot;: 1
+            },
+            {
+              &quot;event&quot;: &quot;receive&quot;,
+              &quot;operation&quot;: &quot;read_temperature&quot;,
+              &quot;data_hex&quot;: &quot;4552522c322c4661756c740a&quot;,
+              &quot;at_ms&quot;: 0
+            },
+            {
+              &quot;event&quot;: &quot;close&quot;,
+              &quot;operation&quot;: &quot;close&quot;,
+              &quot;data_hex&quot;: &quot;&quot;,
+              &quot;at_ms&quot;: 0
+            }
+          ],
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+          },
+          &quot;interpreted_fields&quot;: {
+            &quot;request&quot;: &quot;MEAS:TEMP?\\n&quot;,
+            &quot;response&quot;: &quot;ascii_decimal&quot;,
+            &quot;unit&quot;: &quot;C&quot;,
+            &quot;scale&quot;: 1,
+            &quot;signed&quot;: true,
+            &quot;range&quot;: null,
+            &quot;timeout_ms&quot;: 250,
+            &quot;retry&quot;: 1,
+            &quot;side_effect&quot;: &quot;read&quot;
+          },
+          &quot;attempts&quot;: 1,
+          &quot;elapsed_ms&quot;: 0
+        }
+      ],
+      &quot;schema_version&quot;: 1,
+      &quot;oracle_version&quot;: &quot;1.0.0&quot;,
+      &quot;complete&quot;: true,
+      &quot;exit_code&quot;: 1
+    },
+    &quot;stale_response_reuse&quot;: {
+      &quot;cases&quot;: [
+        {
+          &quot;id&quot;: &quot;late-after-timeout&quot;,
+          &quot;operation&quot;: &quot;read_temperature&quot;,
+          &quot;requirement&quot;: &quot;DF-06&quot;,
+          &quot;state&quot;: &quot;fail&quot;,
+          &quot;expected&quot;: 1.0,
+          &quot;observed&quot;: -12.34,
+          &quot;detail&quot;: &quot;expected 2 transmissions; observed 1&quot;,
+          &quot;transcript&quot;: [
+            {
+              &quot;event&quot;: &quot;send&quot;,
+              &quot;operation&quot;: &quot;read_temperature&quot;,
+              &quot;data_hex&quot;: &quot;0300000001&quot;,
+              &quot;at_ms&quot;: 0,
+              &quot;attempt&quot;: 1
+            },
+            {
+              &quot;event&quot;: &quot;fault&quot;,
+              &quot;operation&quot;: &quot;read_temperature&quot;,
+              &quot;data_hex&quot;: &quot;&quot;,
+              &quot;at_ms&quot;: 0,
+              &quot;kind&quot;: &quot;late&quot;,
+              &quot;onset&quot;: 1,
+              &quot;expected_outcome&quot;: &quot;1.0&quot;
+            },
+            {
+              &quot;event&quot;: &quot;timeout&quot;,
+              &quot;operation&quot;: &quot;read_temperature&quot;,
+              &quot;data_hex&quot;: &quot;&quot;,
+              &quot;at_ms&quot;: 250
+            },
+            {
+              &quot;event&quot;: &quot;discard_late&quot;,
+              &quot;operation&quot;: &quot;close&quot;,
+              &quot;data_hex&quot;: &quot;0302fb2e&quot;,
+              &quot;at_ms&quot;: 250
+            },
+            {
+              &quot;event&quot;: &quot;close&quot;,
+              &quot;operation&quot;: &quot;close&quot;,
+              &quot;data_hex&quot;: &quot;&quot;,
+              &quot;at_ms&quot;: 250
+            }
+          ],
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+          },
+          &quot;interpreted_fields&quot;: {
+            &quot;request&quot;: &quot;0300000001&quot;,
+            &quot;response&quot;: &quot;0302{register}&quot;,
+            &quot;unit&quot;: &quot;C&quot;,
+            &quot;scale&quot;: 0.01,
+            &quot;signed&quot;: true,
+            &quot;range&quot;: [
+              -327.68,
+              327.67
+            ],
+            &quot;timeout_ms&quot;: 250,
+            &quot;retry&quot;: 1,
+            &quot;side_effect&quot;: &quot;read&quot;
+          },
+          &quot;attempts&quot;: 1,
+          &quot;elapsed_ms&quot;: 250
+        }
+      ],
+      &quot;schema_version&quot;: 1,
+      &quot;oracle_version&quot;: &quot;1.0.0&quot;,
+      &quot;complete&quot;: true,
+      &quot;exit_code&quot;: 1
+    }
+  },
+  &quot;ambiguities&quot;: [
+    {
+      &quot;operation&quot;: &quot;read_temperature&quot;,
+      &quot;field&quot;: &quot;scale&quot;,
+      &quot;reason&quot;: &quot;missing or unresolved critical field&quot;,
+      &quot;sources&quot;: [
+        {
+          &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+          &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+        }
+      ],
+      &quot;outcome&quot;: &quot;inconclusive&quot;
+    }
+  ],
+  &quot;protocol_specs&quot;: {
+    &quot;thermoblock&quot;: {
+      &quot;schema_version&quot;: 1,
+      &quot;protocol_version&quot;: &quot;1.0&quot;,
+      &quot;profile&quot;: &quot;thermoblock&quot;,
+      &quot;operations&quot;: {
+        &quot;identify&quot;: {
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/thermoblock.md#identify&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;*IDN?\\\\n\&quot;; response=\&quot;identity\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+          },
+          &quot;fields&quot;: {
+            &quot;request&quot;: {
+              &quot;value&quot;: &quot;*IDN?\\n&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#identify&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;*IDN?\\\\n\&quot;; response=\&quot;identity\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;response&quot;: {
+              &quot;value&quot;: &quot;identity&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#identify&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;*IDN?\\\\n\&quot;; response=\&quot;identity\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;unit&quot;: {
+              &quot;value&quot;: &quot;none&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#identify&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;*IDN?\\\\n\&quot;; response=\&quot;identity\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;scale&quot;: {
+              &quot;value&quot;: 1,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#identify&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;*IDN?\\\\n\&quot;; response=\&quot;identity\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;signed&quot;: {
+              &quot;value&quot;: &quot;not_applicable&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#identify&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;*IDN?\\\\n\&quot;; response=\&quot;identity\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;range&quot;: {
+              &quot;value&quot;: null,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#identify&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;*IDN?\\\\n\&quot;; response=\&quot;identity\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;timeout_ms&quot;: {
+              &quot;value&quot;: 250,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#identify&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;*IDN?\\\\n\&quot;; response=\&quot;identity\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;retry&quot;: {
+              &quot;value&quot;: 1,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#identify&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;*IDN?\\\\n\&quot;; response=\&quot;identity\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;side_effect&quot;: {
+              &quot;value&quot;: &quot;read&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#identify&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;*IDN?\\\\n\&quot;; response=\&quot;identity\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;read_temperature&quot;: {
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+          },
+          &quot;fields&quot;: {
+            &quot;request&quot;: {
+              &quot;value&quot;: &quot;MEAS:TEMP?\\n&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;response&quot;: {
+              &quot;value&quot;: &quot;ascii_decimal&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;unit&quot;: {
+              &quot;value&quot;: &quot;C&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;scale&quot;: {
+              &quot;value&quot;: 1,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;signed&quot;: {
+              &quot;value&quot;: true,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;range&quot;: {
+              &quot;value&quot;: null,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;timeout_ms&quot;: {
+              &quot;value&quot;: 250,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;retry&quot;: {
+              &quot;value&quot;: 1,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;side_effect&quot;: {
+              &quot;value&quot;: &quot;read&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;MEAS:TEMP?\\\\n\&quot;; response=\&quot;ascii_decimal\&quot;; unit=\&quot;C\&quot;; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;set_voltage&quot;: {
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/thermoblock.md#set-voltage&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;SOUR:VOLT {volts:.3f}\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+          },
+          &quot;fields&quot;: {
+            &quot;request&quot;: {
+              &quot;value&quot;: &quot;SOUR:VOLT {volts:.3f}\\n&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;SOUR:VOLT {volts:.3f}\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;response&quot;: {
+              &quot;value&quot;: &quot;OK&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;SOUR:VOLT {volts:.3f}\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;unit&quot;: {
+              &quot;value&quot;: &quot;V&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;SOUR:VOLT {volts:.3f}\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;scale&quot;: {
+              &quot;value&quot;: 0.001,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;SOUR:VOLT {volts:.3f}\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;signed&quot;: {
+              &quot;value&quot;: false,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;SOUR:VOLT {volts:.3f}\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;range&quot;: {
+              &quot;value&quot;: [
+                0,
+                5
+              ],
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;SOUR:VOLT {volts:.3f}\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;timeout_ms&quot;: {
+              &quot;value&quot;: 250,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;SOUR:VOLT {volts:.3f}\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;retry&quot;: {
+              &quot;value&quot;: 0,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;SOUR:VOLT {volts:.3f}\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;side_effect&quot;: {
+              &quot;value&quot;: &quot;write&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;SOUR:VOLT {volts:.3f}\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;disable_output&quot;: {
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/thermoblock.md#disable-output&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;OUTP OFF\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+          },
+          &quot;fields&quot;: {
+            &quot;request&quot;: {
+              &quot;value&quot;: &quot;OUTP OFF\\n&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#disable-output&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;OUTP OFF\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;response&quot;: {
+              &quot;value&quot;: &quot;OK&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#disable-output&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;OUTP OFF\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;unit&quot;: {
+              &quot;value&quot;: &quot;none&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#disable-output&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;OUTP OFF\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;scale&quot;: {
+              &quot;value&quot;: 1,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#disable-output&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;OUTP OFF\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;signed&quot;: {
+              &quot;value&quot;: &quot;not_applicable&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#disable-output&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;OUTP OFF\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;range&quot;: {
+              &quot;value&quot;: null,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#disable-output&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;OUTP OFF\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;timeout_ms&quot;: {
+              &quot;value&quot;: 250,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#disable-output&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;OUTP OFF\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;retry&quot;: {
+              &quot;value&quot;: 0,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#disable-output&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;OUTP OFF\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;side_effect&quot;: {
+              &quot;value&quot;: &quot;write&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/thermoblock.md#disable-output&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;OUTP OFF\\\\n\&quot;; response=\&quot;OK\&quot;; unit=\&quot;none\&quot;; scale=1; signed=\&quot;not_applicable\&quot;; range=null; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    &quot;pressurebrick&quot;: {
+      &quot;schema_version&quot;: 1,
+      &quot;protocol_version&quot;: &quot;1.0&quot;,
+      &quot;profile&quot;: &quot;pressurebrick&quot;,
+      &quot;operations&quot;: {
+        &quot;read_temperature&quot;: {
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+          },
+          &quot;fields&quot;: {
+            &quot;request&quot;: {
+              &quot;value&quot;: &quot;0300000001&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;response&quot;: {
+              &quot;value&quot;: &quot;0302{register}&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;unit&quot;: {
+              &quot;value&quot;: &quot;C&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;scale&quot;: {
+              &quot;value&quot;: 0.01,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;signed&quot;: {
+              &quot;value&quot;: true,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;range&quot;: {
+              &quot;value&quot;: [
+                -327.68,
+                327.67
+              ],
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;timeout_ms&quot;: {
+              &quot;value&quot;: 250,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;retry&quot;: {
+              &quot;value&quot;: 1,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;side_effect&quot;: {
+              &quot;value&quot;: &quot;read&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-temperature&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300000001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;C\&quot;; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;read_pressure&quot;: {
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-pressure&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;0300010001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;kPa\&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+          },
+          &quot;fields&quot;: {
+            &quot;request&quot;: {
+              &quot;value&quot;: &quot;0300010001&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-pressure&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300010001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;kPa\&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;response&quot;: {
+              &quot;value&quot;: &quot;0302{register}&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-pressure&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300010001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;kPa\&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;unit&quot;: {
+              &quot;value&quot;: &quot;kPa&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-pressure&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300010001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;kPa\&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;scale&quot;: {
+              &quot;value&quot;: 0.1,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-pressure&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300010001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;kPa\&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;signed&quot;: {
+              &quot;value&quot;: false,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-pressure&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300010001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;kPa\&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;range&quot;: {
+              &quot;value&quot;: [
+                0,
+                6553.5
+              ],
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-pressure&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300010001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;kPa\&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;timeout_ms&quot;: {
+              &quot;value&quot;: 250,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-pressure&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300010001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;kPa\&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;retry&quot;: {
+              &quot;value&quot;: 1,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-pressure&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300010001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;kPa\&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            },
+            &quot;side_effect&quot;: {
+              &quot;value&quot;: &quot;read&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#read-pressure&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;0300010001\&quot;; response=\&quot;0302{register}\&quot;; unit=\&quot;kPa\&quot;; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\&quot;read\&quot;&quot;
+                }
+              ]
+            }
+          }
+        },
+        &quot;set_voltage&quot;: {
+          &quot;source&quot;: {
+            &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+            &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+          },
+          &quot;fields&quot;: {
+            &quot;request&quot;: {
+              &quot;value&quot;: &quot;060010{register}&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;response&quot;: {
+              &quot;value&quot;: &quot;echo&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;unit&quot;: {
+              &quot;value&quot;: &quot;V&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;scale&quot;: {
+              &quot;value&quot;: 0.001,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;signed&quot;: {
+              &quot;value&quot;: false,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;range&quot;: {
+              &quot;value&quot;: [
+                0,
+                5
+              ],
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;timeout_ms&quot;: {
+              &quot;value&quot;: 250,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;retry&quot;: {
+              &quot;value&quot;: 0,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            },
+            &quot;side_effect&quot;: {
+              &quot;value&quot;: &quot;write&quot;,
+              &quot;sources&quot;: [
+                {
+                  &quot;anchor&quot;: &quot;manuals/pressurebrick.md#set-voltage&quot;,
+                  &quot;passage&quot;: &quot;request=\&quot;060010{register}\&quot;; response=\&quot;echo\&quot;; unit=\&quot;V\&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\&quot;write\&quot;&quot;
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;live_generation&quot;: &quot;not run; no authorized model budget&quot;,
+  &quot;isolation&quot;: &quot;disabled&quot;
+}
+</pre></html>

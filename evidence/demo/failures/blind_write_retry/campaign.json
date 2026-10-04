@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "profile": "pressurebrick",
+  "cases": [
+    {
+      "id": "write-timeout",
+      "profile": "pressurebrick",
+      "operation": "set_voltage",
+      "request_hex": "06001004e2",
+      "response_hex": null,
+      "expected": null,
+      "error": "UnknownWriteOutcome",
+      "requirement": "DF-05",
+      "args": [
+        1.25
+      ],
+      "attempts": 1
+    }
+  ]
+}

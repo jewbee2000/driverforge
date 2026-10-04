@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "profile": "pressurebrick",
+  "cases": [
+    {
+      "id": "late-after-timeout",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "03020064",
+      "expected": 1.0,
+      "error": null,
+      "requirement": "DF-06",
+      "faults": [
+        {
+          "kind": "late",
+          "onset": 1,
+          "data_hex": "0302fb2e",
+          "delay_ms": 251
+        }
+      ],
+      "attempts": 2,
+      "elapsed_ms": 250
+    }
+  ]
+}

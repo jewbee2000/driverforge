@@ -1,0 +1,27 @@
+{
+  "ambiguities": [],
+  "unsupported_capabilities": [
+    {
+      "capability": "async_cancellation",
+      "state": "not_applicable",
+      "reason": "outside declared synchronous upstream contract"
+    },
+    {
+      "capability": "upstream_framing_validation",
+      "state": "not_applicable",
+      "reason": "outside declared synchronous upstream contract"
+    },
+    {
+      "capability": "read_retry",
+      "state": "not_applicable",
+      "reason": "outside declared synchronous upstream contract"
+    }
+  ],
+  "upstream": {
+    "package": "pymeasure",
+    "version": "0.16.0",
+    "commit": "597e0c6760288f6fe1c5a677e9d53a2b7a033566",
+    "source_sha256": "7e578cc7438c05c4186786b07fab42fba8a4faaf6c2092a00192bf7b1e980764",
+    "modified": false
+  }
+}

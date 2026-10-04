@@ -9,72 +9,72 @@
   "runs": [
     {
       "workload": "baseline",
-      "elapsed_seconds": 0.6440746000007493,
-      "peak_working_set_bytes": 80347136,
+      "elapsed_seconds": 0.9245525000005728,
+      "peak_working_set_bytes": 80252928,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 1
     },
     {
       "workload": "baseline",
-      "elapsed_seconds": 0.626028699996823,
-      "peak_working_set_bytes": 80003072,
+      "elapsed_seconds": 0.8872784999985015,
+      "peak_working_set_bytes": 79896576,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 2
     },
     {
       "workload": "baseline",
-      "elapsed_seconds": 0.6036475999935647,
-      "peak_working_set_bytes": 80105472,
+      "elapsed_seconds": 0.9137523000026704,
+      "peak_working_set_bytes": 79806464,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 3
     },
     {
       "workload": "core",
-      "elapsed_seconds": 0.8044886000061524,
-      "peak_working_set_bytes": 34287616,
+      "elapsed_seconds": 1.269824700000754,
+      "peak_working_set_bytes": 34762752,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 1
     },
     {
       "workload": "core",
-      "elapsed_seconds": 0.743239800001902,
-      "peak_working_set_bytes": 33931264,
+      "elapsed_seconds": 1.3136427999997977,
+      "peak_working_set_bytes": 34680832,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 2
     },
     {
       "workload": "core",
-      "elapsed_seconds": 0.747088200005237,
-      "peak_working_set_bytes": 34160640,
+      "elapsed_seconds": 1.493381699998281,
+      "peak_working_set_bytes": 34762752,
       "exit_code": 0,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 3
     },
     {
       "workload": "upstream",
-      "elapsed_seconds": 0.7450421000030474,
-      "peak_working_set_bytes": 83447808,
+      "elapsed_seconds": 1.1048909000019194,
+      "peak_working_set_bytes": 83439616,
       "exit_code": 1,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 1
     },
     {
       "workload": "upstream",
-      "elapsed_seconds": 0.924969500003499,
-      "peak_working_set_bytes": 83353600,
+      "elapsed_seconds": 1.0698991999961436,
+      "peak_working_set_bytes": 83275776,
       "exit_code": 1,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 2
     },
     {
       "workload": "upstream",
-      "elapsed_seconds": 0.7742478000000119,
-      "peak_working_set_bytes": 83582976,
+      "elapsed_seconds": 1.0810754999984056,
+      "peak_working_set_bytes": 83881984,
       "exit_code": 1,
       "measurement": "fresh trusted worker; excludes parent supervisor",
       "trial": 3

@@ -1,0 +1,17 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width'><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'unsafe-inline'"><title>DriverForge conformance</title><style>body{font:16px system-ui;background:#f5f6f9;color:#17223a;max-width:1000px;margin:32px auto;padding:0 16px}article{background:white;padding:16px;margin:16px 0;border-left:6px solid #14775e;border-radius:8px}.fail{border-color:#bf3645}.inconclusive{border-color:#ad750e}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f7;padding:12px}h1{font-size:32px}h2{font-size:20px}blockquote{margin:0;padding:12px;background:#eef1f7}</style><h1>DriverForge conformance</h1><p>REPLAY · synthetic traffic · no hardware or live model evaluation</p><p>Exit 1 · Complete True · 1 cases</p><article class='fail'><h2>voltage · fail</h2><p>set_voltage · DF-03</p><p><b>Expected:</b> None <b>Observed:</b> ParseError</p><p>expected None; observed &#x27;ParseError&#x27;</p><details><summary>Source → interpretation → wire</summary><p>manuals/pressurebrick.md#set-voltage</p><blockquote>request=&quot;060010{register}&quot;; response=&quot;echo&quot;; unit=&quot;V&quot;; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=&quot;write&quot;</blockquote><pre>{
+  &quot;request&quot;: &quot;060010{register}&quot;,
+  &quot;response&quot;: &quot;echo&quot;,
+  &quot;unit&quot;: &quot;V&quot;,
+  &quot;scale&quot;: 0.001,
+  &quot;signed&quot;: false,
+  &quot;range&quot;: [
+    0,
+    5
+  ],
+  &quot;timeout_ms&quot;: 250,
+  &quot;retry&quot;: 0,
+  &quot;side_effect&quot;: &quot;write&quot;
+}
+</pre><pre>  0 ms send         0600100001
+  0 ms close        </pre></details></article><h2>Run context and preserved attempts</h2><pre>{}
+</pre></html>

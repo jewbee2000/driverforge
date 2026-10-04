@@ -1,0 +1,58 @@
+{
+  "cases": [
+    {
+      "id": "signed",
+      "operation": "read_temperature",
+      "requirement": "DF-03",
+      "state": "fail",
+      "expected": -12.34,
+      "observed": 643.02,
+      "detail": "expected -12.34; observed 643.02",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "read_temperature",
+          "data_hex": "0300000001",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "receive",
+          "operation": "read_temperature",
+          "data_hex": "0302fb2e",
+          "at_ms": 0
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 0
+        }
+      ],
+      "source": {
+        "anchor": "manuals/pressurebrick.md#read-temperature",
+        "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+      },
+      "interpreted_fields": {
+        "request": "0300000001",
+        "response": "0302{register}",
+        "unit": "C",
+        "scale": 0.01,
+        "signed": true,
+        "range": [
+          -327.68,
+          327.67
+        ],
+        "timeout_ms": 250,
+        "retry": 1,
+        "side_effect": "read"
+      },
+      "attempts": 1,
+      "elapsed_ms": 0
+    }
+  ],
+  "schema_version": 1,
+  "oracle_version": "1.0.0",
+  "complete": true,
+  "exit_code": 1
+}

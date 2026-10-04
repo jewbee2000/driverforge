@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "profile": "pressurebrick",
+  "cases": [
+    {
+      "id": "signed",
+      "profile": "pressurebrick",
+      "operation": "read_temperature",
+      "request_hex": "0300000001",
+      "response_hex": "0302fb2e",
+      "expected": -12.34,
+      "error": null,
+      "requirement": "DF-03"
+    }
+  ]
+}

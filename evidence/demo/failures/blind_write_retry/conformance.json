@@ -1,0 +1,71 @@
+{
+  "cases": [
+    {
+      "id": "write-timeout",
+      "operation": "set_voltage",
+      "requirement": "DF-05",
+      "state": "fail",
+      "expected": "UnknownWriteOutcome",
+      "observed": "UnknownWriteOutcome",
+      "detail": "expected 1 transmissions; observed 2",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "set_voltage",
+          "data_hex": "06001004e2",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "timeout",
+          "operation": "set_voltage",
+          "data_hex": "",
+          "at_ms": 250
+        },
+        {
+          "event": "send",
+          "operation": "set_voltage",
+          "data_hex": "06001004e2",
+          "at_ms": 250,
+          "attempt": 2
+        },
+        {
+          "event": "timeout",
+          "operation": "set_voltage",
+          "data_hex": "",
+          "at_ms": 500
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 500
+        }
+      ],
+      "source": {
+        "anchor": "manuals/pressurebrick.md#set-voltage",
+        "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+      },
+      "interpreted_fields": {
+        "request": "060010{register}",
+        "response": "echo",
+        "unit": "V",
+        "scale": 0.001,
+        "signed": false,
+        "range": [
+          0,
+          5
+        ],
+        "timeout_ms": 250,
+        "retry": 0,
+        "side_effect": "write"
+      },
+      "attempts": 2,
+      "elapsed_ms": 500
+    }
+  ],
+  "schema_version": 1,
+  "oracle_version": "1.0.0",
+  "complete": true,
+  "exit_code": 1
+}

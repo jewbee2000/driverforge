@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "mode": "REPLAY",
+  "timestamp_utc": "2026-10-04T19:22:02.333558+00:00",
+  "command": [
+    "python",
+    "-m",
+    "driverforge",
+    "demo",
+    "--offline",
+    "--output",
+    "artifacts/demo"
+  ],
+  "exit_code": 0,
+  "source": {
+    "commit": "f42a0589ff65cdb2969089e02780ad2bdcbfce59",
+    "dirty": false,
+    "dirty_diff_sha256": null,
+    "git_available": true
+  },
+  "candidate_sha256": "1f1a5ddc46edf630991fa95b4ce64773b5400a626422ea7caa86dd6d576d1504",
+  "input_sha256": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+  "campaign_sha256": "311c2a99e861429fc21cdfd68224a8433144172c4e47e7b738706b6f90b5b11c",
+  "oracle_version": "1.0.0",
+  "oracle_sha256": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+  "environment_lock_sha256": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+  "evaluator_sha256": "ec9067a021c8ac1faa06e966f74811e0465cfce57d95540b8c0208796ccc0f9f",
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "package_version": "0.1.0",
+  "source_hashes": {
+    "cases.json": "7878915f8b49ab5e26129093da783e33cd1c23992840936c48d51e767dfd2b67",
+    "thermoblock.md": "ca2c1b7a9a69a9ab9e15532d7906886e56ca5947ee36c64a52c5b9b4d762c6c7",
+    "pressurebrick.md": "032e719299d26f7dd748c8c9c4f3da31f049a22c8d988daec83797bd60f4ba44",
+    "agilent34410a.md": "7ed779b3613201c15a9a92d968a2589bedeb348e914ddd9860f2d05689e53ccd",
+    "requirements.lock": "4e27356dbd25cdef4c13f35c918be3ecd6cf9942e42d1b0546ab590ed54b424f",
+    "thermoblock.json": "640a3875f049f89b46ef69c72fba7e105e2d482574e20eca2a2d152dc713511f",
+    "pressurebrick.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+    "agilent34410a.json": "c3aa6212ed10a0b087a45319841607e75343baf26f661806d74536f878ed47b4",
+    "agilent_cases.json": "4dc146132d4ffd6fa66c44e7ce9a7965d46a100d8ae593ecef9a0dd8349e006d"
+  },
+  "package_hashes": {
+    "__init__.py": "5738e0b95fe08b8fa9e29ffc9da0bf7dc6b13ce88db131c806d4b80a3e120689",
+    "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "campaign.py": "ec9067a021c8ac1faa06e966f74811e0465cfce57d95540b8c0208796ccc0f9f",
+    "cli.py": "85244c6850ab96bf554330aee9b2b09404e5b5b011dec525a19b4deb7b19c2ad",
+    "driver.py": "1f1a5ddc46edf630991fa95b4ce64773b5400a626422ea7caa86dd6d576d1504",
+    "errors.py": "4a00c9b31bb06ba5dbcdf35ef802347aa60257aada9cba0f8e767746d4b1c1c6",
+    "mutations.py": "22ab5f5c8e0c056b490ce31a6ca129fa708f569df1caf36ee02b5ec017a2e317",
+    "pymeasure_adapter.py": "839a3970c7dc9e2978449f0362bc168b7e280e0deadfc0574efcea967a2814bc",
+    "pytest_plugin.py": "9a3a5094cf20013724004223b8a11e67e121092b5b0beb8f4c9e8ca314e00fd1",
+    "report.py": "7bf04b7d1f3b2e5f69b4a91de2c71287545e80f9c147d1bccf6ab797082cc6cc",
+    "spec.py": "378394492b4315f445c47c6032c63bec64f6fbaf117ea9c3a00978ebb073ef45",
+    "transport.py": "2719361b9afcc0be5f43746e3c8b99a72e6dbe049ee911c0c5ad1ce8ee239b0b",
+    "schemas/campaign-v1.json": "345c9cbabcef52170efead56bb81faed389089c68a1bab630690117d26287e3f",
+    "schemas/result-v1.json": "8ac9c41a11c978346afddf702bb08898630190cc887bca5b04e16072050f0d11",
+    "schemas/spec-v1.json": "bdf1a4328111f96ccccd73f8b7fd867cc9d0eed5f9e93b9e88e07fbcb42e6c0a"
+  },
+  "package_sha256": "90e2d0c072bd6c219d79b0045b952bb78c5e2745f3b4065d57bb0b330a987ab8",
+  "artifact_sha256": {
+    "spec.json": "abc2e6caf082c3884f78486ec036ca4cf757da184d1aaa5876c3674f7c753e7d",
+    "candidate.py": "1f1a5ddc46edf630991fa95b4ce64773b5400a626422ea7caa86dd6d576d1504",
+    "conformance.json": "a7a3ac765989ad75ccf36624e216f92732576bdd1e38d52fb8d580d3287e88e1",
+    "report.html": "f63df36c9e5abc0dcad3b92f9b385b682fba21fe1802b872bcbc5f306fb48f0b",
+    "context.json": "aee97b3ff063efe615d2c54383cac027b3204380c5c0fda169e2b42f88b8276a",
+    "campaign.json": "311c2a99e861429fc21cdfd68224a8433144172c4e47e7b738706b6f90b5b11c"
+  },
+  "untrusted_execution": "disabled: isolation unavailable",
+  "physical_validation": false,
+  "live_model_evaluation": false
+}

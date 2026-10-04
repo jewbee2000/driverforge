@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "protocol_version": "1.0",
+  "profile": "pressurebrick",
+  "operations": {
+    "read_temperature": {
+      "source": {
+        "anchor": "manuals/pressurebrick.md#read-temperature",
+        "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+      },
+      "fields": {
+        "request": {
+          "value": "0300000001",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-temperature",
+              "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "response": {
+          "value": "0302{register}",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-temperature",
+              "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "unit": {
+          "value": "C",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-temperature",
+              "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "scale": {
+          "value": 0.01,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-temperature",
+              "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "signed": {
+          "value": true,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-temperature",
+              "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "range": {
+          "value": [
+            -327.68,
+            327.67
+          ],
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-temperature",
+              "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "timeout_ms": {
+          "value": 250,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-temperature",
+              "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "retry": {
+          "value": 1,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-temperature",
+              "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "side_effect": {
+          "value": "read",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-temperature",
+              "passage": "request=\"0300000001\"; response=\"0302{register}\"; unit=\"C\"; scale=0.01; signed=true; range=[-327.68, 327.67]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        }
+      }
+    },
+    "read_pressure": {
+      "source": {
+        "anchor": "manuals/pressurebrick.md#read-pressure",
+        "passage": "request=\"0300010001\"; response=\"0302{register}\"; unit=\"kPa\"; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\"read\""
+      },
+      "fields": {
+        "request": {
+          "value": "0300010001",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-pressure",
+              "passage": "request=\"0300010001\"; response=\"0302{register}\"; unit=\"kPa\"; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "response": {
+          "value": "0302{register}",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-pressure",
+              "passage": "request=\"0300010001\"; response=\"0302{register}\"; unit=\"kPa\"; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "unit": {
+          "value": "kPa",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-pressure",
+              "passage": "request=\"0300010001\"; response=\"0302{register}\"; unit=\"kPa\"; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "scale": {
+          "value": 0.1,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-pressure",
+              "passage": "request=\"0300010001\"; response=\"0302{register}\"; unit=\"kPa\"; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "signed": {
+          "value": false,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-pressure",
+              "passage": "request=\"0300010001\"; response=\"0302{register}\"; unit=\"kPa\"; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "range": {
+          "value": [
+            0,
+            6553.5
+          ],
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-pressure",
+              "passage": "request=\"0300010001\"; response=\"0302{register}\"; unit=\"kPa\"; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "timeout_ms": {
+          "value": 250,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-pressure",
+              "passage": "request=\"0300010001\"; response=\"0302{register}\"; unit=\"kPa\"; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "retry": {
+          "value": 1,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-pressure",
+              "passage": "request=\"0300010001\"; response=\"0302{register}\"; unit=\"kPa\"; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        },
+        "side_effect": {
+          "value": "read",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#read-pressure",
+              "passage": "request=\"0300010001\"; response=\"0302{register}\"; unit=\"kPa\"; scale=0.1; signed=false; range=[0, 6553.5]; timeout_ms=250; retry=1; side_effect=\"read\""
+            }
+          ]
+        }
+      }
+    },
+    "set_voltage": {
+      "source": {
+        "anchor": "manuals/pressurebrick.md#set-voltage",
+        "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+      },
+      "fields": {
+        "request": {
+          "value": "060010{register}",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#set-voltage",
+              "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "response": {
+          "value": "echo",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#set-voltage",
+              "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "unit": {
+          "value": "V",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#set-voltage",
+              "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "scale": {
+          "value": 0.001,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#set-voltage",
+              "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "signed": {
+          "value": false,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#set-voltage",
+              "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "range": {
+          "value": [
+            0,
+            5
+          ],
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#set-voltage",
+              "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "timeout_ms": {
+          "value": 250,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#set-voltage",
+              "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "retry": {
+          "value": 0,
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#set-voltage",
+              "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        },
+        "side_effect": {
+          "value": "write",
+          "sources": [
+            {
+              "anchor": "manuals/pressurebrick.md#set-voltage",
+              "passage": "request=\"060010{register}\"; response=\"echo\"; unit=\"V\"; scale=0.001; signed=false; range=[0, 5]; timeout_ms=250; retry=0; side_effect=\"write\""
+            }
+          ]
+        }
+      }
+    }
+  }
+}

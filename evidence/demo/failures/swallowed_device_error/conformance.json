@@ -1,0 +1,55 @@
+{
+  "cases": [
+    {
+      "id": "device-error",
+      "operation": "read_temperature",
+      "requirement": "DF-04",
+      "state": "fail",
+      "expected": "DeviceError",
+      "observed": 0.0,
+      "detail": "expected 'DeviceError'; observed 0.0",
+      "transcript": [
+        {
+          "event": "send",
+          "operation": "read_temperature",
+          "data_hex": "4d4541533a54454d503f0a",
+          "at_ms": 0,
+          "attempt": 1
+        },
+        {
+          "event": "receive",
+          "operation": "read_temperature",
+          "data_hex": "4552522c322c4661756c740a",
+          "at_ms": 0
+        },
+        {
+          "event": "close",
+          "operation": "close",
+          "data_hex": "",
+          "at_ms": 0
+        }
+      ],
+      "source": {
+        "anchor": "manuals/thermoblock.md#read-temperature",
+        "passage": "request=\"MEAS:TEMP?\\\\n\"; response=\"ascii_decimal\"; unit=\"C\"; scale=1; signed=true; range=null; timeout_ms=250; retry=1; side_effect=\"read\""
+      },
+      "interpreted_fields": {
+        "request": "MEAS:TEMP?\\n",
+        "response": "ascii_decimal",
+        "unit": "C",
+        "scale": 1,
+        "signed": true,
+        "range": null,
+        "timeout_ms": 250,
+        "retry": 1,
+        "side_effect": "read"
+      },
+      "attempts": 1,
+      "elapsed_ms": 0
+    }
+  ],
+  "schema_version": 1,
+  "oracle_version": "1.0.0",
+  "complete": true,
+  "exit_code": 1
+}

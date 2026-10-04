@@ -1,5 +1,38 @@
 # Progress
 
+## 2026-10-04 M4 complete — final executed gate
+
+Second clean local clone at f42a058 installed from the pinned lock, followed README,
+and passed lint/format/types/pip check, the entire 94-test suite (no exclusions),
+offline demo (39 cases, six rejected defects) and unchanged report diff. Checkout
+remained clean. Actual commands/hashes in evidence/fresh-install.json.
+
+Final wheel SHA256 7828f715d2772537303e110f72bfd70540a57c4edc6db45c28c6b681aa1f97e8
+installed into a new external consumer directory with --no-index. Failure and
+correction repeated; 67.842 s cached setup, 35 Python/14 config lines. Both reports
+and exact commands are under evidence/consumer. Earlier runs remain in artifacts
+and their separate consumer directories; no failed example was discarded.
+
+Final source demo and unchanged public-driver campaign were copied to evidence/demo
+and evidence/agilent. Eight manifests/48 output hashes were independently recomputed
+and matched; demo source commit f42a058 was clean. Demo exit 0; upstream check exit 1
+with malformed/device-error contract failures retained. Package/schema fingerprint
+is included in addition to candidate/oracle/manual/lock hashes.
+
+Repeated performance after final provenance changes: all nine fresh Windows worker
+runs meet the frozen 10 s / 256 MiB targets; see actual per-run figures rather than
+earlier ranges. Final requirement-specific and aggregate checks are in
+evidence/requirements-evidence.json and checks/. DF-10 stays not applicable and
+DF-18 deferred. DF-17 diff is implemented. Known limitations remain explicit in
+docs/LIMITATIONS.md; no physical, live-model or practitioner validation was claimed.
+
+Unpublished article and screenshot were committed locally in the separate website
+checkout at a395ad6. Blog verification recorded in evidence/blog-verification.json.
+Publication still needs a real hosted URL, owner editorial approval and publication
+date; no push/deploy/publish occurred. All authorized deterministic work is complete.
+Future work is optional practitioner/hardware validation or separately authorized
+model/isolation experiments, not a missing core release requirement.
+
 ## 2026-10-04 M4 release preparation
 
 Completed requirement-specific checks for all 22 IDs: all applicable Must passed;
