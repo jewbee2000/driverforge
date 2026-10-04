@@ -1,0 +1,28 @@
+{
+  "failure_command": [
+    "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "tests/acceptance/test_data_and_license_boundaries.py",
+    "-q",
+    "--basetemp=C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\artifacts\\ci\\cold-results\\pytest-tmp",
+    "--junitxml=evidence/ci/cold-path-failed.xml"
+  ],
+  "failure_exit_code": 1,
+  "prepare_command": [
+    "pwsh",
+    "-NoProfile",
+    "-Command",
+    "New-Item -ItemType Directory -Force 'C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\artifacts\\ci\\cold-results'"
+  ],
+  "corrected_command": [
+    "C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "--basetemp=C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\artifacts\\ci\\cold-results\\pytest-tmp",
+    "--junitxml=C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\artifacts\\ci\\cold-results\\junit.xml"
+  ],
+  "corrected_exit_code": 0,
+  "expectations_changed": false
+}

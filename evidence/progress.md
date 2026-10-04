@@ -1,5 +1,22 @@
 # Progress
 
+## 2026-10-04 CI cold-directory repair
+
+PR #1 started hosted run 37231139309 on the unchanged application. Installation,
+lint/format/types and offline demo passed, but pytest had 84 passes / 10 setup errors
+because artifacts did not exist before pytest created artifacts/pytest-tmp. The
+first local check had already made artifacts for its helper, hiding this precondition.
+The workflow correctly failed and uploaded reports; the wheel step was skipped.
+Preserved the failing hosted JUnit plus run/ZIP hashes in evidence/ci. The complete
+job log and downloaded ZIP remain ignored local artifacts.
+
+Added an explicit PowerShell New-Item step to create the result directory before
+pytest. Reproduced the missing-parent FileNotFoundError locally against a fresh
+result path, retained that failure, then ran the full suite after directory creation:
+94 passed with the same single upstream warning. Commands/logs are in
+cold-path-checks.json and associated files. No test was skipped or expectation
+changed. The corrected hosted execution remains pending at this commit.
+
 ## 2026-10-04 CI branch completion — local gate
 
 Resumed Walter's C:/Users/Walt/Documents/Codex/driverforge-next checkout on codex/ci.

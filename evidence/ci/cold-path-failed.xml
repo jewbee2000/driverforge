@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="2" time="0.106" timestamp="2026-10-04T13:15:47.031801-07:00" hostname="Waltstation"><testcase classname="tests.acceptance.test_data_and_license_boundaries" name="test_html_escapes_source_and_observation_and_paths" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\artifacts\\ci\\cold-results\\pytest-tmp'&quot;">self = WindowsPath('C:/Users/Walt/Documents/Codex/driverforge-next/artifacts/ci/cold-results/pytest-tmp')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\Walt\\Documents\\Codex\\driverforge-next\\artifacts\\ci\\cold-results\\pytest-tmp'
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.acceptance.test_data_and_license_boundaries" name="test_source_instruction_is_inert_data" time="0.006" /></testsuite></testsuites>

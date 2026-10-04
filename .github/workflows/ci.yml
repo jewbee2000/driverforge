@@ -52,6 +52,9 @@ jobs:
       - name: Check types
         run: .venv\Scripts\python.exe -m mypy
 
+      - name: Prepare result directory
+        run: New-Item -ItemType Directory -Force artifacts
+
       - name: Run tests
         run: .venv\Scripts\python.exe -m pytest -q --junitxml=artifacts/junit.xml --basetemp=artifacts/pytest-tmp
 

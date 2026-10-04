@@ -1,0 +1,19 @@
+{
+  "id": 37231139309,
+  "html_url": "https://github.com/jewbee2000/driverforge/actions/runs/37231139309",
+  "head_sha": "a633c248dc7ce7375316e4ab496c266f2e098136",
+  "event": "pull_request",
+  "status": "completed",
+  "conclusion": "failure",
+  "created_at": "2026-10-04T20:11:21Z",
+  "updated_at": "2026-10-04T20:13:28Z",
+  "tests_passed": 84,
+  "test_setup_errors": 10,
+  "assertion_failures": 0,
+  "cause": "Missing artifacts parent before pytest creates --basetemp",
+  "artifact_id": 11313587848,
+  "artifact_sha256": "4d1fc85ed915d8394b7e8f2fc90c1270d09ecb22778c25d60e89b446085e07c6",
+  "preserved_junit": "evidence/ci/failed-hosted-junit.xml",
+  "junit_sha256": "b28eee879cce4ec389574c9b3804d7836dffae8edba3e0c2a18f2facf2e63878",
+  "expectations_changed": false
+}
