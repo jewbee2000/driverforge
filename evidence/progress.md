@@ -1,5 +1,24 @@
 # Progress
 
+## 2026-10-04 CI merged and main trigger verified
+
+Final PR head 5cddcb256bfad82a348aae465dc22fd90f6042b7 passed hosted run 37231792241.
+Merged PR #1 with an expected-head guard at merge commit
+9ab85e47f5040adf269a1e7a06ab2860ac62de09. Both driverforge-next and the original
+project checkout were fast-forwarded to main without resetting local files.
+
+The merge triggered a push run on main:
+https://github.com/jewbee2000/driverforge/actions/runs/37231982048. All steps passed.
+Downloaded artifact 11314696349 and verified its API digest, 94-test JUnit with
+zero failures/errors/skips, 42 CLI demo output hashes, six rejected defects and
+wheel contents. The demo source commit matches the actual merge commit and its
+unchanged package fingerprint is
+90e2d0c072bd6c219d79b0045b952bb78c5e2745f3b4065d57bb0b330a987ab8.
+Permanent main-run metadata and normalized JUnit are in evidence/ci/main-run.json
+and main-junit.xml. This final evidence update changes no workflow or application
+behavior. Step 1 is complete; later practitioner/hardware work remains pending.
+No website/blog files were changed or pushed during this CI task.
+
 ## 2026-10-04 hosted CI verified — step 1 complete
 
 Corrected PR run https://github.com/jewbee2000/driverforge/actions/runs/37231475370

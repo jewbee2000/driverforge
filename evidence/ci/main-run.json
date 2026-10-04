@@ -1,0 +1,113 @@
+{
+  "run_id": 37231982048,
+  "run_url": "https://github.com/jewbee2000/driverforge/actions/runs/37231982048",
+  "event": "push",
+  "head_sha": "9ab85e47f5040adf269a1e7a06ab2860ac62de09",
+  "conclusion": "success",
+  "job_id": 111523481687,
+  "runner_os": [
+    "windows-latest"
+  ],
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "conclusion": "success"
+    },
+    {
+      "name": "Create virtual environment",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install pinned dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install project",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Lint",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check formatting",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check types",
+      "conclusion": "success"
+    },
+    {
+      "name": "Prepare result directory",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run tests",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run offline demonstration",
+      "conclusion": "success"
+    },
+    {
+      "name": "Build wheel",
+      "conclusion": "success"
+    },
+    {
+      "name": "Preserve results",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "artifact_id": 11314696349,
+  "artifact_digest": "sha256:20173287cbb4d8e7f3270b64244d1de8553332e69b4ef5394c6e304cd3531350",
+  "artifact_bytes": 406633,
+  "tests": 94,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "artifact_hashes_verified": 42,
+  "rejected_defects": [
+    "blind_write_retry",
+    "stale_response_reuse",
+    "swallowed_device_error",
+    "swapped_bytes",
+    "unsigned_decode",
+    "voltage_factor_1000"
+  ],
+  "wheel_sha256": "b6eb395de2f13af5a459d3047d10857be1e3fd0ff249f189ddc6f5debaf6821c",
+  "workflow_sha256": "6593ba62fc28f47a4767dd167af4413c4b8626e67d4aaa9bfcfb2498e6636172",
+  "raw_junit_sha256": "fd70c4c4138de101f9d19b7ec8e4d894d1950ea99bcc783efdc8435502032086",
+  "junit_sha256": "fd70c4c4138de101f9d19b7ec8e4d894d1950ea99bcc783efdc8435502032086",
+  "junit_normalization": "UTF-8 / LF",
+  "demo_source": {
+    "commit": "9ab85e47f5040adf269a1e7a06ab2860ac62de09",
+    "dirty": false,
+    "dirty_diff_sha256": null,
+    "git_available": true
+  },
+  "package_sha256": "90e2d0c072bd6c219d79b0045b952bb78c5e2745f3b4065d57bb0b330a987ab8"
+}
