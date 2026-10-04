@@ -1,0 +1,58 @@
+{
+  "pymeasure": "0.16.0",
+  "pyvisa_sim": "0.7.1",
+  "results": [
+    {
+      "tool": "expected_protocol",
+      "operation": "voltage_dc",
+      "request": "MEAS:VOLT:DC? DEF,DEF",
+      "response": "1.250",
+      "actual": 1.25,
+      "terminators": "excluded"
+    },
+    {
+      "tool": "expected_protocol",
+      "operation": "current_dc",
+      "request": "MEAS:CURR:DC? DEF,DEF",
+      "response": "0.012",
+      "actual": 0.012,
+      "terminators": "excluded"
+    },
+    {
+      "tool": "expected_protocol",
+      "operation": "resistance",
+      "request": "MEAS:RES? DEF,DEF",
+      "response": "1000",
+      "actual": 1000.0,
+      "terminators": "excluded"
+    },
+    {
+      "tool": "pyvisa-sim",
+      "operation": "voltage_dc",
+      "request": "MEAS:VOLT:DC? DEF,DEF\n",
+      "response": "1.250\n",
+      "actual": 1.25
+    },
+    {
+      "tool": "pyvisa-sim",
+      "operation": "current_dc",
+      "request": "MEAS:CURR:DC? DEF,DEF\n",
+      "response": "0.012\n",
+      "actual": 0.012
+    },
+    {
+      "tool": "pyvisa-sim",
+      "operation": "resistance",
+      "request": "MEAS:RES? DEF,DEF\n",
+      "response": "1000\n",
+      "actual": 1000.0
+    },
+    {
+      "tool": "expected_protocol",
+      "fault": "malformed",
+      "actual": "garbage",
+      "observation": "upstream returns text; explicit scalar contract rejects it"
+    }
+  ],
+  "elapsed_seconds": 0.03374039999471279
+}

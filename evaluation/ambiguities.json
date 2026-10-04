@@ -1,0 +1,68 @@
+[
+  {
+    "id": "missing-unit",
+    "field": "unit",
+    "action": "missing",
+    "expected": "inconclusive"
+  },
+  {
+    "id": "missing-scale",
+    "field": "scale",
+    "action": "missing",
+    "expected": "inconclusive"
+  },
+  {
+    "id": "missing-signed",
+    "field": "signed",
+    "action": "missing",
+    "expected": "inconclusive"
+  },
+  {
+    "id": "missing-range",
+    "field": "range",
+    "action": "missing",
+    "expected": "inconclusive"
+  },
+  {
+    "id": "missing-retry",
+    "field": "retry",
+    "action": "missing",
+    "expected": "inconclusive"
+  },
+  {
+    "id": "missing-side_effect",
+    "field": "side_effect",
+    "action": "missing",
+    "expected": "inconclusive"
+  },
+  {
+    "id": "missing-timeout_ms",
+    "field": "timeout_ms",
+    "action": "missing",
+    "expected": "inconclusive"
+  },
+  {
+    "id": "missing-request",
+    "field": "request",
+    "action": "missing",
+    "expected": "inconclusive"
+  },
+  {
+    "id": "conflicting-scale",
+    "field": "scale",
+    "action": "contradictory",
+    "expected": "inconclusive"
+  },
+  {
+    "id": "missing-anchor",
+    "field": "unit",
+    "action": "anchor",
+    "expected": "inconclusive"
+  },
+  {
+    "id": "write-retry",
+    "field": "retry",
+    "action": "write_retry",
+    "expected": "inconclusive"
+  }
+]

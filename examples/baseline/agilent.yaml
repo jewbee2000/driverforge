@@ -1,0 +1,17 @@
+spec: "1.0"
+devices:
+  meter:
+    eom:
+      GPIB INSTR:
+        q: "\n"
+        r: "\n"
+    dialogues:
+      - q: "MEAS:VOLT:DC? DEF,DEF"
+        r: "1.250"
+      - q: "MEAS:CURR:DC? DEF,DEF"
+        r: "0.012"
+      - q: "MEAS:RES? DEF,DEF"
+        r: "1000"
+resources:
+  GPIB::1::INSTR:
+    device: meter
