@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "project": "driverforge",
+  "status": "planned",
+  "requirements": [
+    {
+      "id": "DF-01",
+      "requirement": "ProtocolSpec requires units, scaling, signedness, side effects, retry semantics, and source anchors; unresolved critical fields prevent generation.",
+      "acceptance": "Feed missing and contradictory fields; verify a structured ambiguity with cited source anchors.",
+      "planned_test": "tests/acceptance/test_spec_validation.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-02",
+      "requirement": "The two reviewed fictional manuals and specs produce typed drivers with only supported operations.",
+      "acceptance": "Compare generated API and annotations to capability lists; unsupported operation raises the named exception.",
+      "planned_test": "tests/acceptance/test_capabilities.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-03",
+      "requirement": "Signed register and voltage scaling match golden wire vectors exactly.",
+      "acceptance": "Check FB2E \u2192 -12.34 C and 1.250 V \u2192 04E2 against hand-calculated constants.",
+      "planned_test": "tests/acceptance/test_golden_bytes.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-04",
+      "requirement": "Framing and parsing reject truncated, overlong, nonfinite, malformed, and trailing input.",
+      "acceptance": "Inject each malformed response without calling production parsers in the oracle.",
+      "planned_test": "tests/acceptance/test_hostile_frames.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-05",
+      "requirement": "Read retry is bounded; uncertain side-effecting writes are never replayed automatically.",
+      "acceptance": "Fake clock and counted transport prove two maximum read attempts and one write.",
+      "planned_test": "tests/acceptance/test_retry_semantics.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-06",
+      "requirement": "Errors, cancellation, and close preserve operation ordering and typed outcomes.",
+      "acceptance": "Cancel a pending read then attempt another; no stale response can be reused. Close twice.",
+      "planned_test": "tests/acceptance/test_lifecycle.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-07",
+      "requirement": "The oracle rejects six seeded driver defects.",
+      "acceptance": "Unsigned decode, factor-of-1000 voltage, swapped bytes, blind write retry, swallowed device error, stale response reuse each fail at least one assertion.",
+      "planned_test": "tests/acceptance/test_mutation_detection.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-08",
+      "requirement": "At least 20 conformance cases and 10 ambiguity or instruction-injection cases exist.",
+      "acceptance": "A manifest enumerates cases and expected decisions; source text cannot alter evaluator rules or run shell commands.",
+      "planned_test": "tests/acceptance/test_case_inventory.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-09",
+      "requirement": "Offline demo requires neither a model key nor physical I/O and preserves a failed attempt.",
+      "acceptance": "Run with credentials absent and network disabled; inspect manifest and failure report.",
+      "planned_test": "tests/acceptance/test_offline_demo.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-10",
+      "requirement": "Generated code cannot edit evaluation inputs or access credentials/network.",
+      "acceptance": "Isolation tests attempt forbidden writes and egress and hit the timeout limit; report unavailable isolation as blocked.",
+      "planned_test": "tests/acceptance/test_isolation.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-11",
+      "requirement": "Reports trace results to protocol source, candidate hash, oracle version, and commands.",
+      "acceptance": "Verify artifact hashes and recompute expected output from a fresh checkout.",
+      "planned_test": "tests/acceptance/test_provenance.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "DF-12",
+      "requirement": "The public package passes lint, type checks, meaningful tests, and documented installation.",
+      "acceptance": "Fresh environment follows README and repeats the offline demonstration.",
+      "planned_test": "tests/acceptance/test_reproducibility.py",
+      "status": "not_implemented"
+    }
+  ]
+}
