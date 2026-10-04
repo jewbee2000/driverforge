@@ -21,7 +21,7 @@ One transport operation has a 250 ms deadline. An idempotent read may be retried
 
 ProtocolSpec includes protocol/version, command name, request grammar or register/function, response schema, units, signedness, scaling, legal range, timeout, retry policy, side-effect class, and source anchor for every field. Missing behavior must be `unresolved`, not a guessed default.
 
-The generated driver's public API is identify(), read_temperature(), read_pressure() where supported, set_voltage(volts), disable_output(), and close(). Unsupported capabilities are explicit. Return measurements with value, unit, sampled_at, received_at, and quality. Use typed exceptions for parse errors, deadline exceeded, device errors, unsupported operations, and unknown write outcomes.
+The generated driver's public API is identify(), read_temperature(), read_pressure() where supported, set_voltage(volts), disable_output(), and close(). Unsupported capabilities are explicit. Return measurements with value, unit, sampled_at, received_at, and quality. sampled_at is nullable when the wire protocol does not report acquisition time; do not mislabel host receipt time as physical sampling time. Use typed exceptions for parse errors, deadline exceeded, device errors, unsupported operations, and unknown write outcomes.
 
 Proposed package layout: src/driverforge/{spec,transport,driver,generate,report}, emulators/, manuals/, examples/specs/, tests/unit/, tests/conformance/, evaluation/, docs/, evidence/. The emulator and golden vectors derive from the manual, never the generated driver or a shared codec that could duplicate its bug. Common neutral datatypes are acceptable; shared encoding logic is not.
 
