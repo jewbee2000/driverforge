@@ -1,5 +1,28 @@
 # Progress
 
+## 2026-10-04 authorized GitHub publication and proposed follow-ups
+
+Walter's latest request authorizes pushing the project to his GitHub and explicitly
+keeps the article off the blog. This supersedes the original project no-push boundary
+for this action. Authenticated GitHub identity and local Git Credential Manager both
+match jewbee2000. The planned driverforge name was absent (authenticated API 404).
+Created an empty public repository at https://github.com/jewbee2000/driverforge
+(repository ID 1404774585), without generated commits, then configured HTTPS origin.
+Credentials were used only in memory and were not printed or stored in the project.
+
+Publication preparation: git status was clean at c0a68dc; scanned all 267 historical
+blobs for common GitHub/model token and private-key patterns, with no matches. The
+largest blob was 91,253 bytes. This is a bounded pattern check, not a universal secret
+detector. Reviewed the tracked inventory and licensing/data boundary. Venvs, wheels,
+builds and local artifacts remain ignored. Documentation/status now distinguish
+source publication from the unpublished blog. docs/NEXT_STEPS.md proposes CI,
+practitioner/second-driver validation, contract clarification and optional hardware.
+No new application behavior or completed acceptance expectations were changed.
+
+Push and remote verification results are recorded below after execution. The prior
+94-test clean-install evidence remains the application gate for this documentation
+update; git diff --check passed. No paid model call or hardware purchase was made.
+
 ## Final documentation serialization repair
 
 The final audit recomputed 60 retained artifact hashes, matched package fingerprints

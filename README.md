@@ -4,7 +4,8 @@ A local fault-testing extension for instrument drivers, with exact wire transcri
 source-linked verdicts, and an installable pytest fixture. It integrates the existing
 PyMeasure adapter seam. [The baseline comparison](docs/BASELINE.md) explains its scope.
 
-**Local software release candidate, unpublished.** Two fictional reference drivers
+**Software release candidate.** Source and milestone history are hosted at
+[jewbee2000/driverforge](https://github.com/jewbee2000/driverforge). Two fictional reference drivers
 pass 39 open conformance cases; all six deliberate defects are rejected. The unchanged
 public Agilent34410A driver passes its three normal operations, timeout, fragmentation
 and late-response cases. Synthetic malformed/device-error responses fail the explicit
@@ -110,4 +111,5 @@ generation or hostile-code execution. Docker's daemon was unavailable, so
 generated-code isolation is disabled. Upstream validation failures remain unresolved.
 Only Windows/Python 3.12 was verified. [Licensing and privacy](docs/LICENSING_AND_PRIVACY.md)
 cover fixtures and dependencies. The [blog draft](docs/BLOG_DRAFT.md) stays
-unpublished. No remote repository has been created or pushed.
+unpublished; the separate website checkout has not been pushed or deployed.
+[Next steps](docs/NEXT_STEPS.md) prioritize repeatable checks and practitioner validation.

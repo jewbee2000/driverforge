@@ -1,10 +1,10 @@
 {
-  "phase": "local_release_candidate",
+  "phase": "github_release_candidate",
   "implementation_started": true,
   "application_tests_run": true,
   "live_model_evaluation_run": false,
   "physical_validation_run": false,
-  "published": false,
+  "published": true,
   "requirements_revision": "2026-10-04",
   "usefulness_validation": "executed_baseline_and_agent_consumer_practitioner_unverified",
   "all_applicable_must_verified": true,
@@ -13,5 +13,7 @@
   "known_upstream_failures": [
     "malformed",
     "device-error"
-  ]
+  ],
+  "repository_url": "https://github.com/jewbee2000/driverforge",
+  "blog_published": false
 }

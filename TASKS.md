@@ -13,4 +13,12 @@ hashes and limitations are in evidence/progress.md and evidence/requirements-evi
 - [x] Complete the independent consumer walkthrough and compare its cost with the baseline. This is agent-executed adoption evidence; practitioner feedback is unverified.
 
 Known upstream malformed/device-error failures remain failed. Physical validation,
-live models, hostile-code isolation and publication were not performed.
+live models and hostile-code isolation were not performed. Project GitHub publication
+was separately authorized on 2026-10-04; the article remains unpublished.
+
+Follow-up work is proposed in docs/NEXT_STEPS.md, outside the completed M0–M4 scope:
+
+- [ ] Automate the supported Windows/Python 3.12 checks in CI.
+- [ ] Obtain a practitioner walkthrough and exercise a second existing driver.
+- [ ] Resolve the integration contract's malformed/device-error semantics with source evidence.
+- [ ] Validate a read-only operation on available hardware if access is arranged.
