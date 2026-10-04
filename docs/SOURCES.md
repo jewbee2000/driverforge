@@ -15,3 +15,14 @@ Research reviewed October 3, 2026. These sources inform the workflow; they do no
 - [NIST experimental design handbook](https://www.itl.nist.gov/div898/handbook/pri/pri.htm): why physical claims need repeatable measurements and confirmation experiments.
 
 Personal context comes from Walter's resume reviewed in the earlier research and his public [portfolio](https://walter.teitelbaum.us/), especially [bicycle components](https://walter.teitelbaum.us/2025/04/01/3D-Printed-Bicycle-Components/) and [automated pruning](https://walter.teitelbaum.us/2021/07/25/Automated-Pruning-for-Polyculture/). No employer designs, logs, protocols, measurements, or confidential materials belong in these repositories.
+
+## Existing-tool comparison checked 2026-10-04
+
+- [PyMeasure protocol tests and Generator](https://pymeasure.readthedocs.io/en/stable/dev/adding_instruments/tests.html)
+- [QCoDeS simulated instruments](https://microsoft.github.io/Qcodes/examples/writing_drivers/Creating-Simulated-PyVISA-Instruments.html)
+- [PyVISA simulation](https://pyvisa.readthedocs.io/projects/pyvisa-sim/en/latest/)
+- [instrbuilder](https://github.com/lucask07/instrbuilder)
+- [PyMeasure exact-byte debugging issue 1081](https://github.com/pymeasure/pymeasure/issues/1081)
+- [QCoDeS testing without hardware discussion](https://github.com/microsoft/Qcodes/discussions/6237)
+
+See REQUIREMENTS.md for the supported claims and unresolved usefulness hypothesis.

@@ -1,11 +1,11 @@
 # DriverForge
 
-Instrument drivers whose behavior can be checked against the wire protocol.
+A fault and conformance test kit for Python instrument drivers, with source-linked wire transcripts and pytest integration.
 
-**Status: planned; implementation has not started.** This repository contains the requirements, execution plan, acceptance design, and blog draft for an agent-assisted engineering project. It does not yet contain working application code or benchmark results.
+**Status: refined planning repository; implementation has not started.** Start with [requirements and rationale](docs/REQUIREMENTS.md), then [START_HERE.md](START_HERE.md) and the [implementation plan](IMPLEMENTATION_PLAN.md).
 
-Start with [START_HERE.md](START_HERE.md). The [implementation plan](IMPLEMENTATION_PLAN.md) defines the build and [specification](docs/SPEC.md) defines what must be proven.
+Unit conversion, framing, timeout, and uncertain-write errors can invalidate measurements or repeat a hardware action. Testing these explicitly is useful even when no AI-generated driver is involved. This fits Walter's instrument automation and hardware abstraction experience.
 
-The intended demonstration: A temperature module reports a negative temperature. A generated driver mistakenly decodes the signed register as unsigned. The independent byte-level suite rejects it; a corrected driver passes. An ambiguous write command is rejected rather than guessed.
+Existing tools already cover parts of this problem. M0 must compare them and establish a useful addition or integration. The plan makes no claim of unique invention or practitioner adoption. All software and engineering validation remain pending.
 
-The final release must run offline without hardware or a model key. Live AI evaluations and physical validation, where applicable, are separate and explicitly labeled.
+The first release must work without hardware or model credentials. Live AI experiments and physical tests are separate. Commits stay local; publication is not authorized.

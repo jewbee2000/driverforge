@@ -1,13 +1,13 @@
 # DriverForge specification
 
-Status: implementation-ready proposal. No implementation or benchmark results are claimed.
+Status: refined proposal; M0 baseline comparison is pending. No implementation or benchmark results are claimed. Read [REQUIREMENTS.md](REQUIREMENTS.md) first for priorities, rationale, external-user interfaces, and release gates.
 
 
 ## Scope and assumptions
 
-Version 1 supports two deliberately fictional instruments: ThermoBlock T1 using a small line-oriented ASCII protocol, and PressureBrick P1 using a Modbus-style register PDU over an in-memory transport. The manuals are authored for this project and must be labeled fictional. We test function/data encoding; full Modbus TCP transaction framing and serial RTU CRC are outside version 1.
+The regression suite contains two deliberately fictional instruments: ThermoBlock T1 using a small line-oriented ASCII protocol, and PressureBrick P1 using a Modbus-style register PDU over an in-memory transport. The manuals are authored for this project and must be labeled fictional. We test function/data encoding; full Modbus TCP transaction framing and serial RTU CRC are outside version 1.
 
-Start with Markdown manuals and explicit source anchors. An extraction stage proposes a typed ProtocolSpec, but it may return an unresolved ambiguity. The checked-in example ProtocolSpecs are reviewed project fixtures. Do not assume arbitrary PDFs can be interpreted correctly.
+Start with Markdown manuals and explicit source anchors. An optional later extraction stage proposes a typed ProtocolSpec, but it may return an unresolved ambiguity; v1 accepts explicitly authored specifications. The checked-in example ProtocolSpecs are reviewed project fixtures. Do not assume arbitrary PDFs can be interpreted correctly.
 
 ## Wire contracts to freeze before implementation
 
@@ -21,7 +21,7 @@ One transport operation has a 250 ms deadline. An idempotent read may be retried
 
 ProtocolSpec includes protocol/version, command name, request grammar or register/function, response schema, units, signedness, scaling, legal range, timeout, retry policy, side-effect class, and source anchor for every field. Missing behavior must be `unresolved`, not a guessed default.
 
-The generated driver's public API is identify(), read_temperature(), read_pressure() where supported, set_voltage(volts), disable_output(), and close(). Unsupported capabilities are explicit. Return measurements with value, unit, sampled_at, received_at, and quality. sampled_at is nullable when the wire protocol does not report acquisition time; do not mislabel host receipt time as physical sampling time. Use typed exceptions for parse errors, deadline exceeded, device errors, unsupported operations, and unknown write outcomes.
+The reference driver's public API is identify(), read_temperature(), read_pressure() where supported, set_voltage(volts), disable_output(), and close(). Unsupported capabilities are explicit. Return measurements with value, unit, sampled_at, received_at, and quality. sampled_at is nullable when the wire protocol does not report acquisition time; do not mislabel host receipt time as physical sampling time. Use typed exceptions for parse errors, deadline exceeded, device errors, unsupported operations, and unknown write outcomes.
 
 Proposed package layout: src/driverforge/{spec,transport,driver,generate,report}, emulators/, manuals/, examples/specs/, tests/unit/, tests/conformance/, evaluation/, docs/, evidence/. The emulator and golden vectors derive from the manual, never the generated driver or a shared codec that could duplicate its bug. Common neutral datatypes are acceptable; shared encoding logic is not.
 
@@ -33,21 +33,37 @@ The report shows source passage → interpreted field → wire bytes → driver 
 
 ## Scope exclusions and later work
 
-No arbitrary PDF extraction, real device writes, universal driver generator, enterprise fleet management, or claim of universal Modbus/SCPI compliance. A later PyVISA adapter, OpenHTF plug, or CAN decoder is worthwhile only after the two-instrument suite is complete. A physical instrument can independently validate one adapter later; its purchase is not a prerequisite.
+No arbitrary PDF extraction, real device writes, universal driver generator, enterprise fleet management, or claim of universal Modbus/SCPI compliance. One existing public PyMeasure driver and its injectable adapter are now required by DF-14; additional ecosystems and CAN decoding remain later work. A physical instrument can independently validate one adapter later; its purchase is not a prerequisite.
+
+## Public interface applicability
+
+The numeric protocol limits and driver behaviors in SPEC.md apply to the two fictional reference profiles. Existing upstream drivers are judged against their own explicit supported-operation contracts; the tool must report a real failure without rewriting the upstream driver or disguising it as a pass. A consumer walkthrough may correct a test adapter or an intentionally broken consumer candidate; it must not fabricate a correction to an unresolved upstream bug.
 
 ## Acceptance requirements
 
-| ID | Required behavior | Independent acceptance evidence |
-| --- | --- | --- |
-| DF-01 | ProtocolSpec requires units, scaling, signedness, side effects, retry semantics, and source anchors; unresolved critical fields prevent generation. | Feed missing and contradictory fields; verify a structured ambiguity with cited source anchors. |
-| DF-02 | The two reviewed fictional manuals and specs produce typed drivers with only supported operations. | Compare generated API and annotations to capability lists; unsupported operation raises the named exception. |
-| DF-03 | Signed register and voltage scaling match golden wire vectors exactly. | Check FB2E → -12.34 C and 1.250 V → 04E2 against hand-calculated constants. |
-| DF-04 | Framing and parsing reject truncated, overlong, nonfinite, malformed, and trailing input. | Inject each malformed response without calling production parsers in the oracle. |
-| DF-05 | Read retry is bounded; uncertain side-effecting writes are never replayed automatically. | Fake clock and counted transport prove two maximum read attempts and one write. |
-| DF-06 | Errors, cancellation, and close preserve operation ordering and typed outcomes. | Cancel a pending read then attempt another; no stale response can be reused. Close twice. |
-| DF-07 | The oracle rejects six seeded driver defects. | Unsigned decode, factor-of-1000 voltage, swapped bytes, blind write retry, swallowed device error, stale response reuse each fail at least one assertion. |
-| DF-08 | At least 20 conformance cases and 10 ambiguity or instruction-injection cases exist. | A manifest enumerates cases and expected decisions; source text cannot alter evaluator rules or run shell commands. |
-| DF-09 | Offline demo requires neither a model key nor physical I/O and preserves a failed attempt. | Run with credentials absent and network disabled; inspect manifest and failure report. |
-| DF-10 | Generated code cannot edit evaluation inputs or access credentials/network. | Isolation tests attempt forbidden writes and egress and hit the timeout limit; report unavailable isolation as blocked. |
-| DF-11 | Reports trace results to protocol source, candidate hash, oracle version, and commands. | Verify artifact hashes and recompute expected output from a fresh checkout. |
-| DF-12 | The public package passes lint, type checks, meaningful tests, and documented installation. | Fresh environment follows README and repeats the offline demonstration. |
+The authoritative rationale, applicability, and independent acceptance evidence for these requirements are in [REQUIREMENTS.md](REQUIREMENTS.md). Reference-case behavior above does not replace the public-interface requirements.
+
+| ID | Priority | Milestone | Requirement |
+| --- | --- | --- | --- |
+| DF-01 | must | M0 | ProtocolSpec requires units, scaling, signedness, side effects, retry semantics, and source anchors; unresolved critical fields prevent dependent checks or generation. |
+| DF-02 | must | M1 | Two reviewed fictional protocol fixtures have typed reference drivers exposing only supported operations; generation is optional. |
+| DF-03 | must | M0 | Signed register and voltage scaling match golden wire vectors exactly. |
+| DF-04 | must | M2 | Framing and parsing reject truncated, overlong, nonfinite, malformed, and trailing input. |
+| DF-05 | must | M2 | Read retry is bounded; uncertain side-effecting writes are never replayed automatically. |
+| DF-06 | must | M2 | Errors, cancellation, and close preserve operation ordering and typed outcomes. |
+| DF-07 | must | M2 | The oracle rejects six seeded driver defects. |
+| DF-08 | must | M2 | At least 20 conformance cases and 10 missing/contradictory-source cases have explicit decisions; enabled model extraction also receives instruction-injection cases. |
+| DF-09 | must | M3 | Offline demo requires neither a model key nor physical I/O and preserves a failed attempt. |
+| DF-10 | must | M3 | Generated code cannot edit evaluation inputs or access credentials/network. |
+| DF-11 | must | M3 | Reports trace results to protocol source, candidate hash, oracle version, and commands. |
+| DF-12 | must | M4 | The public package passes lint, type checks, meaningful tests, and documented installation. |
+| DF-13 | must | M0 | Compare a pinned PyMeasure expected_protocol/PyVISA-sim baseline with the proposed fault kit on the same driver operations. |
+| DF-14 | must | M1 | Test at least one pinned, real public PyMeasure driver without rewriting its implementation, through an injectable transport adapter. |
+| DF-15 | must | M2 | A declarative fault schedule supports timeout, fragmented response, malformed response, device error, and late response after cancellation or timeout. |
+| DF-16 | must | M2 | Expose a pytest fixture/API that exercises supported existing-driver adapters without requiring a new hardware abstraction layer. |
+| DF-17 | should | M3 | Compare two run reports by operation and requirement with readable byte-level differences. |
+| DF-18 | could | M3 | Add manual-to-spec generation and bounded model repair after the deterministic conformance tool works. |
+| DF-19 | must | M2 | Publish a versioned input and result schema, stable requirement IDs, public Python API, and a scriptable CLI with clear failure semantics. |
+| DF-20 | must | M4 | Declare resource limits and measure repeatable performance for the supported workload in the pinned environment. |
+| DF-21 | must | M4 | Keep offline workflows local by default and document dependency, fixture, manual, and example licensing. |
+| DF-22 | must | M4 | Demonstrate adoption from a separate clean consumer directory using only the documented public interface. |

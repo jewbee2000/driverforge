@@ -1,11 +1,14 @@
 # Implementation tasks
 
-All tasks below are unstarted. The preparation commit contains specifications and editorial drafts, not application code.
+All tasks are unstarted. Check off only after recording executed evidence.
 
-- [ ] M0 — Freeze the contract and environment. Evidence: Schema validation and hand arithmetic independently confirm the three seed vectors.
-- [ ] M1 — Implement the transport and independent emulator. Evidence: A minimal hand-written driver passes the normal path and lifecycle cases; injected transport faults fail as specified.
-- [ ] M2 — Generate and verify candidates. Evidence: Good and deliberately bad drivers produce distinguishable reproducible reports; all six mutations are caught.
-- [ ] M3 — Add bounded repair and evaluation. Evidence: Replay produces rejection then success without modifying the oracle; unsupported ambiguity remains unresolved.
-- [ ] M4 — Prepare the portfolio release. Evidence: All release requirements pass; post and repository are ready for review but remain local.
+- [ ] M0 — Compare existing tools and freeze contracts. Gate: A concrete use case requires useful additional behavior beyond the baseline; otherwise deliver an integration/examples extension. Three hand-calculated vectors and the public-driver adapter design are documented.
+- [ ] M1 — Test an existing driver through one adapter. Gate: The external driver completes three declared operations without source changes. Deadline, device-error, and framing behavior are independently observable.
+- [ ] M2 — Package reusable fault tests. Gate: Every seeded defect is detected for its intended reason; the external consumer package runs through the documented public API.
+- [ ] M3 — Make failures useful to an engineer. Gate: A failure report identifies the operation, expected behavior, observed bytes, source, and reproduction command.
+- [ ] M4 — Verify adoption and prepare the local release. Gate: All applicable Must requirements pass; deferred Should items are explained. No claim of real hardware validation or publication is made.
 
-Update this file only after checking the milestone evidence. See IMPLEMENTATION_PLAN.md for dependencies and estimates.
+- [ ] Record dispositions for every Should/Could item and verify Won't claims remain excluded.
+- [ ] Complete the independent consumer walkthrough and compare its cost with the baseline.
+
+See IMPLEMENTATION_PLAN.md and docs/REQUIREMENTS.md.

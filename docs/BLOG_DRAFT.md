@@ -1,3 +1,5 @@
+<!-- Prospective draft: revised requirements and BLOG_BRIEF.md govern the eventual article. No implementation results or novelty claims are established. -->
+
 # Making an instrument driver earn my trust
 
 Unpublished prospective draft. Implementation and results are pending.

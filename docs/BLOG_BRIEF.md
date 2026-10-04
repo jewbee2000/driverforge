@@ -36,3 +36,7 @@ This gives the coding agent a useful kind of feedback. A failed check should poi
 I am interested in how much of the work this makes easier, and in what still requires judgment. My guess is that generating the happy path will be the least interesting part. Knowing when the manual is ambiguous may turn out to matter more than producing another hundred lines of plausible Python.
 
 The intended result is a small repository that someone can clone and run without owning either instrument or buying access to an AI service. A recorded example will show the checking loop; any live model results will be reported separately. Once the implementation exists, I will add the actual failures, the fixes, and the cases where the agent needed help. Those seem more useful than a screenshot of code that looks correct.
+
+## Usefulness audit of 2026-10-04
+
+The current contribution is: A fault and conformance test kit for Python instrument drivers, with source-linked wire transcripts and pytest integration. Explain the existing tools, the narrow gap tested in M0, the non-default consumer example, one real failure, and any reason the result is best delivered as an integration. Do not claim a first-of-its-kind tool. Product AI features are optional. The current draft remains prospective; rewrite it after implementation from actual evidence and [REQUIREMENTS.md](REQUIREMENTS.md).
