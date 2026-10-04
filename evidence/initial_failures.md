@@ -14,3 +14,11 @@ check incorrectly referenced `signature.empty` instead of `Signature.empty`.
 Corrected the test's introspection API; expected capabilities and annotations
 remain unchanged. An initial type pass also caught tuple inference, an optional
 response assignment, and an untyped escaping lambda; repaired explicit typing.
+
+Final documentation audit: a Windows helper used the default cp1252 codec to read
+UTF-8 task/requirement text. The status reconciliation corrupted punctuation and
+failed to match the requirement headings; the final task-count probe exposed a
+UnicodeDecodeError. Restored the original UTF-8 contracts from the pre-update
+commit, fixed the helper's explicit encoding, and reapplied only executed status
+updates. Verified all 22 headings/statuses and an uncorrupted completed task list.
+No wire vectors, expected results, driver behavior or acceptance criteria changed.

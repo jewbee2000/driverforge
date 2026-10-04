@@ -5,10 +5,10 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-executed = json.loads((ROOT / "evidence/requirements-evidence.json").read_text())
+executed = json.loads((ROOT / "evidence/requirements-evidence.json").read_text(encoding="utf-8"))
 states = {row["requirement"]: row["state"] for row in executed["requirements"]}
 register_path = ROOT / "requirements.json"
-register = json.loads(register_path.read_text())
+register = json.loads(register_path.read_text(encoding="utf-8"))
 register["status"] = "verified_local_release_candidate"
 register["decision_status"] = "bounded_baseline_and_agent_consumer_usefulness_demonstrated"
 for req in register["requirements"]:
@@ -20,7 +20,7 @@ for req in register["requirements"]:
     req["executed_evidence"] = "evidence/requirements-evidence.json"
 register_path.write_text(json.dumps(register, indent=2) + "\n", encoding="utf-8", newline="\n")
 path = ROOT / "docs/REQUIREMENTS.md"
-text = path.read_text()
+text = path.read_text(encoding="utf-8")
 text = text.replace(
     "Status: planned, not implemented.",
     "Status: verified local software release candidate. Executed mappings are in [requirements-evidence.json](../evidence/requirements-evidence.json); known upstream failures and conditional exclusions remain explicit.",

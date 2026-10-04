@@ -34,7 +34,7 @@
     {
       "id": "DF-03",
       "requirement": "Signed register and voltage scaling match golden wire vectors exactly.",
-      "acceptance": "Check FB2E \u00e2\u2020\u2019 -12.34 C and 1.250 V \u00e2\u2020\u2019 04E2 against hand-calculated constants.",
+      "acceptance": "Check FB2E \u2192 -12.34 C and 1.250 V \u2192 04E2 against hand-calculated constants.",
       "planned_test": "tests/acceptance/test_golden_bytes.py",
       "status": "verified",
       "priority": "must",

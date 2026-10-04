@@ -1,5 +1,15 @@
 # Progress
 
+## Final documentation serialization repair
+
+The final audit recomputed 60 retained artifact hashes, matched package fingerprints
+between the wheel consumer and source demo, and confirmed a clean full-suite fresh
+checkout record. A task-count helper then exposed default Windows cp1252 decoding
+of UTF-8 text. Restored requirements from b8f9cd3, made update_register.py read
+explicit UTF-8, and reapplied statuses without changing criteria. All 22 statuses
+and the completed task list verified; lint/format checks passed. The application,
+oracle, pinned dependency set and all executed outcomes are unchanged.
+
 ## 2026-10-04 M4 complete — final executed gate
 
 Second clean local clone at f42a058 installed from the pinned lock, followed README,
