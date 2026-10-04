@@ -19,9 +19,22 @@ source publication from the unpublished blog. docs/NEXT_STEPS.md proposes CI,
 practitioner/second-driver validation, contract clarification and optional hardware.
 No new application behavior or completed acceptance expectations were changed.
 
-Push and remote verification results are recorded below after execution. The prior
-94-test clean-install evidence remains the application gate for this documentation
-update; git diff --check passed. No paid model call or hardware purchase was made.
+Executed git push -u origin main: exit 0, new main branch with upstream tracking.
+First pushed commit: 9d6deb0622761927d5baffd1fcbcbd672932c688. git ls-remote origin
+refs/heads/main and the unauthenticated GitHub branches/main API both matched this
+exact commit; public repository metadata confirmed public visibility and URL.
+The machine-readable record is evidence/github-publication.json.
+
+Updated the draft's two stale local-only references with the verified repository
+URL. The canonical article and handoff were committed only in the separate website
+checkout; no website push or deployment occurred. published:false and absent date
+remain verified. The previous rendered-build record still refers to a395ad6; it was
+not rerun or relabeled for this prose-only update. Unrelated website changes were
+left untouched. The matching project draft copy is updated too.
+
+The prior 94-test clean-install evidence remains the application gate for this
+documentation update; git diff --check passed. No production code, test, oracle,
+lock or schema changed from c0a68dc. No paid model call or hardware purchase was made.
 
 ## Final documentation serialization repair
 

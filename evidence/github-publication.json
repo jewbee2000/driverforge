@@ -1,0 +1,26 @@
+{
+  "verified_at_utc": "2026-10-04T19:38:45.035142+00:00",
+  "repository_url": "https://github.com/jewbee2000/driverforge",
+  "repository_id": 1404774585,
+  "visibility": "public",
+  "branch": "main",
+  "first_pushed_commit": "9d6deb0622761927d5baffd1fcbcbd672932c688",
+  "ls_remote_commit": "9d6deb0622761927d5baffd1fcbcbd672932c688",
+  "public_api_commit": "9d6deb0622761927d5baffd1fcbcbd672932c688",
+  "push_command": "git push -u origin main",
+  "push_exit_code": 0,
+  "blog_published": false,
+  "website_pushed": false,
+  "application_changes": false,
+  "historical_blobs_scanned": 267,
+  "credential_pattern_matches": 0,
+  "local_article_reference_update": {
+    "website_commit": "07f4d87a64018885fab894c152fff742ebf5e83f",
+    "project_copy_sha256": "d2f909cacc3f596036cfe9b5d07d5a27328322b8762dd9f9ad15d12b1c3fe6c4",
+    "canonical_normalized_utf8_sha256": "4c888a0a0b1d760c2609d3474d994f42f0e3354e10272bbc6fef95a18e06b72a",
+    "copies_match_except_image_path": true,
+    "published_frontmatter": false,
+    "date_frontmatter": false,
+    "new_build_run": false
+  }
+}

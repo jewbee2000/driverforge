@@ -11,6 +11,7 @@ hashes and limitations are in evidence/progress.md and evidence/requirements-evi
 
 - [x] Record Should/Could dispositions and verify Won't exclusions. DF-17 is implemented; DF-18 is deferred; DF-10 is not applicable with untrusted execution disabled.
 - [x] Complete the independent consumer walkthrough and compare its cost with the baseline. This is agent-executed adoption evidence; practitioner feedback is unverified.
+- [x] Publish the project to GitHub under the later authorization, with remote commit and public visibility verified in evidence/github-publication.json. Keep the website checkout unpushed.
 
 Known upstream malformed/device-error failures remain failed. Physical validation,
 live models and hostile-code isolation were not performed. Project GitHub publication
